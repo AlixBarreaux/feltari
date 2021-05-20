@@ -11,7 +11,15 @@ config_version=4
 [application]
 
 config/name="Malvens Doors"
-config/icon="res://icon.png"
+config/icon="res://Miscellaneous/icon.png"
+
+[autoload]
+
+Settings="*res://Autoloads/settings.gd"
+
+[locale]
+
+translations=PoolStringArray( "res://Translations/general_translations.en_US.translation", "res://Translations/general_translations.fr_FR.translation", "res://Translations/gui_translations.en_US.translation", "res://Translations/gui_translations.fr_FR.translation" )
 
 [physics]
 
@@ -22,4 +30,4 @@ common/enable_pause_aware_picking=true
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://Resources/default_env.tres"
