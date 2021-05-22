@@ -72,3 +72,6 @@ anims/Idle = SubResource( 9 )
 "anims/Move Left" = SubResource( 11 )
 "anims/Move Right" = SubResource( 12 )
 "anims/Move Up" = SubResource( 13 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
