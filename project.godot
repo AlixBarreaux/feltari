@@ -9,13 +9,31 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "HealthManager",
+"language": "GDScript",
+"path": "res://Scripts/health_manager.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Scripts/player.gd"
+}, {
+"base": "Button",
+"class": "QuitToDesktopButton",
+"language": "GDScript",
+"path": "res://Scripts/quit_to_desktop_button.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "enemy",
+"language": "GDScript",
+"path": "res://Scripts/enemy.gd"
 } ]
 _global_script_class_icons={
-"Player": ""
+"HealthManager": "",
+"Player": "",
+"QuitToDesktopButton": "",
+"enemy": ""
 }
 
 [application]
@@ -27,6 +45,29 @@ config/icon="res://Miscellaneous/icon.png"
 [autoload]
 
 Settings="*res://Autoloads/settings.gd"
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
 
 [input]
 
@@ -66,6 +107,12 @@ interact={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Environment"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemies"
 
 [locale]
 

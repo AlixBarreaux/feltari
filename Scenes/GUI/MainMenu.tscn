@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/GUI/QuitToDesktopButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/main_menu.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/World.tscn" type="PackedScene" id=4]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene_to_load = ExtResource( 4 )
+
+[node name="TitleLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -35.0
+margin_top = 50.0
+margin_right = 35.0
+margin_bottom = 64.0
+text = "Game Title"
+align = 1
+valign = 1
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -280.0
+margin_top = -180.0
+margin_right = 280.0
+margin_bottom = 180.0
+custom_constants/separation = 60
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="ButtonsContainer"]
+margin_right = 560.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "PLAY"
+
+[node name="OptionsButton" type="Button" parent="ButtonsContainer"]
+margin_top = 140.0
+margin_right = 560.0
+margin_bottom = 220.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "OPTIONS"
+
+[node name="QuitToDesktopButton" parent="ButtonsContainer" instance=ExtResource( 2 )]
+margin_top = 280.0
+margin_right = 560.0
+margin_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="pressed" from="ButtonsContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
