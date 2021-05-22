@@ -42,6 +42,10 @@ config/name="Malvens Doors"
 run/main_scene="res://Scenes/World.tscn"
 config/icon="res://Miscellaneous/icon.png"
 
+[audio]
+
+default_bus_layout="res://Resources/default_bus_layout.tres"
+
 [autoload]
 
 Settings="*res://Autoloads/settings.gd"
