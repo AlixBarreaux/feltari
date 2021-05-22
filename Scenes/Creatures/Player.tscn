@@ -19,7 +19,7 @@ animation = "Idle Right"
 [sub_resource type="AnimationNodeAnimation" id=41]
 animation = "Idle Left"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=2]
+[sub_resource type="AnimationNodeBlendSpace2D" id=48]
 blend_point_0/node = SubResource( 38 )
 blend_point_0/pos = Vector2( 0, 1.1 )
 blend_point_1/node = SubResource( 39 )
@@ -32,26 +32,26 @@ min_space = Vector2( -2, -2 )
 max_space = Vector2( 2, 2 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=3]
+[sub_resource type="AnimationNodeAnimation" id=49]
 animation = "Melee Attack Down"
 
-[sub_resource type="AnimationNodeAnimation" id=4]
+[sub_resource type="AnimationNodeAnimation" id=50]
 animation = "Melee Attack Up"
 
-[sub_resource type="AnimationNodeAnimation" id=5]
+[sub_resource type="AnimationNodeAnimation" id=51]
 animation = "Melee Attack Left"
 
-[sub_resource type="AnimationNodeAnimation" id=6]
+[sub_resource type="AnimationNodeAnimation" id=52]
 animation = "Melee Attack Right"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=7]
-blend_point_0/node = SubResource( 3 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=53]
+blend_point_0/node = SubResource( 49 )
 blend_point_0/pos = Vector2( 0, 1.1 )
-blend_point_1/node = SubResource( 4 )
+blend_point_1/node = SubResource( 50 )
 blend_point_1/pos = Vector2( 0, -1.1 )
-blend_point_2/node = SubResource( 5 )
+blend_point_2/node = SubResource( 51 )
 blend_point_2/pos = Vector2( -1.1, 0 )
-blend_point_3/node = SubResource( 6 )
+blend_point_3/node = SubResource( 52 )
 blend_point_3/pos = Vector2( 1.1, 0 )
 min_space = Vector2( -2, -2 )
 max_space = Vector2( 2, 2 )
@@ -60,26 +60,26 @@ blend_mode = 1
 [sub_resource type="AnimationNodeAnimation" id=36]
 animation = "Take Damage"
 
-[sub_resource type="AnimationNodeAnimation" id=8]
+[sub_resource type="AnimationNodeAnimation" id=54]
 animation = "Move Down"
 
-[sub_resource type="AnimationNodeAnimation" id=9]
+[sub_resource type="AnimationNodeAnimation" id=55]
 animation = "Move Up"
 
-[sub_resource type="AnimationNodeAnimation" id=10]
+[sub_resource type="AnimationNodeAnimation" id=56]
 animation = "Move Left"
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=57]
 animation = "Move Right"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=12]
-blend_point_0/node = SubResource( 8 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=58]
+blend_point_0/node = SubResource( 54 )
 blend_point_0/pos = Vector2( 0, 1.1 )
-blend_point_1/node = SubResource( 9 )
+blend_point_1/node = SubResource( 55 )
 blend_point_1/pos = Vector2( 0, -1 )
-blend_point_2/node = SubResource( 10 )
+blend_point_2/node = SubResource( 56 )
 blend_point_2/pos = Vector2( -1, 0 )
-blend_point_3/node = SubResource( 11 )
+blend_point_3/node = SubResource( 57 )
 blend_point_3/pos = Vector2( 1, 0 )
 blend_mode = 1
 
@@ -101,14 +101,14 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=47]
 
-[sub_resource type="AnimationNodeStateMachine" id=19]
-states/Idle/node = SubResource( 2 )
+[sub_resource type="AnimationNodeStateMachine" id=59]
+states/Idle/node = SubResource( 48 )
 states/Idle/position = Vector2( 713, 95 )
-"states/Melee Attack/node" = SubResource( 7 )
+"states/Melee Attack/node" = SubResource( 53 )
 "states/Melee Attack/position" = Vector2( 893, 194 )
 "states/Take Damage/node" = SubResource( 36 )
 "states/Take Damage/position" = Vector2( 713, 334 )
-states/Walk/node = SubResource( 12 )
+states/Walk/node = SubResource( 58 )
 states/Walk/position = Vector2( 552, 194 )
 transitions = [ "Idle", "Take Damage", SubResource( 37 ), "Take Damage", "Idle", SubResource( 42 ), "Melee Attack", "Idle", SubResource( 43 ), "Walk", "Idle", SubResource( 44 ), "Idle", "Walk", SubResource( 45 ), "Idle", "Melee Attack", SubResource( 46 ), "Walk", "Melee Attack", SubResource( 47 ) ]
 start_node = "Idle"
@@ -498,9 +498,8 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 19 )
+tree_root = SubResource( 59 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/playback = SubResource( 20 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 "parameters/Melee Attack/blend_position" = Vector2( -0.680093, -0.00677967 )
