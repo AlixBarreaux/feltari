@@ -14,12 +14,12 @@ var velocity: Vector2 = Vector2(0.0, 0.0) setget set_velocity
 
 ################################# RUN THE CODE #################################
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	self.calculate_velocity()
 	velocity = move_and_slide(velocity)
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	self.set_direction(Vector2(0.0, 0.0))
 	
 	if Input.get_action_strength("move_left"):
