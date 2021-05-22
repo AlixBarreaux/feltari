@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/enemy.gd" type="Script" id=1]
 [ext_resource path="res://Miscellaneous/icon.png" type="Texture" id=2]
+[ext_resource path="res://Resources/take_damage_animation.tres" type="Animation" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
@@ -20,7 +21,6 @@ current_health = 2
 max_health = 3
 
 [node name="Sprite" type="Sprite" parent="."]
-self_modulate = Color( 1, 0, 0, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -39,6 +39,9 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/take_damage_animation = ExtResource( 3 )
 
 [connection signal="body_entered" from="CreatureDetectionZone" to="." method="_on_CreatureDetectionZone_body_entered"]
 [connection signal="body_exited" from="CreatureDetectionZone" to="." method="_on_CreatureDetectionZone_body_exited"]

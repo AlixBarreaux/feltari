@@ -1,3 +1,4 @@
+class_name ItemContainer
 extends Node2D
 
 

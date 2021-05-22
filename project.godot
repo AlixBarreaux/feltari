@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/health_manager.gd"
 }, {
+"base": "Reference",
+"class": "ItemContainer",
+"language": "GDScript",
+"path": "res://Scenes/Container/item_container.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -31,6 +36,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "HealthManager": "",
+"ItemContainer": "",
 "Player": "",
 "QuitToDesktopButton": "",
 "enemy": ""

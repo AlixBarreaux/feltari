@@ -5,6 +5,10 @@ extends KinematicBody2D
 
 ############################### DECLARE VARIABLES ##############################
 
+export var current_health: int = 0
+export var max_health: int = 0
+export var damage: int = 1
+
 enum AI_STATES {
 	IDLE,
 	WANDER,
@@ -66,9 +70,7 @@ func _on_CreatureDetectionZone_body_exited(body: PhysicsBody2D) -> void:
 
 
 
-export var current_health: int = 0
-export var max_health: int = 0
-export var damage: int = 1
+
 
 func take_damage(amount: int) -> void:
 	self.current_health -= amount
