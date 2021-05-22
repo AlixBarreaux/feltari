@@ -7,7 +7,25 @@ extends KinematicBody2D
 
 ############################### DECLARE VARIABLES ##############################
 
-export var current_speed: int = 200 setget set_current_speed, get_current_speed
+export var current_speed: int = 150 setget set_current_speed, get_current_speed
+export var normal_speed: int = 150
+export var max_speed = 300
+
+export var current_health: int = 0
+export var max_health: int = 0
+
+export var current_melee_attack_damage: int = 1
+export var max_melee_attack_damage: int = 2
+
+enum ABILITIES {
+					NONE = 0,
+					BANDANA,
+					TORSO,
+					TURBAN
+				}
+
+export (ABILITIES) var current_ability = ABILITIES.BANDANA
+
 
 var direction: Vector2 = Vector2(0.0, 0.0) setget set_direction, get_direction
 var velocity: Vector2 = Vector2(0.0, 0.0) setget set_velocity
@@ -41,10 +59,40 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if Input.get_action_strength("move_down"):
 		self.direction.y = 1
 	
+
+	
+#	if Input.is_action_just_pressed("ability_one"):
+#		current_
+#
+#	if Input.is_action_just_pressed("ability_two"):
+#
+#
+#	if Input.is_action_just_pressed("ability_three"):
+		
+	
+	if Input.is_action_just_pressed("interact"):
+		if targeted_interactable != null:
+			targeted_interactable.receive_interaction()
+			targeted_interactable = null
+	
 	
 	self.direction = self.direction.normalized()
 	
 
+func set_current_ability() -> void:
+	match current_ability:
+		ABILITIES.NONE:
+			pass
+			
+		ABILITIES.BANDANA:
+			self.set_current_speed(max_speed)
+			self.set_current_damage(max_melee_attack_damage)
+			
+		ABILITIES.TORSO:
+			pass
+			
+		ABILITIES.TURBAN:
+			pass
 
 ############################### DECLARE FUNCTIONS ##############################
 
@@ -86,9 +134,6 @@ func melee_attack_animation_finished() -> void:
 
 
 
-export var current_health: int = 0
-export var max_health: int = 0
-export var damage: int = 1
 
 func take_damage(amount: int) -> void:
 	self.current_health -= amount
@@ -111,5 +156,20 @@ func die() -> void:
 
 func _on_HurtBox_body_entered(body: PhysicsBody2D) -> void:
 	print(self.name, ": I was entered by: ", body.name)
-	body.take_damage(self.damage)
+	body.take_damage(self.get_current_damage())
 	
+
+
+func set_current_damage(amount: int) -> void:
+	current_melee_attack_damage = amount
+
+
+func get_current_damage() -> int:
+	return current_melee_attack_damage
+
+
+var targeted_interactable: PhysicsBody2D = null
+
+func _on_InteractZone_body_entered(body: PhysicsBody2D) -> void:
+	self.targeted_interactable = body
+	print(self.name + ": Interact target set to: " + body.name)

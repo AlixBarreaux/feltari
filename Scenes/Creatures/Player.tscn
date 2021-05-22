@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Miscellaneous/icon.png" type="Texture" id=2]
@@ -266,9 +266,12 @@ tracks/3/keys = {
 [sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 15, 30 )
 
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 37.1911, 38.1541 )
+
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 13
 script = ExtResource( 1 )
 current_health = 2
 max_health = 3
@@ -319,4 +322,13 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxBoxPivot/HurtBox"]
 shape = SubResource( 33 )
 
+[node name="InteractZone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone"]
+position = Vector2( -72.1251, 1.41422 )
+shape = SubResource( 34 )
+
 [connection signal="body_entered" from="HurtBoxBoxPivot/HurtBox" to="." method="_on_HurtBox_body_entered"]
+[connection signal="body_entered" from="InteractZone" to="." method="_on_InteractZone_body_entered"]

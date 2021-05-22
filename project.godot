@@ -111,12 +111,25 @@ interact={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
  ]
 }
+ability_one={
+"deadzone": 0.5,
+"events": [  ]
+}
+ability_two={
+"deadzone": 0.5,
+"events": [  ]
+}
+ability_three={
+"deadzone": 0.5,
+"events": [  ]
+}
 
 [layer_names]
 
 2d_physics/layer_1="Environment"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemies"
+2d_physics/layer_4="Containers"
 
 [locale]
 
