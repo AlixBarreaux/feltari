@@ -222,7 +222,7 @@ tile_data = PoolIntArray( 65543, 1, 0, 196611, 1, 0, 327689, 0, 0 )
 [node name="Creatures" type="Node2D" parent="."]
 
 [node name="Player" parent="Creatures" instance=ExtResource( 1 )]
-position = Vector2( 435, 197 )
+position = Vector2( 418.526, 93.8015 )
 
 [node name="Enemies" type="Node2D" parent="Creatures"]
 
