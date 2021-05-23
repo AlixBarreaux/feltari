@@ -5,10 +5,20 @@ extends Control
 
 export var scene_to_load: PackedScene = null setget , get_scene_to_load
 
+# Node Paths
+export var play_button_node_path: NodePath = ""
+
+
+# Node References
+onready var play_button: Button = get_node(play_button_node_path)
+
+
 ################################# RUN THE CODE #################################
 
 func _ready() -> void:
 	self._initialize_asserts()
+	
+	play_button.grab_focus()
 
 ############################### DECLARE FUNCTIONS ##############################
 

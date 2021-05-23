@@ -272,3 +272,20 @@ func _on_InteractZone_body_exited(_body: PhysicsBody2D) -> void:
 
 func _on_MeleeAttackCooldownTimer_timeout() -> void:
 	can_melee_attack = true
+
+
+
+signal current_health_changed
+
+func set_current_health(value: int) -> void:
+	current_health = value
+#	emit_signal("current_health_changed", cur)
+
+
+func get_current_health() -> int:
+	return current_health
+
+func add_current_health(amount: int) -> void:
+	self.current_health += amount
+	self.set_current_health(get_current_health() + amount)
+	print("ADD HEALTH TRIGGGERED, NEEDS TO UPDATE HEALTH!")

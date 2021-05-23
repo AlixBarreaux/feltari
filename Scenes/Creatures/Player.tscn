@@ -131,7 +131,7 @@ graph_offset = Vector2( 180.775, 113.135 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=26]
 
-[sub_resource type="Animation" id=27]
+[sub_resource type="Animation" id=47]
 resource_name = "Die"
 length = 3.4
 tracks/0/type = "value"
@@ -159,7 +159,7 @@ tracks/1/keys = {
 "values": [ false, true, false, true ]
 }
 
-[sub_resource type="Animation" id=28]
+[sub_resource type="Animation" id=48]
 length = 1.5
 loop = true
 tracks/0/type = "value"
@@ -199,7 +199,7 @@ tracks/2/keys = {
 "values": [ -89.9999, -89.9999 ]
 }
 
-[sub_resource type="Animation" id=29]
+[sub_resource type="Animation" id=49]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -238,7 +238,7 @@ tracks/2/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=30]
+[sub_resource type="Animation" id=50]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -277,7 +277,7 @@ tracks/2/keys = {
 "values": [ 180.0, 180.0 ]
 }
 
-[sub_resource type="Animation" id=31]
+[sub_resource type="Animation" id=51]
 length = 1.5
 loop = true
 tracks/0/type = "value"
@@ -317,7 +317,7 @@ tracks/2/keys = {
 "values": [ 90.0, 90.0 ]
 }
 
-[sub_resource type="Animation" id=32]
+[sub_resource type="Animation" id=52]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -426,7 +426,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=33]
+[sub_resource type="Animation" id=53]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -535,7 +535,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=34]
+[sub_resource type="Animation" id=54]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -644,7 +644,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=35]
+[sub_resource type="Animation" id=55]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -753,7 +753,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=36]
+[sub_resource type="Animation" id=56]
 length = 0.6
 loop = true
 step = 0.05
@@ -794,7 +794,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=37]
+[sub_resource type="Animation" id=57]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -834,7 +834,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=58]
 length = 0.6
 loop = true
 step = 0.05
@@ -875,7 +875,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=39]
+[sub_resource type="Animation" id=59]
 length = 0.6
 loop = true
 step = 0.05
@@ -916,7 +916,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="RectangleShape2D" id=40]
+[sub_resource type="RectangleShape2D" id=60]
 extents = Vector2( 15, 30 )
 
 [sub_resource type="RectangleShape2D" id=41]
@@ -932,8 +932,8 @@ max_health = 3
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
+flip_h = true
 hframes = 44
-frame = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1.5 )
@@ -948,20 +948,20 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( 1.11387, 0.22069 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Die = SubResource( 27 )
-"anims/Idle Down" = SubResource( 28 )
-"anims/Idle Left" = SubResource( 29 )
-"anims/Idle Right" = SubResource( 30 )
-"anims/Idle Up" = SubResource( 31 )
-"anims/Melee Attack Down" = SubResource( 32 )
-"anims/Melee Attack Left" = SubResource( 33 )
-"anims/Melee Attack Right" = SubResource( 34 )
-"anims/Melee Attack Up" = SubResource( 35 )
+anims/Die = SubResource( 47 )
+"anims/Idle Down" = SubResource( 48 )
+"anims/Idle Left" = SubResource( 49 )
+"anims/Idle Right" = SubResource( 50 )
+"anims/Idle Up" = SubResource( 51 )
+"anims/Melee Attack Down" = SubResource( 52 )
+"anims/Melee Attack Left" = SubResource( 53 )
+"anims/Melee Attack Right" = SubResource( 54 )
+"anims/Melee Attack Up" = SubResource( 55 )
 "anims/Take Damage" = ExtResource( 3 )
-"anims/Walk Down" = SubResource( 36 )
-"anims/Walk Left" = SubResource( 37 )
-"anims/Walk Right" = SubResource( 38 )
-"anims/Walk Up" = SubResource( 39 )
+"anims/Walk Down" = SubResource( 56 )
+"anims/Walk Left" = SubResource( 57 )
+"anims/Walk Right" = SubResource( 58 )
+"anims/Walk Up" = SubResource( 59 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -977,11 +977,11 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxBoxPivot/HurtBox"]
-shape = SubResource( 40 )
+shape = SubResource( 60 )
 disabled = true
 
 [node name="InteractZone" type="Area2D" parent="."]
-rotation = 1.57079
+rotation = -1.57079
 collision_layer = 0
 collision_mask = 8
 

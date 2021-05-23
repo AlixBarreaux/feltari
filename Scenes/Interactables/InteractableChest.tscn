@@ -1,8 +1,24 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Interactables/Interactable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Graphics/chest_spritesheet.png" type="Texture" id=2]
-[ext_resource path="res://Miscellaneous/icon.png" type="Texture" id=3]
+[ext_resource path="res://t_shirt.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Interactables/interactable_chest.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Enable"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -34,22 +50,9 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, -20 ), Vector2( 0, 0 ), Vector2( 0, -20 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Open"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 1,
-"values": [  ]
-}
-
 [node name="InteractableChest" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
+available_colors = PoolColorArray( 0.513726, 0.772549, 0.133333, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254902, 0, 0.752941, 1 )
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
@@ -57,10 +60,11 @@ hframes = 2
 
 [node name="AnimationPlayer" parent="." index="2"]
 autoplay = "Idle"
+anims/Enable = SubResource( 2 )
 anims/Idle = SubResource( 1 )
-anims/Open = SubResource( 2 )
 
 [node name="RevealedItem" type="Sprite" parent="." index="3"]
-position = Vector2( -0.5, -27.5 )
-scale = Vector2( 0.375, 0.375 )
+self_modulate = Color( 0, 1, 0.203922, 1 )
+position = Vector2( -0.5, -20.5 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )

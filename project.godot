@@ -9,15 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
-"class": "HealthManager",
+"base": "Control",
+"class": "InGameGui",
 "language": "GDScript",
-"path": "res://Scripts/health_manager.gd"
+"path": "res://in_game_gui.gd"
 }, {
 "base": "Node2D",
-"class": "ItemContainer",
+"class": "Interactable",
 "language": "GDScript",
-"path": "res://Scripts/interactable.gd"
+"path": "res://Scripts/Interactables/interactable.gd"
+}, {
+"base": "Interactable",
+"class": "InteractableChest",
+"language": "GDScript",
+"path": "res://Scripts/Interactables/interactable_chest.gd"
+}, {
+"base": "Node2D",
+"class": "Pickable",
+"language": "GDScript",
+"path": "res://pickable.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
@@ -35,8 +45,10 @@ _global_script_classes=[ {
 "path": "res://Scripts/enemy.gd"
 } ]
 _global_script_class_icons={
-"HealthManager": "",
-"ItemContainer": "",
+"InGameGui": "",
+"Interactable": "",
+"InteractableChest": "",
+"Pickable": "",
 "Player": "",
 "QuitToDesktopButton": "",
 "enemy": ""
@@ -55,6 +67,14 @@ default_bus_layout="res://Resources/default_bus_layout.tres"
 [autoload]
 
 Settings="*res://Autoloads/settings.gd"
+Global="*res://Autoloads/global.gd"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [importer_defaults]
 
@@ -136,6 +156,7 @@ ability_three={
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemies"
 2d_physics/layer_4="Containers"
+2d_physics/layer_5="Pickables"
 
 [locale]
 
