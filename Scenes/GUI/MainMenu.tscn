@@ -43,21 +43,29 @@ __meta__ = {
 
 [node name="PlayButton" type="Button" parent="ButtonsContainer"]
 margin_right = 560.0
-margin_bottom = 80.0
+margin_bottom = 45.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "PLAY"
 
 [node name="OptionsButton" type="Button" parent="ButtonsContainer"]
-margin_top = 140.0
+margin_top = 105.0
 margin_right = 560.0
-margin_bottom = 220.0
+margin_bottom = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "OPTIONS"
 
+[node name="CreditsButton" type="Button" parent="ButtonsContainer"]
+margin_top = 210.0
+margin_right = 560.0
+margin_bottom = 255.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "CREDITS"
+
 [node name="QuitToDesktopButton" parent="ButtonsContainer" instance=ExtResource( 2 )]
-margin_top = 280.0
+margin_top = 315.0
 margin_right = 560.0
 margin_bottom = 360.0
 size_flags_horizontal = 3
