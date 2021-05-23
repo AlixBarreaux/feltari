@@ -14,10 +14,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/health_manager.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
 "class": "ItemContainer",
 "language": "GDScript",
-"path": "res://Scenes/Container/item_container.gd"
+"path": "res://Scripts/interactable.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",

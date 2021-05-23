@@ -26,6 +26,9 @@ enum ABILITIES {
 
 export (ABILITIES) var current_ability = ABILITIES.BANDANA
 
+# Enables/Disables all nodes requiring to be active or not
+# along  with the player inputs and physics
+var enabled: bool = true setget set_enabled, get_enabled
 
 var direction: Vector2 = Vector2(0.0, 0.0) setget set_direction, get_direction
 var velocity: Vector2 = Vector2(0.0, 0.0) setget set_velocity
@@ -49,8 +52,10 @@ func _physics_process(_delta: float) -> void:
 #	if not self.velocity != Vector2(0.0, 0.0):
 #		anim_tree_sm_playback.travel("Idle")
 #		return
+
 	if can_move:
 		velocity = move_and_slide(velocity)
+		
 
 
 
@@ -106,25 +111,42 @@ onready var animation_tree: AnimationTree = $AnimationTree
 onready var anim_tree_sm_playback: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/playback")
 
 
-func attack_melee() -> void:
-	animation_tree.set("parameters/Melee Attack/blend_position", faced_direction)
-	anim_tree_sm_playback.travel("Melee Attack")
+# TEST
+var can_interact: bool = true
 
+func set_can_interact(value: bool) -> void:
+	can_interact = value
 
-func set_can_melee_attack(value: bool) -> void:
-	can_melee_attack = value
-
-
-func get_can_melee_attack() -> bool:
-	return can_melee_attack
+func get_can_interact() -> bool:
+	return can_interact
 
 
 func set_can_move(value: bool) -> void:
 	can_move = value
-
-
+	
 func get_can_move() -> bool:
 	return can_move
+
+
+func set_enabled(value: bool) -> void:
+	if value:
+		set_physics_process(false)
+		set_process_unhandled_input(false)
+		$CollisionShape2D.set_deferred("disabled", true)
+		$HurtBoxBoxPivot/HurtBox/CollisionShape2D.set_deferred("disabled", true)
+		$InteractZone/CollisionShape2D.set_deferred("disabled", true)
+		$MeleeAttackCooldownTimer.stop()
+	else:
+		set_physics_process(true)
+		set_process_unhandled_input(true)
+		$CollisionShape2D.set_deferred("disabled", false)
+		$HurtBoxBoxPivot/HurtBox/CollisionShape2D.set_deferred("disabled", false)
+		$InteractZone/CollisionShape2D.set_deferred("disabled", false)
+		$MeleeAttackCooldownTimer.start()
+
+
+func get_enabled() -> bool:
+	return enabled
 
 
 func set_current_ability() -> void:
@@ -188,11 +210,22 @@ func calculate_velocity() -> void:
 
 
 func melee_attack_animation_finished() -> void:
-#	can_move = true
+	$MeleeAttackCooldownTimer.start()
 	pass
 
 
+func attack_melee() -> void:
+	set_can_interact(false)
+	animation_tree.set("parameters/Melee Attack/blend_position", faced_direction)
+	anim_tree_sm_playback.travel("Melee Attack")
 
+
+func set_can_melee_attack(value: bool) -> void:
+	can_melee_attack = value
+
+
+func get_can_melee_attack() -> bool:
+	return can_melee_attack
 
 
 func take_damage(amount: int) -> void:
@@ -213,6 +246,8 @@ func check_if_dead() -> void:
 
 func die() -> void:
 	print(self.name + str(": I died!"))
+	self.set_enabled(false)
+	anim_tree_sm_playback.travel("Die")
 
 
 # Send damage from the weapon collision zone (HurtBox) to whatever is in 
@@ -232,3 +267,8 @@ func _on_InteractZone_body_exited(_body: PhysicsBody2D) -> void:
 	# Remove the interactable target since it's out of the player's
 	# interaction range (Area2D)
 	self.targeted_interactable = null
+
+
+
+func _on_MeleeAttackCooldownTimer_timeout() -> void:
+	can_melee_attack = true
