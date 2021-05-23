@@ -130,19 +130,19 @@ func get_can_move() -> bool:
 
 func set_enabled(value: bool) -> void:
 	if value:
-		set_physics_process(false)
-		set_process_unhandled_input(false)
-		$CollisionShape2D.set_deferred("disabled", true)
-		$HurtBoxBoxPivot/HurtBox/CollisionShape2D.set_deferred("disabled", true)
-		$InteractZone/CollisionShape2D.set_deferred("disabled", true)
-		$MeleeAttackCooldownTimer.stop()
-	else:
 		set_physics_process(true)
 		set_process_unhandled_input(true)
 		$CollisionShape2D.set_deferred("disabled", false)
 		$HurtBoxBoxPivot/HurtBox/CollisionShape2D.set_deferred("disabled", false)
 		$InteractZone/CollisionShape2D.set_deferred("disabled", false)
 		$MeleeAttackCooldownTimer.start()
+	else:
+		set_physics_process(false)
+		set_process_unhandled_input(false)
+		$CollisionShape2D.set_deferred("disabled", true)
+		$HurtBoxBoxPivot/HurtBox/CollisionShape2D.set_deferred("disabled", true)
+		$InteractZone/CollisionShape2D.set_deferred("disabled", true)
+		$MeleeAttackCooldownTimer.stop()
 
 
 func get_enabled() -> bool:
