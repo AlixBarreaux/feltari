@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/beardman_spritesheet.png-3a27a85982fb6496cf9463c690ad1dfd.stex"
+path="res://.import/beardman_spritesheet_32x32.png-47eaf0337e05e50a9193a90c8d9b4cf1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/beardman_spritesheet.png"
-dest_files=[ "res://.import/beardman_spritesheet.png-3a27a85982fb6496cf9463c690ad1dfd.stex" ]
+source_file="res://Assets/Graphics/Spritesheets/beardman_spritesheet_32x32.png"
+dest_files=[ "res://.import/beardman_spritesheet_32x32.png-47eaf0337e05e50a9193a90c8d9b4cf1.stex" ]
 
 [params]
 
