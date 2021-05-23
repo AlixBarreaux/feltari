@@ -40,6 +40,7 @@ var targeted_interactable: PhysicsBody2D = null
 
 func _ready() -> void:
 	self._initialize_asserts()
+	animation_tree.set_active(true)
 	anim_tree_sm_playback.start("Idle")
 
 
