@@ -754,7 +754,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=41]
+[sub_resource type="Animation" id=47]
 length = 0.6
 loop = true
 step = 0.05
@@ -967,7 +967,7 @@ anims/Die = SubResource( 32 )
 "anims/Melee Attack Right" = SubResource( 39 )
 "anims/Melee Attack Up" = SubResource( 40 )
 "anims/Take Damage" = ExtResource( 3 )
-"anims/Walk Down" = SubResource( 41 )
+"anims/Walk Down" = SubResource( 47 )
 "anims/Walk Left" = SubResource( 42 )
 "anims/Walk Right" = SubResource( 43 )
 "anims/Walk Up" = SubResource( 44 )
