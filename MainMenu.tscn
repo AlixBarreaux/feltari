@@ -61,6 +61,7 @@ tracks/3/keys = {
 
 [node name="GroundTileMap" parent="." instance=ExtResource( 1 )]
 position = Vector2( 456.791, 33.9411 )
+scale = Vector2( 3, 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"

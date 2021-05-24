@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/heart_icon_gui.png-928e4c9d63fa190ae4e919a267cc6b21.stex"
+path="res://.import/fairy_spritesheet.png-7407ba845985da3fc02f496f1a6f27c3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heart_icon_gui.png"
-dest_files=[ "res://.import/heart_icon_gui.png-928e4c9d63fa190ae4e919a267cc6b21.stex" ]
+source_file="res://fairy_spritesheet.png"
+dest_files=[ "res://.import/fairy_spritesheet.png-7407ba845985da3fc02f496f1a6f27c3.stex" ]
 
 [params]
 

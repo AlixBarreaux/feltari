@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Creatures/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tilemaps/DecorationsTileMap.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Scenes/GUI/InGameGUI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Pickables/PickableHeart.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Tilemaps/PathsTileMap.tscn" type="PackedScene" id=9]
+[ext_resource path="res://EnemySpawnPoint.tscn" type="PackedScene" id=10]
+[ext_resource path="res://PatrolZoneEnemy.tscn" type="PackedScene" id=12]
 
 [sub_resource type="GDScript" id=1]
 script/source = "class_name ItemContainer
@@ -54,11 +56,27 @@ scale = Vector2( 3, 3 )
 
 [node name="Enemies" type="Node2D" parent="Creatures"]
 
-[node name="Enemy" parent="Creatures/Enemies" instance=ExtResource( 3 )]
-position = Vector2( 633, 461 )
+[node name="PatrolZoneEnemy" parent="Creatures/Enemies" instance=ExtResource( 12 )]
+position = Vector2( 555, 454 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Creatures/Enemies/PatrolZoneEnemy"]
+polygon = PoolVector2Array( -108, 151, -137, -122, 93, -169, 268, -41, 233, 149 )
+
+[node name="PatrolZoneEnemy2" parent="Creatures/Enemies" instance=ExtResource( 12 )]
+position = Vector2( 555, 454 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Creatures/Enemies/PatrolZoneEnemy2"]
+polygon = PoolVector2Array( -108, 151, -137, -122, 93, -169, 268, -41, 233, 149 )
+
+[node name="EnemySpawnPoint" parent="Creatures/Enemies" instance=ExtResource( 10 )]
+
+[node name="Enemy" parent="Creatures/Enemies/EnemySpawnPoint" groups=[
+"enemy",
+] instance=ExtResource( 3 )]
+position = Vector2( 621, 457 )
 
 [node name="Player" parent="Creatures" instance=ExtResource( 1 )]
-position = Vector2( 418.526, 93.8015 )
+position = Vector2( 532.776, 181.124 )
 
 [node name="Interactables" type="Node2D" parent="."]
 

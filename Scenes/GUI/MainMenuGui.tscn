@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/GUI/QuitToDesktopButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/main_menu.gd" type="Script" id=2]
-[ext_resource path="res://Resources/main_theme.tres" type="Theme" id=3]
+[ext_resource path="res://Resources/Themes/main_theme.tres" type="Theme" id=3]
 [ext_resource path="res://Scenes/World.tscn" type="PackedScene" id=4]
 
 [node name="MainMenu" type="Control"]

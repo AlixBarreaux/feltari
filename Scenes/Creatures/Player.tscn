@@ -1,104 +1,103 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Graphics/Spritesheets/beardman_spritesheet_32x32.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Animations/take_damage_animation.tres" type="Animation" id=3]
+[ext_resource path="res://fairy_spritesheet.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21, 22.5 )
 
-[sub_resource type="AnimationNodeAnimation" id=42]
+[sub_resource type="AnimationNodeAnimation" id=2]
 animation = "Die"
 
-[sub_resource type="AnimationNodeAnimation" id=2]
+[sub_resource type="AnimationNodeAnimation" id=3]
 animation = "Idle Down"
 
-[sub_resource type="AnimationNodeAnimation" id=3]
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "Idle Up"
 
-[sub_resource type="AnimationNodeAnimation" id=4]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "Idle Right"
 
-[sub_resource type="AnimationNodeAnimation" id=5]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "Idle Left"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=6]
-blend_point_0/node = SubResource( 2 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=7]
+blend_point_0/node = SubResource( 3 )
 blend_point_0/pos = Vector2( 0, 1.1 )
-blend_point_1/node = SubResource( 3 )
+blend_point_1/node = SubResource( 4 )
 blend_point_1/pos = Vector2( 0, -1.1 )
-blend_point_2/node = SubResource( 4 )
+blend_point_2/node = SubResource( 5 )
 blend_point_2/pos = Vector2( 1.1, 0 )
-blend_point_3/node = SubResource( 5 )
+blend_point_3/node = SubResource( 6 )
 blend_point_3/pos = Vector2( -1.1, 0 )
 min_space = Vector2( -2, -2 )
 max_space = Vector2( 2, 2 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=7]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "Melee Attack Down"
 
-[sub_resource type="AnimationNodeAnimation" id=8]
+[sub_resource type="AnimationNodeAnimation" id=9]
 animation = "Melee Attack Up"
 
-[sub_resource type="AnimationNodeAnimation" id=9]
+[sub_resource type="AnimationNodeAnimation" id=10]
 animation = "Melee Attack Left"
 
-[sub_resource type="AnimationNodeAnimation" id=10]
+[sub_resource type="AnimationNodeAnimation" id=11]
 animation = "Melee Attack Right"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=11]
-blend_point_0/node = SubResource( 7 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=12]
+blend_point_0/node = SubResource( 8 )
 blend_point_0/pos = Vector2( 0, 1.1 )
-blend_point_1/node = SubResource( 8 )
+blend_point_1/node = SubResource( 9 )
 blend_point_1/pos = Vector2( 0, -1.1 )
-blend_point_2/node = SubResource( 9 )
+blend_point_2/node = SubResource( 10 )
 blend_point_2/pos = Vector2( -1.1, 0 )
-blend_point_3/node = SubResource( 10 )
+blend_point_3/node = SubResource( 11 )
 blend_point_3/pos = Vector2( 1.1, 0 )
 min_space = Vector2( -2, -2 )
 max_space = Vector2( 2, 2 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=13]
 animation = "Take Damage"
 
-[sub_resource type="AnimationNodeAnimation" id=13]
+[sub_resource type="AnimationNodeAnimation" id=14]
 animation = "Walk Down"
 
-[sub_resource type="AnimationNodeAnimation" id=14]
+[sub_resource type="AnimationNodeAnimation" id=15]
 animation = "Walk Up"
 
-[sub_resource type="AnimationNodeAnimation" id=15]
+[sub_resource type="AnimationNodeAnimation" id=16]
 animation = "Walk Left"
 
-[sub_resource type="AnimationNodeAnimation" id=16]
+[sub_resource type="AnimationNodeAnimation" id=17]
 animation = "Walk Right"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=17]
-blend_point_0/node = SubResource( 13 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=18]
+blend_point_0/node = SubResource( 14 )
 blend_point_0/pos = Vector2( 0, 1.1 )
-blend_point_1/node = SubResource( 14 )
+blend_point_1/node = SubResource( 15 )
 blend_point_1/pos = Vector2( 0, -1 )
-blend_point_2/node = SubResource( 15 )
+blend_point_2/node = SubResource( 16 )
 blend_point_2/pos = Vector2( -1, 0 )
-blend_point_3/node = SubResource( 16 )
+blend_point_3/node = SubResource( 17 )
 blend_point_3/pos = Vector2( 1, 0 )
 min_space = Vector2( -2, -2 )
 max_space = Vector2( 2, 2 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=18]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=19]
-switch_mode = 2
-auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=20]
 switch_mode = 2
 auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=21]
+switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=22]
 
@@ -106,32 +105,34 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=24]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=45]
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=46]
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
 
-[sub_resource type="AnimationNodeStateMachine" id=25]
-states/Die/node = SubResource( 42 )
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+
+[sub_resource type="AnimationNodeStateMachine" id=30]
+states/Die/node = SubResource( 2 )
 states/Die/position = Vector2( 1287, 95 )
-states/Idle/node = SubResource( 6 )
+states/Idle/node = SubResource( 7 )
 states/Idle/position = Vector2( 713, 95 )
-"states/Melee Attack/node" = SubResource( 11 )
+"states/Melee Attack/node" = SubResource( 12 )
 "states/Melee Attack/position" = Vector2( 893, 194 )
-"states/Take Damage/node" = SubResource( 12 )
+"states/Take Damage/node" = SubResource( 13 )
 "states/Take Damage/position" = Vector2( 713, 334 )
-states/Walk/node = SubResource( 17 )
+states/Walk/node = SubResource( 18 )
 states/Walk/position = Vector2( 552, 194 )
-transitions = [ "Idle", "Take Damage", SubResource( 18 ), "Take Damage", "Idle", SubResource( 19 ), "Melee Attack", "Idle", SubResource( 20 ), "Walk", "Idle", SubResource( 21 ), "Idle", "Walk", SubResource( 22 ), "Idle", "Melee Attack", SubResource( 23 ), "Walk", "Melee Attack", SubResource( 24 ), "Take Damage", "Die", SubResource( 43 ), "Melee Attack", "Die", SubResource( 44 ), "Walk", "Die", SubResource( 45 ), "Idle", "Die", SubResource( 46 ) ]
+transitions = [ "Idle", "Take Damage", SubResource( 19 ), "Take Damage", "Idle", SubResource( 20 ), "Melee Attack", "Idle", SubResource( 21 ), "Walk", "Idle", SubResource( 22 ), "Idle", "Walk", SubResource( 23 ), "Idle", "Melee Attack", SubResource( 24 ), "Walk", "Melee Attack", SubResource( 25 ), "Take Damage", "Die", SubResource( 26 ), "Melee Attack", "Die", SubResource( 27 ), "Walk", "Die", SubResource( 28 ), "Idle", "Die", SubResource( 29 ) ]
 start_node = "Idle"
 graph_offset = Vector2( 180.775, 113.135 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=26]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=31]
 
-[sub_resource type="Animation" id=47]
+[sub_resource type="Animation" id=32]
 resource_name = "Die"
 length = 3.4
 tracks/0/type = "value"
@@ -159,7 +160,7 @@ tracks/1/keys = {
 "values": [ false, true, false, true ]
 }
 
-[sub_resource type="Animation" id=48]
+[sub_resource type="Animation" id=33]
 length = 1.5
 loop = true
 tracks/0/type = "value"
@@ -199,7 +200,7 @@ tracks/2/keys = {
 "values": [ -89.9999, -89.9999 ]
 }
 
-[sub_resource type="Animation" id=49]
+[sub_resource type="Animation" id=34]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -238,7 +239,7 @@ tracks/2/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=50]
+[sub_resource type="Animation" id=35]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -277,7 +278,7 @@ tracks/2/keys = {
 "values": [ 180.0, 180.0 ]
 }
 
-[sub_resource type="Animation" id=51]
+[sub_resource type="Animation" id=36]
 length = 1.5
 loop = true
 tracks/0/type = "value"
@@ -317,7 +318,7 @@ tracks/2/keys = {
 "values": [ 90.0, 90.0 ]
 }
 
-[sub_resource type="Animation" id=52]
+[sub_resource type="Animation" id=37]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -426,7 +427,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=53]
+[sub_resource type="Animation" id=38]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -535,7 +536,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=54]
+[sub_resource type="Animation" id=39]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -644,7 +645,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=55]
+[sub_resource type="Animation" id=40]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -753,7 +754,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=56]
+[sub_resource type="Animation" id=41]
 length = 0.6
 loop = true
 step = 0.05
@@ -794,7 +795,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=57]
+[sub_resource type="Animation" id=42]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -834,7 +835,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=58]
+[sub_resource type="Animation" id=43]
 length = 0.6
 loop = true
 step = 0.05
@@ -875,7 +876,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=59]
+[sub_resource type="Animation" id=44]
 length = 0.6
 loop = true
 step = 0.05
@@ -916,10 +917,10 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="RectangleShape2D" id=60]
+[sub_resource type="RectangleShape2D" id=45]
 extents = Vector2( 15, 30 )
 
-[sub_resource type="RectangleShape2D" id=41]
+[sub_resource type="RectangleShape2D" id=46]
 extents = Vector2( 37.1911, 38.1541 )
 
 [node name="Player" type="KinematicBody2D"]
@@ -932,36 +933,43 @@ max_health = 3
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
-flip_h = true
 hframes = 44
+frame = 30
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1.5 )
 shape = SubResource( 1 )
 
+[node name="FairySprite" type="Sprite" parent="."]
+self_modulate = Color( 0, 0.105882, 0.960784, 1 )
+position = Vector2( 0, -31.2542 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+hframes = 3
+
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 25 )
+tree_root = SubResource( 30 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 26 )
+parameters/playback = SubResource( 31 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 "parameters/Melee Attack/blend_position" = Vector2( 0.807126, 0.0827587 )
 parameters/Walk/blend_position = Vector2( 1.11387, 0.22069 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Die = SubResource( 47 )
-"anims/Idle Down" = SubResource( 48 )
-"anims/Idle Left" = SubResource( 49 )
-"anims/Idle Right" = SubResource( 50 )
-"anims/Idle Up" = SubResource( 51 )
-"anims/Melee Attack Down" = SubResource( 52 )
-"anims/Melee Attack Left" = SubResource( 53 )
-"anims/Melee Attack Right" = SubResource( 54 )
-"anims/Melee Attack Up" = SubResource( 55 )
+anims/Die = SubResource( 32 )
+"anims/Idle Down" = SubResource( 33 )
+"anims/Idle Left" = SubResource( 34 )
+"anims/Idle Right" = SubResource( 35 )
+"anims/Idle Up" = SubResource( 36 )
+"anims/Melee Attack Down" = SubResource( 37 )
+"anims/Melee Attack Left" = SubResource( 38 )
+"anims/Melee Attack Right" = SubResource( 39 )
+"anims/Melee Attack Up" = SubResource( 40 )
 "anims/Take Damage" = ExtResource( 3 )
-"anims/Walk Down" = SubResource( 56 )
-"anims/Walk Left" = SubResource( 57 )
-"anims/Walk Right" = SubResource( 58 )
-"anims/Walk Up" = SubResource( 59 )
+"anims/Walk Down" = SubResource( 41 )
+"anims/Walk Left" = SubResource( 42 )
+"anims/Walk Right" = SubResource( 43 )
+"anims/Walk Up" = SubResource( 44 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -977,7 +985,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxBoxPivot/HurtBox"]
-shape = SubResource( 60 )
+shape = SubResource( 45 )
 disabled = true
 
 [node name="InteractZone" type="Area2D" parent="."]
@@ -987,7 +995,7 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone"]
 position = Vector2( -59, 1.4 )
-shape = SubResource( 41 )
+shape = SubResource( 46 )
 
 [node name="MeleeAttackCooldownTimer" type="Timer" parent="."]
 wait_time = 0.75

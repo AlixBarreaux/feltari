@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Scripts/enemy.gd"
+}, {
+"base": "Position2D",
+"class": "EnemySpawnPoint",
+"language": "GDScript",
+"path": "res://enemy_spawn_point.gd"
+}, {
 "base": "Control",
 "class": "InGameGui",
 "language": "GDScript",
@@ -38,20 +48,16 @@ _global_script_classes=[ {
 "class": "QuitToDesktopButton",
 "language": "GDScript",
 "path": "res://Scripts/quit_to_desktop_button.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "enemy",
-"language": "GDScript",
-"path": "res://Scripts/enemy.gd"
 } ]
 _global_script_class_icons={
+"Enemy": "",
+"EnemySpawnPoint": "",
 "InGameGui": "",
 "Interactable": "",
 "InteractableChest": "",
 "Pickable": "",
 "Player": "",
-"QuitToDesktopButton": "",
-"enemy": ""
+"QuitToDesktopButton": ""
 }
 
 [application]
@@ -62,7 +68,7 @@ config/icon="res://Miscellaneous/icon.png"
 
 [audio]
 
-default_bus_layout="res://Resources/default_bus_layout.tres"
+default_bus_layout="res://Resources/Others/default_bus_layout.tres"
 
 [autoload]
 
@@ -171,4 +177,4 @@ common/enable_pause_aware_picking=true
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
-environment/default_environment="res://Resources/default_env.tres"
+environment/default_environment="res://Resources/Others/default_env.tres"
