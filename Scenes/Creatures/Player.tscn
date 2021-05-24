@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Graphics/Spritesheets/beardman_spritesheet_32x32.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Animations/take_damage_animation.tres" type="Animation" id=3]
-[ext_resource path="res://fairy_spritesheet.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Graphics/Spritesheets/fairy_spritesheet.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21, 22.5 )
@@ -754,7 +754,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=47]
+[sub_resource type="Animation" id=41]
 length = 0.6
 loop = true
 step = 0.05
@@ -923,7 +923,9 @@ extents = Vector2( 15, 30 )
 [sub_resource type="RectangleShape2D" id=46]
 extents = Vector2( 37.1911, 38.1541 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
 collision_layer = 2
 collision_mask = 13
 script = ExtResource( 1 )
@@ -943,7 +945,7 @@ shape = SubResource( 1 )
 
 [node name="FairySprite" type="Sprite" parent="."]
 self_modulate = Color( 0, 0.105882, 0.960784, 1 )
-position = Vector2( 0, -31.2542 )
+position = Vector2( 0, -32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 hframes = 3
@@ -967,7 +969,7 @@ anims/Die = SubResource( 32 )
 "anims/Melee Attack Right" = SubResource( 39 )
 "anims/Melee Attack Up" = SubResource( 40 )
 "anims/Take Damage" = ExtResource( 3 )
-"anims/Walk Down" = SubResource( 47 )
+"anims/Walk Down" = SubResource( 41 )
 "anims/Walk Left" = SubResource( 42 )
 "anims/Walk Right" = SubResource( 43 )
 "anims/Walk Up" = SubResource( 44 )

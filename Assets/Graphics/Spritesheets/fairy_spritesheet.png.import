@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/t_shirt.png-0432c4eb306aa9ac23f503d32041693c.stex"
+path="res://.import/fairy_spritesheet.png-3b5208971420bfc283cd62dcf25fec8f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://t_shirt.png"
-dest_files=[ "res://.import/t_shirt.png-0432c4eb306aa9ac23f503d32041693c.stex" ]
+source_file="res://Assets/Graphics/Spritesheets/fairy_spritesheet.png"
+dest_files=[ "res://.import/fairy_spritesheet.png-3b5208971420bfc283cd62dcf25fec8f.stex" ]
 
 [params]
 

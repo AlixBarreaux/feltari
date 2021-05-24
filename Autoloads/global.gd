@@ -3,10 +3,29 @@ extends Node
 
 ############################### DECLARE VARIABLES ##############################
 
-var remainin_t_shirts_ids: PoolIntArray = []
-var owned_t_shirts_ids: PoolIntArray = []
+var remaining_fairies_ids: PoolIntArray = []
+var owned_fairies_ids: PoolIntArray = []
 
 ################################# RUN THE CODE #################################
 
 
 ############################### DECLARE FUNCTIONS ##############################
+
+func pickup_fairy(id: int) -> void:
+	print("Remaining: ", remaining_fairies_ids)
+	print("Owned: ", owned_fairies_ids)
+	var _index: int = -1
+	for fairy_id in owned_fairies_ids:
+		_index += 1
+		if fairy_id == id:
+			self.owned_fairies_ids.remove(_index)
+	
+	self.remaining_fairies_ids.append(id)
+	get_tree().call_group("player", "spawn_fairy")
+	
+	print("Remaining: ", remaining_fairies_ids)
+	print("Owned: ", owned_fairies_ids)
+
+
+func use_fairy(id: int) -> void:
+	pass
