@@ -76,7 +76,7 @@ polygon = PoolVector2Array( -108, 151, -137, -122, 93, -169, 268, -41, 233, 149 
 position = Vector2( 621, 457 )
 
 [node name="Player" parent="Creatures" instance=ExtResource( 1 )]
-position = Vector2( 532.776, 181.124 )
+position = Vector2( 275.776, 414.124 )
 
 [node name="Interactables" type="Node2D" parent="."]
 

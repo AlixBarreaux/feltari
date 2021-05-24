@@ -927,6 +927,7 @@ extents = Vector2( 37.1911, 38.1541 )
 collision_layer = 2
 collision_mask = 13
 script = ExtResource( 1 )
+current_speed = 200
 current_health = 2
 max_health = 3
 
@@ -999,7 +1000,6 @@ shape = SubResource( 46 )
 
 [node name="MeleeAttackCooldownTimer" type="Timer" parent="."]
 wait_time = 0.75
-one_shot = true
 autostart = true
 
 [connection signal="body_entered" from="HurtBoxBoxPivot/HurtBox" to="." method="_on_HurtBox_body_entered"]

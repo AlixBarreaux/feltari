@@ -2,6 +2,16 @@ class_name Enemy
 extends KinematicBody2D
 
 # Generic class all enemies share
+# WARNING: All child nodes are tightly coupled
+# to the main class (time contraints)
+# NOTE: The AI was poorly implemented due to the time constraints during the
+# game jam, it is therefore not recommended to replicate unless it's not a
+# problem to have something not maintainable nor scalable.
+
+# The TargetPosition node is only used in the wander function.
+# You can add a child to this node to see it in the world for debugging.
+# It could probably be used in the set_target() function.
+
 
 ############################### DECLARE VARIABLES ##############################
 
@@ -40,13 +50,13 @@ var current_target: Node2D = null setget set_current_target, get_current_target
 func _physics_process(_delta: float) -> void:
 	if self.get_current_target() != null:
 		velocity = position.direction_to(target_destination) * current_speed
-#		velocity = position.direction_to(get_current_target().position) * current_speed
-		
-#		if self.position.distance_to(get_current_target().position) > 5:
+
 		if self.position.distance_to(target_destination) > 5:
 			velocity = move_and_slide(velocity)
 		
-		self.target_destination = get_current_target().position
+		self.target_destination = get_current_target().global_position
+		
+#		print("Physics Process: Destination: ", self.target_destination)
 	
 #	self.move_and_slide(velocity)
 	
@@ -77,8 +87,7 @@ func _on_CreatureDetectionZone_body_entered(body: PhysicsBody2D) -> void:
 
 
 func _on_CreatureDetectionZone_body_exited(_body: PhysicsBody2D) -> void:
-#	self.set_current_ai_state(AI_STATES.TELEPORT_TO_SPAWN_POINT)
-	idle()
+	self.set_current_ai_state(AI_STATES.IDLE)
 	pass
 
 
@@ -103,7 +112,8 @@ func get_initial_spawn_position() -> Vector2:
 func set_current_target(new_target: Node2D) -> void:
 	current_target = new_target
 	if new_target != null:
-		target_destination = new_target.position
+		target_destination = new_target.global_position
+		print("set_current_target(): Target set to: " + str(new_target.global_position))
 
 
 func get_current_target() -> Node2D:
@@ -117,7 +127,7 @@ func set_current_ai_state(new_state: int) -> void:
 		AI_STATES.IDLE:
 			self.idle()
 		AI_STATES.WANDER:
-			pass
+			self.wander()
 		AI_STATES.CHASE:
 			self.chase_target()
 		AI_STATES.TELEPORT_TO_SPAWN_POINT:
@@ -132,8 +142,30 @@ func idle() -> void:
 	velocity = Vector2(0.0, 0.0)
 
 
+
+# DESTINATION TEST VARIABLES
+export var min_random_destination_axis_length: int = -100
+export var max_random_destination_axis_length: int = 100
+var random_destination_x_axis: int = 0
+var random_destination_y_axis: int = 0
+var destination_rng: RandomNumberGenerator = RandomNumberGenerator.new()
+
+# Move 100 pixels away from the current position
 func wander() -> void:
-	pass
+
+#	# DESTIONATION TEST
+	destination_rng.randomize()
+	random_destination_x_axis = rand_range(min_random_destination_axis_length, max_random_destination_axis_length)
+	destination_rng.randomize()
+	random_destination_y_axis = rand_range(min_random_destination_axis_length, max_random_destination_axis_length)
+	print("Random destination: ", random_destination_x_axis, " ", random_destination_y_axis)
+
+	$TargetPosition.global_position.x = self.global_position.x + random_destination_x_axis
+	$TargetPosition.global_position.y = self.global_position.y + random_destination_y_axis
+	set_current_target($TargetPosition)
+	print("TargetPosition position set to: ", $TargetPosition.global_position)
+#	target_destination = $TargetPosition.global_position
+
 
 func chase_target() -> void:
 	pass
@@ -144,6 +176,23 @@ func teleport_to_spawn_point() -> void:
 	self.set_current_target(null)
 	self.set_position(get_initial_spawn_position())
 
+
+func _on_IdleTimer_timeout() -> void:
+	# Check if the enemy is chasing something
+	# and do not stop it if it is
+	if self.current_ai_state == AI_STATES.CHASE:
+		return
+	
+	self.wander()
+	$WanderTimer.start()
+
+
+func _on_WanderTimer_timeout() -> void:
+	if self.current_ai_state == AI_STATES.CHASE:
+		return
+
+	$IdleTimer.start()
+	set_current_ai_state(AI_STATES.IDLE)
 
 
 func get_current_ai_state() -> int:
