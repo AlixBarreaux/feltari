@@ -52,36 +52,36 @@ position = Vector2( 447.409, -7.54245 )
 
 [node name="Interactables" type="Node2D" parent="."]
 script = ExtResource( 11 )
-interactables_colors = PoolColorArray( 0, 1, 0.133333, 1, 0.870588, 0, 0, 1, 0.639216, 0, 0.509804, 1, 0.839216, 0.698039, 0.0470588, 1 )
+interactables_colors = PoolColorArray( 0, 1, 0.133333, 1, 0.870588, 0, 0, 1, 0.639216, 0, 0.509804, 1, 0.054902, 0.0470588, 0.839216, 1 )
 
 [node name="Altars" type="Node2D" parent="Interactables"]
 scale = Vector2( 3, 3 )
 
 [node name="InteractableAltar" parent="Interactables/Altars" instance=ExtResource( 6 )]
-position = Vector2( 12.0072, 34.9623 )
+position = Vector2( 17.6577, 31.0776 )
 
 [node name="InteractableAltar2" parent="Interactables/Altars" instance=ExtResource( 6 )]
-position = Vector2( 107.006, 30.0181 )
+position = Vector2( 66.7462, 31.0776 )
 
 [node name="InteractableAltar3" parent="Interactables/Altars" instance=ExtResource( 6 )]
-position = Vector2( 209.774, 38.847 )
+position = Vector2( 117.954, 31.0776 )
 
 [node name="InteractableAltar4" parent="Interactables/Altars" instance=ExtResource( 6 )]
-position = Vector2( 308.657, 37.7875 )
+position = Vector2( 190.35, 31.0776 )
 
 [node name="Chests" type="Node2D" parent="Interactables"]
 
 [node name="InteractableChest" parent="Interactables/Chests" instance=ExtResource( 4 )]
-position = Vector2( 189.644, 245.796 )
+position = Vector2( 34.9623, 322.077 )
 
 [node name="InteractableChest2" parent="Interactables/Chests" instance=ExtResource( 4 )]
-position = Vector2( 293.471, 246.855 )
+position = Vector2( 287.115, 277.579 )
 
 [node name="InteractableChest3" parent="Interactables/Chests" instance=ExtResource( 4 )]
-position = Vector2( 382.466, 252.152 )
+position = Vector2( 458.748, 255.331 )
 
 [node name="InteractableChest4" parent="Interactables/Chests" instance=ExtResource( 4 )]
-position = Vector2( 465.104, 248.974 )
+position = Vector2( 796.716, 257.45 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

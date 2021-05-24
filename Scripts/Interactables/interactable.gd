@@ -46,3 +46,7 @@ func _set_current_color(new_color: Color) -> void:
 
 func get_current_color() -> Color:
 	return current_color
+
+
+#func _on_enable_animation_finished() -> void:
+#	pass

@@ -17,9 +17,13 @@ func receive_interaction() -> void:
 	animation_player.play("Enable")
 	
 	# Give fairy to player
-	Global.pickup_fairy(self.id)
+	Global.pickup_fairy_from_chest(self.id)
 
 
 func _set_current_color(new_color: Color) -> void:
 	current_color = new_color
 	$RevealedItem.set("self_modulate", new_color)
+
+
+func _on_enable_animation_finished() -> void:
+	self.queue_free()

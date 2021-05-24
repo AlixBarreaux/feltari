@@ -34,7 +34,7 @@ func _initialize_asserts() -> void:
 	
 	# Assign to this variable for checks in functions later in the code
 	interactable_pairs_count = altars.get_child_count()
-	# There must be as much Colors as each pair of interactable!
+	# There must be as much Colors as each pair of interactables!
 	assert((interactables_colors.size()) == interactable_pairs_count)
 	
 
