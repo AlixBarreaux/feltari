@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Resources/Sprites/heart_icon_over_atlastex.tres" type="Texture" id=1]
-[ext_resource path="res://in_game_gui.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/GUI/in_game_gui.gd" type="Script" id=2]
 [ext_resource path="res://Resources/Sprites/heart_icon_progress_atlastex.tres" type="Texture" id=3]
 
 [sub_resource type="DynamicFontData" id=1]

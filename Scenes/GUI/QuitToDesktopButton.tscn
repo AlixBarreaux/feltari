@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scripts/quit_to_desktop_button.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/GUI/quit_to_desktop_button.gd" type="Script" id=1]
 
 [node name="QuitToDesktopButton" type="Button"]
 margin_right = 12.0

@@ -116,7 +116,7 @@ func set_current_target(new_target: Node2D) -> void:
 	current_target = new_target
 	if new_target != null:
 		target_destination = new_target.global_position
-		print("set_current_target(): Target set to: " + str(new_target.global_position))
+#		print("set_current_target(): Target set to: " + str(new_target.global_position))
 
 
 func get_current_target() -> Node2D:
@@ -161,13 +161,12 @@ func wander() -> void:
 	random_destination_x_axis = rand_range(min_random_destination_axis_length, max_random_destination_axis_length)
 	destination_rng.randomize()
 	random_destination_y_axis = rand_range(min_random_destination_axis_length, max_random_destination_axis_length)
-	print("Random destination: ", random_destination_x_axis, " ", random_destination_y_axis)
+#	print("Random destination: ", random_destination_x_axis, " ", random_destination_y_axis)
 
 	$TargetPosition.global_position.x = self.global_position.x + random_destination_x_axis
 	$TargetPosition.global_position.y = self.global_position.y + random_destination_y_axis
 	set_current_target($TargetPosition)
-	print("TargetPosition position set to: ", $TargetPosition.global_position)
-#	target_destination = $TargetPosition.global_position
+#	print("TargetPosition position set to: ", $TargetPosition.global_position)
 
 
 func chase_target() -> void:
