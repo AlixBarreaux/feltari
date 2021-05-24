@@ -11,7 +11,7 @@ extends Area2D
 ############################### DECLARE FUNCTIONS ##############################
 
 # Use this to detect if player enters the patrol zone and call the enemy group
-func _on_PatrolZoneEnemy_body_entered(body: PhysicsBody2D) -> void:
+func _on_PatrolZoneEnemy_body_entered(_body: PhysicsBody2D) -> void:
 #	body.go_back_to_patrol_area()
 	pass
 

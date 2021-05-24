@@ -147,10 +147,10 @@ func idle() -> void:
 
 
 # DESTINATION TEST VARIABLES
-export var min_random_destination_axis_length: int = -100
-export var max_random_destination_axis_length: int = 100
-var random_destination_x_axis: int = 0
-var random_destination_y_axis: int = 0
+export var min_random_destination_axis_length: float = -100.0
+export var max_random_destination_axis_length: float = 100.0
+var random_destination_x_axis: float = 0.0
+var random_destination_y_axis: float = 0.0
 var destination_rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 # Move 100 pixels away from the current position
