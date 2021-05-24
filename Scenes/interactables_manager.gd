@@ -69,9 +69,7 @@ func verify_if_colors_assigned() -> void:
 	# Altar or chest count doesn't matter
 	if interactable_pairs_count == 0:
 		return
-		
-	print("Array: ", interactables_colors.size())
-	print("Pairs count: ", interactable_pairs_count)
+	
 	assert(interactables_colors.size() == interactable_pairs_count)
 	for color in interactables_colors:
 		if color == unassigned_color:
