@@ -66,7 +66,7 @@ polygon = PoolVector2Array( -108, 151, -137, -122, 93, -169, 268, -41, 233, 149 
 position = Vector2( 555, 454 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Creatures/Enemies/PatrolZoneEnemy2"]
-polygon = PoolVector2Array( -108, 151, -137, -122, 93, -169, 268, -41, 233, 149 )
+polygon = PoolVector2Array( -108, 151, -137, -122, 87.9993, -67.119, 268, -41, 233, 149 )
 
 [node name="EnemySpawnPoint" parent="Creatures/Enemies" instance=ExtResource( 10 )]
 

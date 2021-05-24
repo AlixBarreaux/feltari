@@ -1,3 +1,4 @@
+class_name PatrolZoneEnemy
 extends Area2D
 
 

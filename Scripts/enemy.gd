@@ -2,7 +2,10 @@ class_name Enemy
 extends KinematicBody2D
 
 # Generic class all enemies share
+
 # WARNING: All child nodes are tightly coupled
+# WARNING: chase_target() function is empty even though everything works!
+
 # to the main class (time contraints)
 # NOTE: The AI was poorly implemented due to the time constraints during the
 # game jam, it is therefore not recommended to replicate unless it's not a
