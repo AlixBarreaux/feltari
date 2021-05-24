@@ -1,15 +1,12 @@
-class_name HealthManager
 extends Node
 
 
 ############################### DECLARE VARIABLES ##############################
 
-
+var remainin_t_shirts_ids: PoolIntArray = []
+var owned_t_shirts_ids: PoolIntArray = []
 
 ################################# RUN THE CODE #################################
-
-func _ready() -> void:
-	self._initialize_asserts()
 
 
 ############################### DECLARE FUNCTIONS ##############################

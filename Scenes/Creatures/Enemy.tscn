@@ -4,8 +4,8 @@
 [ext_resource path="res://Miscellaneous/icon.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Animations/take_damage_animation.tres" type="Animation" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+[sub_resource type="CircleShape2D" id=4]
+radius = 30.5941
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 222.0
@@ -19,12 +19,13 @@ collision_mask = 3
 script = ExtResource( 1 )
 current_health = 2
 max_health = 3
+current_speed = 50
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="CreatureDetectionZone" type="Area2D" parent="."]
 collision_layer = 0
@@ -43,6 +44,18 @@ shape = SubResource( 3 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/take_damage_animation = ExtResource( 3 )
 
+[node name="IdleTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="TargetPosition" type="Position2D" parent="."]
+
+[node name="WanderTimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
 [connection signal="body_entered" from="CreatureDetectionZone" to="." method="_on_CreatureDetectionZone_body_entered"]
 [connection signal="body_exited" from="CreatureDetectionZone" to="." method="_on_CreatureDetectionZone_body_exited"]
 [connection signal="body_entered" from="HurtBox" to="." method="_on_HurtBox_body_entered"]
+[connection signal="timeout" from="IdleTimer" to="." method="_on_IdleTimer_timeout"]
+[connection signal="timeout" from="WanderTimer" to="." method="_on_WanderTimer_timeout"]

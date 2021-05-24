@@ -130,19 +130,19 @@ func get_can_move() -> bool:
 
 func set_enabled(value: bool) -> void:
 	if value:
-		set_physics_process(false)
-		set_process_unhandled_input(false)
-		$CollisionShape2D.set_deferred("disabled", true)
-		$HurtBoxBoxPivot/HurtBox/CollisionShape2D.set_deferred("disabled", true)
-		$InteractZone/CollisionShape2D.set_deferred("disabled", true)
-		$MeleeAttackCooldownTimer.stop()
-	else:
 		set_physics_process(true)
 		set_process_unhandled_input(true)
 		$CollisionShape2D.set_deferred("disabled", false)
 		$HurtBoxBoxPivot/HurtBox/CollisionShape2D.set_deferred("disabled", false)
 		$InteractZone/CollisionShape2D.set_deferred("disabled", false)
 		$MeleeAttackCooldownTimer.start()
+	else:
+		set_physics_process(false)
+		set_process_unhandled_input(false)
+		$CollisionShape2D.set_deferred("disabled", true)
+		$HurtBoxBoxPivot/HurtBox/CollisionShape2D.set_deferred("disabled", true)
+		$InteractZone/CollisionShape2D.set_deferred("disabled", true)
+		$MeleeAttackCooldownTimer.stop()
 
 
 func get_enabled() -> bool:
@@ -272,3 +272,20 @@ func _on_InteractZone_body_exited(_body: PhysicsBody2D) -> void:
 
 func _on_MeleeAttackCooldownTimer_timeout() -> void:
 	can_melee_attack = true
+
+
+
+signal current_health_changed
+
+func set_current_health(value: int) -> void:
+	current_health = value
+#	emit_signal("current_health_changed", cur)
+
+
+func get_current_health() -> int:
+	return current_health
+
+func add_current_health(amount: int) -> void:
+	self.current_health += amount
+	self.set_current_health(get_current_health() + amount)
+	print("ADD HEALTH TRIGGGERED, NEEDS TO UPDATE HEALTH!")

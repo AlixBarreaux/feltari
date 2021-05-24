@@ -1,8 +1,9 @@
-class_name ItemContainer
+class_name Interactable
 extends Node2D
 
 
 ############################### DECLARE VARIABLES ##############################
+
 
 onready var sprite: Sprite = $Sprite
 onready var animation_player: AnimationPlayer = $AnimationPlayer

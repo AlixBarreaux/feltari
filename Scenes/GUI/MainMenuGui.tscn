@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/GUI/QuitToDesktopButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/main_menu.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Themes/main_theme.tres" type="Theme" id=3]
+[ext_resource path="res://Scenes/World.tscn" type="PackedScene" id=4]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene_to_load = ExtResource( 4 )
+play_button_node_path = NodePath("ButtonsContainer/PlayButton")
+
+[node name="TitleLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -82.0
+margin_top = 53.7401
+margin_right = 82.0
+margin_bottom = 91.7401
+text = "Game Title"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -280.0
+margin_top = -180.0
+margin_right = 280.0
+margin_bottom = 180.0
+custom_constants/separation = 60
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="ButtonsContainer"]
+margin_right = 560.0
+margin_bottom = 45.0
+focus_neighbour_left = NodePath("../QuitToDesktopButton")
+focus_neighbour_top = NodePath("../QuitToDesktopButton")
+focus_neighbour_right = NodePath("../OptionsButton")
+focus_neighbour_bottom = NodePath("../OptionsButton")
+focus_next = NodePath("../OptionsButton")
+focus_previous = NodePath("../QuitToDesktopButton")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "PLAY"
+flat = true
+
+[node name="OptionsButton" type="Button" parent="ButtonsContainer"]
+margin_top = 105.0
+margin_right = 560.0
+margin_bottom = 150.0
+focus_neighbour_left = NodePath("../PlayButton")
+focus_neighbour_top = NodePath("../PlayButton")
+focus_neighbour_right = NodePath("../CreditsButton")
+focus_neighbour_bottom = NodePath("../CreditsButton")
+focus_next = NodePath("../CreditsButton")
+focus_previous = NodePath("../PlayButton")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "OPTIONS"
+flat = true
+
+[node name="CreditsButton" type="Button" parent="ButtonsContainer"]
+margin_top = 210.0
+margin_right = 560.0
+margin_bottom = 255.0
+focus_neighbour_left = NodePath("../OptionsButton")
+focus_neighbour_top = NodePath("../OptionsButton")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../QuitToDesktopButton")
+focus_next = NodePath(".")
+focus_previous = NodePath("../OptionsButton")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "CREDITS"
+flat = true
+
+[node name="QuitToDesktopButton" parent="ButtonsContainer" instance=ExtResource( 1 )]
+margin_top = 315.0
+margin_right = 560.0
+margin_bottom = 360.0
+focus_neighbour_left = NodePath("../CreditsButton")
+focus_neighbour_top = NodePath("../CreditsButton")
+focus_neighbour_right = NodePath("../PlayButton")
+focus_neighbour_bottom = NodePath("../PlayButton")
+focus_next = NodePath("../PlayButton")
+focus_previous = NodePath("../CreditsButton")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[connection signal="pressed" from="ButtonsContainer/PlayButton" to="." method="_on_PlayButton_pressed"]

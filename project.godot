@@ -9,15 +9,40 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
-"class": "HealthManager",
+"base": "KinematicBody2D",
+"class": "Enemy",
 "language": "GDScript",
-"path": "res://Scripts/health_manager.gd"
+"path": "res://Scripts/enemy.gd"
+}, {
+"base": "Position2D",
+"class": "EnemySpawnPoint",
+"language": "GDScript",
+"path": "res://enemy_spawn_point.gd"
+}, {
+"base": "Control",
+"class": "InGameGui",
+"language": "GDScript",
+"path": "res://in_game_gui.gd"
 }, {
 "base": "Node2D",
-"class": "ItemContainer",
+"class": "Interactable",
 "language": "GDScript",
-"path": "res://Scripts/interactable.gd"
+"path": "res://Scripts/Interactables/interactable.gd"
+}, {
+"base": "Interactable",
+"class": "InteractableChest",
+"language": "GDScript",
+"path": "res://Scripts/Interactables/interactable_chest.gd"
+}, {
+"base": "Area2D",
+"class": "PatrolZoneEnemy",
+"language": "GDScript",
+"path": "res://patrol_zone_enemy.gd"
+}, {
+"base": "Node2D",
+"class": "Pickable",
+"language": "GDScript",
+"path": "res://pickable.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
@@ -28,18 +53,17 @@ _global_script_classes=[ {
 "class": "QuitToDesktopButton",
 "language": "GDScript",
 "path": "res://Scripts/quit_to_desktop_button.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "enemy",
-"language": "GDScript",
-"path": "res://Scripts/enemy.gd"
 } ]
 _global_script_class_icons={
-"HealthManager": "",
-"ItemContainer": "",
+"Enemy": "",
+"EnemySpawnPoint": "",
+"InGameGui": "",
+"Interactable": "",
+"InteractableChest": "",
+"PatrolZoneEnemy": "",
+"Pickable": "",
 "Player": "",
-"QuitToDesktopButton": "",
-"enemy": ""
+"QuitToDesktopButton": ""
 }
 
 [application]
@@ -50,11 +74,19 @@ config/icon="res://Miscellaneous/icon.png"
 
 [audio]
 
-default_bus_layout="res://Resources/default_bus_layout.tres"
+default_bus_layout="res://Resources/Others/default_bus_layout.tres"
 
 [autoload]
 
 Settings="*res://Autoloads/settings.gd"
+Global="*res://Autoloads/global.gd"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [importer_defaults]
 
@@ -136,6 +168,7 @@ ability_three={
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemies"
 2d_physics/layer_4="Containers"
+2d_physics/layer_5="Pickables"
 
 [locale]
 
@@ -150,4 +183,4 @@ common/enable_pause_aware_picking=true
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
-environment/default_environment="res://Resources/default_env.tres"
+environment/default_environment="res://Resources/Others/default_env.tres"
