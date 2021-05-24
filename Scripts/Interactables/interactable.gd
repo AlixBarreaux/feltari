@@ -42,3 +42,7 @@ func get_id() -> int:
 
 func _set_current_color(new_color: Color) -> void:
 	current_color = new_color
+
+
+func get_current_color() -> Color:
+	return current_color

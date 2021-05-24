@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Graphics/light.png" type="Texture" id=3]
 [ext_resource path="res://interactable_altar.gd" type="Script" id=4]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=3]
 resource_name = "Enable"
 length = 5.0
 step = 0.05
@@ -55,5 +55,5 @@ energy = 6.0
 
 [node name="AnimationPlayer" parent="." index="3"]
 autoplay = "Idle"
-anims/Enable = SubResource( 1 )
+anims/Enable = SubResource( 3 )
 anims/Idle = SubResource( 2 )

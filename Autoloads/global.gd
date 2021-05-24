@@ -29,3 +29,9 @@ func pickup_fairy(id: int) -> void:
 
 func use_fairy(id: int) -> void:
 	pass
+
+
+func populate_remaining_fairies_ids(max_index: int) -> void:
+	for new_id in range(0, max_index + 1):
+		remaining_fairies_ids.append(new_id)
+		print(remaining_fairies_ids)

@@ -4,22 +4,12 @@ extends Interactable
 
 ############################### DECLARE VARIABLES ##############################
 
-#export var available_colors: PoolColorArray = [
-#												Color("83c522"),
-#												Color("83c522"),
-#												Color("83c522"),
-#												Color("4100c0")
-#											  ]
-
 
 ################################# RUN THE CODE #################################
 
-func _ready() -> void:
-	pass
 
 ############################### DECLARE FUNCTIONS ##############################
 
-# CHEST !
 
 func receive_interaction() -> void:
 	print("Sending fairy to you player!")
