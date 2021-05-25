@@ -39,11 +39,15 @@ func receive_interaction() -> void:
 		if self.is_enabled:
 			animation_player.play("Idle")
 			Global.pickup_fairy_from_altar(self.id)
+			# Add following fairy on the player
+			get_tree().call_group("player", "spawn_following_fairy", self.get_current_color())
 			is_enabled = false
 	else:
 		if not self.is_enabled:
 			animation_player.play("Enable")
 			Global.place_fairy_in_altar()
+			# Remove following fairy on the player
+			get_tree().call_group("player", "despawn_following_fairy")
 			has_fairy_inside = true
 			is_enabled = true
 

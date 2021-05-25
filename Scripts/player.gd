@@ -43,8 +43,11 @@ var targeted_interactable: PhysicsBody2D = null
 
 func _ready() -> void:
 	self._initialize_asserts()
+	self._initialize()
+	
 	animation_tree.set_active(true)
 	anim_tree_sm_playback.start("Idle")
+	
 
 
 func _physics_process(_delta: float) -> void:
@@ -175,6 +178,9 @@ func _initialize_asserts() -> void:
 	assert(self.current_health <= self.max_health)
 
 
+func _initialize() -> void:
+	$FairySprite.hide()
+
 
 # Setters and Getters for public variables
 func set_current_speed(new_speed: int) -> void:
@@ -274,6 +280,17 @@ func _on_MeleeAttackCooldownTimer_timeout() -> void:
 	can_melee_attack = true
 
 
+# TEST
+func spawn_following_fairy(new_color: Color) -> void:
+	$FairySprite.set("self_modulate", new_color)
+	$FairySprite.show()
+
+
+func despawn_following_fairy() -> void:
+	$FairySprite.hide()
+
+
+# END TEST
 
 signal current_health_changed
 

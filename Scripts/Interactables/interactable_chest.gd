@@ -24,6 +24,8 @@ func receive_interaction() -> void:
 	
 	# Give fairy to player
 	Global.pickup_fairy_from_chest(self.id)
+	# Add following fairy on the player
+	get_tree().call_group("player", "spawn_following_fairy", self.get_current_color())
 
 
 func _set_current_color(new_color: Color) -> void:
