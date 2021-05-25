@@ -38,13 +38,8 @@ func pickup_fairy_from_chest(id: int) -> void:
 	print("Remaining: ", remaining_fairies_ids)
 	print("In altar: ", in_altar_fairies_ids)
 	print("Following (lone on player): ", following_fairy_id)
-			
-#	get_tree().call_group("player", "spawn_fairy")
-#
-#	print("Remaining: ", remaining_fairies_ids)
-#	print("Owned: ", owned_fairies_ids)
 
-# TEST
+
 func pickup_fairy_from_altar(id: int) -> void:
 	print("Remaining: ", remaining_fairies_ids)
 	print("In altar: ", in_altar_fairies_ids)
@@ -67,7 +62,6 @@ func pickup_fairy_from_altar(id: int) -> void:
 	print("Remaining: ", remaining_fairies_ids)
 	print("In altar: ", in_altar_fairies_ids)
 	print("Following (lone on player): ", following_fairy_id)
-	# END TEST
 
 
 func place_fairy_in_altar() -> void:

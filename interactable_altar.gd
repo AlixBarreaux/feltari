@@ -28,10 +28,7 @@ func receive_interaction() -> void:
 		return
 	
 	print(self.name + ": I just received an interaction!")
-	if not Global.following_fairy_id == self.id: #or Global.has_player_following_fairy:
-		print(self.name + ": The player has a following fairy or a fairy of different ID from me!")
-		print("Submitted fairy ID: ", Global.following_fairy_id, " Altar's ID: ", self.id)
-		return
+	
 	
 	if not Global.has_player_following_fairy:
 		print(self.name + ": PLAYER HAS NO FAIRY FOLLOWING HIM: ", Global.has_player_following_fairy)
@@ -43,6 +40,11 @@ func receive_interaction() -> void:
 			get_tree().call_group("player", "spawn_following_fairy", self.get_current_color())
 			is_enabled = false
 	else:
+		if not Global.following_fairy_id == self.id: #or Global.has_player_following_fairy:
+			print(self.name + ": The player has a following fairy or a fairy of different ID from me!")
+			print("Submitted fairy ID: ", Global.following_fairy_id, " Altar's ID: ", self.id)
+			return
+		
 		if not self.is_enabled:
 			animation_player.play("Enable")
 			Global.place_fairy_in_altar()
