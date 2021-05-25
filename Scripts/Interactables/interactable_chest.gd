@@ -4,32 +4,34 @@ extends Interactable
 
 ############################### DECLARE VARIABLES ##############################
 
-#export var available_colors: PoolColorArray = [
-#												Color("83c522"),
-#												Color("83c522"),
-#												Color("83c522"),
-#												Color("4100c0")
-#											  ]
-
+onready var collision_shape2D: CollisionShape2D = $CollisionShape2D
 
 ################################# RUN THE CODE #################################
 
-func _ready() -> void:
-	pass
 
 ############################### DECLARE FUNCTIONS ##############################
 
-# CHEST !
 
 func receive_interaction() -> void:
+	if Global.has_player_following_fairy:
+		print(self.name + ": The player already has a fairy!")
+		return
+	
 	print("Sending fairy to you player!")
 	print(self.name + ": I just received an interaction!")
+	collision_shape2D.set_deferred("disabled", true)
 	animation_player.play("Enable")
 	
 	# Give fairy to player
-	Global.pickup_fairy(self.id)
+	Global.pickup_fairy_from_chest(self.id)
+	# Add following fairy on the player
+	get_tree().call_group("player", "spawn_following_fairy", self.get_current_color())
 
 
 func _set_current_color(new_color: Color) -> void:
 	current_color = new_color
 	$RevealedItem.set("self_modulate", new_color)
+
+
+func _on_enable_animation_finished() -> void:
+	self.queue_free()

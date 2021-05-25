@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chest_spritesheet.png-accc6a0c5c1ef394d3bda6b362d22bc5.stex"
+path="res://.import/shrine_guardian_spritesheet.png-c77092b88a884f2271a96f4a160514e7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/chest_spritesheet.png"
-dest_files=[ "res://.import/chest_spritesheet.png-accc6a0c5c1ef394d3bda6b362d22bc5.stex" ]
+source_file="res://Assets/Graphics/Spritesheets/shrine_guardian_spritesheet.png"
+dest_files=[ "res://.import/shrine_guardian_spritesheet.png-c77092b88a884f2271a96f4a160514e7.stex" ]
 
 [params]
 

@@ -8,7 +8,7 @@ extends Node2D
 ############################### DECLARE VARIABLES ##############################
 
 var id: int = 0 setget set_id, get_id
-var current_color: Color = Color(0, 0, 0, 0) setget _set_current_color
+var current_color: Color = Color(0, 0, 0, 0) setget _set_current_color, get_current_color
 
 onready var sprite: Sprite = $Sprite
 onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -42,3 +42,11 @@ func get_id() -> int:
 
 func _set_current_color(new_color: Color) -> void:
 	current_color = new_color
+
+
+func get_current_color() -> Color:
+	return current_color
+
+
+#func _on_enable_animation_finished() -> void:
+#	pass

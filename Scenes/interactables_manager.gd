@@ -14,7 +14,7 @@ extends Node2D
 
 export var interactables_colors: PoolColorArray = []
 
-var unassigned_color: Color = Color("ffffff")
+var unassigned_color: Color = Color("000000")
 var interactable_pairs_count: int = 0
 
 
@@ -34,7 +34,7 @@ func _initialize_asserts() -> void:
 	
 	# Assign to this variable for checks in functions later in the code
 	interactable_pairs_count = altars.get_child_count()
-	# There must be as much Colors as each pair of interactable!
+	# There must be as much Colors as each pair of interactables!
 	assert((interactables_colors.size()) == interactable_pairs_count)
 	
 
@@ -84,6 +84,11 @@ func assign_ids_to_interactables() -> void:
 	for altar in altars.get_children():
 		_id_to_assign += 1
 		altar.set_id(_id_to_assign)
+		
+	# Assign the IDs in the singleton which will be the hub
+	# for the checks with the fairies management
+	# will break if _id_to_assign is changed unproperly or removed
+	Global.populate_remaining_fairies_ids(_id_to_assign)
 	
 	# Reset the id to have the same on both of the altars and chests
 	_id_to_assign = -1
