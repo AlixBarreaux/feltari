@@ -47,6 +47,8 @@ func _on_PlayButton_pressed() -> void:
 	_change_scene_to_error = get_tree().change_scene_to(get_scene_to_load())
 	
 	match _change_scene_to_error:
+		OK:
+			pass
 		ERR_CANT_CREATE:
 			printerr("(!) ERROR: In " + self.name + " _on_PlayButton_pressed()")
 			printerr("Can't load the scene! ERR_CANT_CREATE")
