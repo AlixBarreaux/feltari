@@ -13,6 +13,10 @@ onready var collision_shape2D: CollisionShape2D = $CollisionShape2D
 
 
 func receive_interaction() -> void:
+	if Global.has_player_following_fairy:
+		print(self.name + ": The player already has a fairy!")
+		return
+	
 	print("Sending fairy to you player!")
 	print(self.name + ": I just received an interaction!")
 	collision_shape2D.set_deferred("disabled", true)
