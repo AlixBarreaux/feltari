@@ -44,6 +44,31 @@ func pickup_fairy_from_chest(id: int) -> void:
 #	print("Remaining: ", remaining_fairies_ids)
 #	print("Owned: ", owned_fairies_ids)
 
+# TEST
+func pickup_fairy_from_altar(id: int) -> void:
+	print("Remaining: ", remaining_fairies_ids)
+	print("In altar: ", in_altar_fairies_ids)
+	print("Following (lone on player): ", following_fairy_id)
+	
+	if has_player_following_fairy:
+		print("Global: pickup_fairy_from_altar() THE PLAYER ALREADY HAS A FOLLOWING FAIRY!")
+		return
+	
+	# The player has now a fairy
+	has_player_following_fairy = true
+	var _index: int = -1
+	
+	for fairy_id in in_altar_fairies_ids:
+		_index += 1
+		if fairy_id == id:
+			self.in_altar_fairies_ids.remove(_index)
+			self.following_fairy_id = id
+	
+	print("Remaining: ", remaining_fairies_ids)
+	print("In altar: ", in_altar_fairies_ids)
+	print("Following (lone on player): ", following_fairy_id)
+	# END TEST
+
 
 func place_fairy_in_altar() -> void:
 	in_altar_fairies_ids.append(following_fairy_id)
