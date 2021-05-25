@@ -917,7 +917,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=45]
+[sub_resource type="Animation" id=51]
 resource_name = "Despawn"
 step = 0.2
 tracks/0/type = "value"
@@ -981,7 +981,7 @@ tracks/4/keys = {
 "values": [ Vector2( 2, 2 ), Vector2( 0.425, 0.425 ) ]
 }
 
-[sub_resource type="Animation" id=46]
+[sub_resource type="Animation" id=52]
 resource_name = "Idle"
 loop = true
 step = 0.2
@@ -1201,8 +1201,8 @@ anims/Die = SubResource( 32 )
 "anims/Walk Up" = SubResource( 44 )
 
 [node name="FairyAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Despawn = SubResource( 45 )
-anims/Idle = SubResource( 46 )
+anims/Despawn = SubResource( 51 )
+anims/Idle = SubResource( 52 )
 anims/Spawn = SubResource( 47 )
 
 [node name="FairyFlyAnimationPlayer" type="AnimationPlayer" parent="FairyAnimationPlayer"]
