@@ -116,7 +116,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Malvens Doors"
+config/name="Feltari"
 run/main_scene="res://Scenes/MainMenuWorld.tscn"
 config/icon="res://Miscellaneous/feltari_icon.png"
 config/macos_native_icon="res://Miscellaneous/feltari_icon.icns"
