@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/enemy.gd"
 }, {
-"base": "Reference",
+"base": "Position2D",
 "class": "EnemySpawnPoint",
 "language": "GDScript",
 "path": "res://Scripts/enemy_spawn_point.gd"
@@ -29,7 +29,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Interactables/interactable.gd"
 }, {
-"base": "Reference",
+"base": "Interactable",
 "class": "InteractableAltar",
 "language": "GDScript",
 "path": "res://Scripts/interactable_altar.gd"
@@ -44,12 +44,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/interactables_manager.gd"
 }, {
-"base": "Reference",
+"base": "Area2D",
 "class": "PatrolZoneEnemy",
 "language": "GDScript",
 "path": "res://Scripts/patrol_zone_enemy.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
 "class": "Pickable",
 "language": "GDScript",
 "path": "res://Scripts/pickable.gd"
@@ -184,7 +184,7 @@ ability_three={
 
 [locale]
 
-translations=PoolStringArray( "res://Translations/general_translations.en_US.translation", "res://Translations/general_translations.fr_FR.translation", "res://Translations/gui_translations.en_US.translation", "res://Translations/gui_translations.fr_FR.translation" )
+translations=PoolStringArray( "res://Translations/General/general_translations.en_US.translation", "res://Translations/General/general_translations.fr_FR.translation", "res://Translations/GUI/gui_translations.en_US.translation", "res://Translations/GUI/gui_translations.fr_FR.translation" )
 
 [physics]
 
