@@ -262,7 +262,7 @@ func _on_MeleeAttackCooldownTimer_timeout() -> void:
 var current_fairy_current_color: Color = Color(0, 0, 0, 1) setget set_fairy_current_color, get_fairy_current_color
 func set_fairy_current_color(new_color: Color) -> void:
 	current_fairy_current_color = new_color
-	fairy_sprite.set("self_modulate", current_fairy_current_color)
+	fairy_sprite.set("self_modulate", self.get_fairy_current_color())
 
 
 func get_fairy_current_color() -> Color:

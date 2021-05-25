@@ -1122,23 +1122,6 @@ tracks/5/keys = {
 "method": "on_spawn_animation_finished"
 } ]
 }
-tracks/6/type = "method"
-tracks/6/path = NodePath(".")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ 0 ],
-"method": "set_fairy_current_color_transparency"
-}, {
-"args": [ 1 ],
-"method": "set_fairy_current_color_transparency"
-} ]
-}
 
 [sub_resource type="Animation" id=50]
 resource_name = "Fly"
