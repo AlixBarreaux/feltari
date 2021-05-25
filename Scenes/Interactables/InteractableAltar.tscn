@@ -21,6 +21,23 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 6.0, 0.0, 3.5, 0.0, 0.0, 6.0 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ false ],
+"method": "set_can_interact"
+}, {
+"args": [ true ],
+"method": "set_can_interact"
+} ]
+}
 
 [sub_resource type="Animation" id=2]
 length = 4.0
@@ -51,7 +68,7 @@ position = Vector2( 0, 13 )
 position = Vector2( 0, 0.264858 )
 texture = ExtResource( 3 )
 texture_scale = 0.1
-energy = 6.0
+energy = 0.583333
 
 [node name="AnimationPlayer" parent="." index="3"]
 autoplay = "Idle"

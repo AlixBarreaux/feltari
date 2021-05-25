@@ -6,14 +6,27 @@ extends Interactable
 
 var is_enabled: bool = false
 var has_fairy_inside: bool = false
+# Prevent the player from spamming the Altar's interaction
+var can_interact: bool = true setget set_can_interact, get_can_interact
 
 ################################# RUN THE CODE #################################
 
 
 ############################### DECLARE FUNCTIONS ##############################
 
+func set_can_interact(value: bool) -> void:
+	can_interact = value
+
+
+func get_can_interact() -> bool:
+	return can_interact
+
 
 func receive_interaction() -> void:
+	if not self.get_can_interact():
+		print(self.name + ": Stop spamming me with your interaction!")
+		return
+	
 	print(self.name + ": I just received an interaction!")
 	if not Global.following_fairy_id == self.id: #or Global.has_player_following_fairy:
 		print(self.name + ": The player has a following fairy or a fairy of different ID from me!")
