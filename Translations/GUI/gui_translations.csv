@@ -1,5 +1,17 @@
 KEYS,en_US,fr_FR
+BACK,Back,Retour
 CREDITS,Credits,Credits
+CTN_PHACO_BUTTON,CTN Phaco Itch.io (external link),CTN Phaco Itch.io (lien externe)
+CTN_PHACO_LABEL,"Programming, Team Management, Game Design:\nCtn Phaco","Programmation, Gestion de l’Équipe, Game Design:\CTN Phaco"
+FULL_SCREEN,Full Screen,Plein Écran
+CREDITS_INTRO_LABEL,Thank you for playing the game!\n We are grateful about that after 1 week non stop work.\n We hope you enjoyed it! :)\n\n\n  Development Team:,Merci d'avoir joué au jeu!\n Nous vous en sommes reconnaissant après une semaine de travail sans relâche.\n Nous espérons que cela vous a plu! :)\n\n\n  L'Équipe de développement:
+MASTER_VOLUME,Master Volume,Volume Master
+MUSIC_VOLUME,Music Volume,Volume Musique
+OCTONYTE_BUTTON,Octonyte Itch.io (external link),Octonyte Itch.io (lien externe)
+OCTONYTE_LABEL,Music and Sound Effects:\nOctonyte,Musique et Effets Sonores:\nOctonyte
 OPTIONS,Options,Options
 PLAY,Play,Play
 QUIT_TO_DESKTOP,Quit to Desktop,Quit to Desktop
+RAESAY_BUTTON,Raesay Itch.io (external link),Raesay Itch.io (lien externe)
+RAESAY_LABEL,Graphics Art:\nRae-Anne (raesay),Graphismes (art):\nRae-Anne (raesay)
+SOUND_EFFECTS_VOLUME,Sound Effect Volume,Volume Effets Sonores

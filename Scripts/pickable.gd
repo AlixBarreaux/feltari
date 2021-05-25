@@ -22,7 +22,7 @@ func _initialize_asserts() -> void:
 
 
 func _on_Pickable_body_entered(body: PhysicsBody2D) -> void:
-	body.add_current_health(get_health_value())
+	body.increase_current_health(get_health_value())
 	animation_player.play("Pick Up")
 	yield(animation_player, "animation_finished")
 	self.queue_free()

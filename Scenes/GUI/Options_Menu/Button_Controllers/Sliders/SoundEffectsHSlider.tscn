@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/GUI/Options_Controllers/Sound_Control/sound_effects_slider.gd" type="Script" id=1]
+
+[node name="SoundEffectsHSlider" type="HSlider"]
+margin_right = 853.0
+margin_bottom = 16.0
+value = 50.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="value_changed" from="." to="." method="_on_SoundEffectsHSlider_value_changed"]

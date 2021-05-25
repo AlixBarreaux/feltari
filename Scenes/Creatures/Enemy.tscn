@@ -1,17 +1,38 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/enemy.gd" type="Script" id=1]
-[ext_resource path="res://Miscellaneous/icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Graphics/Spritesheets/shrine_guardian_spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Resources/Animations/take_damage_animation.tres" type="Animation" id=3]
 
-[sub_resource type="CircleShape2D" id=4]
-radius = 30.5941
+[sub_resource type="CircleShape2D" id=1]
+radius = 20.5682
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 222.0
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 50, 50 )
+extents = Vector2( 23, 23 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Idle"
+
+[sub_resource type="Animation" id=5]
+resource_name = "Move"
+length = 1.4
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 4 ]
+}
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 4
@@ -22,10 +43,13 @@ max_health = 3
 current_speed = 50
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
+hframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 4 )
+position = Vector2( 0, 2 )
+shape = SubResource( 1 )
 
 [node name="CreatureDetectionZone" type="Area2D" parent="."]
 collision_layer = 0
@@ -39,9 +63,13 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2( 0, 1.5 )
 shape = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Move"
+anims/Idle = SubResource( 4 )
+anims/Move = SubResource( 5 )
 anims/take_damage_animation = ExtResource( 3 )
 
 [node name="IdleTimer" type="Timer" parent="."]
