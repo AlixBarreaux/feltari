@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Graphics/Spritesheets/beardman_spritesheet_32x32.png" type="Texture" id=2]
@@ -917,10 +917,31 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="RectangleShape2D" id=45]
+[sub_resource type="Animation" id=45]
+resource_name = "Despawn"
+
+[sub_resource type="Animation" id=46]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("FairySprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -32 ) ]
+}
+
+[sub_resource type="Animation" id=47]
+resource_name = "Spawn"
+
+[sub_resource type="RectangleShape2D" id=48]
 extents = Vector2( 15, 30 )
 
-[sub_resource type="RectangleShape2D" id=46]
+[sub_resource type="RectangleShape2D" id=49]
 extents = Vector2( 37.1911, 38.1541 )
 
 [node name="Player" type="KinematicBody2D" groups=[
@@ -953,13 +974,13 @@ hframes = 3
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 30 )
-anim_player = NodePath("../AnimationPlayer")
+anim_player = NodePath("../PlayerAnimationPlayer")
 parameters/playback = SubResource( 31 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 "parameters/Melee Attack/blend_position" = Vector2( 0.807126, 0.0827587 )
 parameters/Walk/blend_position = Vector2( 1.11387, 0.22069 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="PlayerAnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Die = SubResource( 32 )
 "anims/Idle Down" = SubResource( 33 )
 "anims/Idle Left" = SubResource( 34 )
@@ -974,6 +995,11 @@ anims/Die = SubResource( 32 )
 "anims/Walk Left" = SubResource( 42 )
 "anims/Walk Right" = SubResource( 43 )
 "anims/Walk Up" = SubResource( 44 )
+
+[node name="FairyAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Despawn = SubResource( 45 )
+anims/Idle = SubResource( 46 )
+anims/Spawn = SubResource( 47 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -990,7 +1016,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxBoxPivot/HurtBox"]
 light_mask = 0
-shape = SubResource( 45 )
+shape = SubResource( 48 )
 disabled = true
 
 [node name="InteractZone" type="Area2D" parent="."]
@@ -1001,7 +1027,7 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone"]
 light_mask = 0
 position = Vector2( -59, 1.4 )
-shape = SubResource( 46 )
+shape = SubResource( 49 )
 
 [node name="MeleeAttackCooldownTimer" type="Timer" parent="."]
 wait_time = 0.75

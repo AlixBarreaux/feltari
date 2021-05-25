@@ -9,9 +9,9 @@
 [ext_resource path="res://Scenes/GUI/InGameGUI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Pickables/PickableHeart.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Tilemaps/PathsTileMap.tscn" type="PackedScene" id=9]
-[ext_resource path="res://EnemySpawnPoint.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/EnemySpawnPoint.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/interactables_manager.gd" type="Script" id=11]
-[ext_resource path="res://PatrolZoneEnemy.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/PatrolZoneEnemy.tscn" type="PackedScene" id=12]
 
 [node name="World" type="Node2D"]
 

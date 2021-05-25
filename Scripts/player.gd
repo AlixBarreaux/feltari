@@ -31,6 +31,9 @@ var can_melee_attack = true
 
 var targeted_interactable: PhysicsBody2D = null
 
+
+onready var fairy_sprite: Sprite = $FairySprite
+
 ################################# RUN THE CODE #################################
 
 func _ready() -> void:
@@ -75,7 +78,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		self.faced_direction = Vector2(0.0, 1.0)
 
 	
-	if Input.is_action_pressed("attack_melee"):
+	if Input.is_action_just_pressed("attack_melee"):
 		if can_melee_attack:
 #			can_move = false
 			attack_melee()
@@ -146,7 +149,7 @@ func _initialize_asserts() -> void:
 
 
 func _initialize() -> void:
-	$FairySprite.hide()
+	fairy_sprite.hide()
 
 
 # Setters and Getters for public variables
@@ -247,17 +250,17 @@ func _on_MeleeAttackCooldownTimer_timeout() -> void:
 	can_melee_attack = true
 
 
-# TEST
+
 func spawn_following_fairy(new_color: Color) -> void:
-	$FairySprite.set("self_modulate", new_color)
-	$FairySprite.show()
+	fairy_sprite.set("self_modulate", new_color)
+	fairy_sprite.show()
 
 
 func despawn_following_fairy() -> void:
-	$FairySprite.hide()
+	fairy_sprite.hide()
 
 
-# END TEST
+
 
 signal current_health_changed
 
