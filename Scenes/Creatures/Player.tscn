@@ -1101,7 +1101,7 @@ tracks/4/path = NodePath("FairySprite:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
-tracks/4/enabled = true
+tracks/4/enabled = false
 tracks/4/keys = {
 "times": PoolRealArray( 0, 0.4, 0.7, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1160,8 +1160,9 @@ max_health = 3
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
+flip_h = true
 hframes = 44
-frame = 35
+frame = 36
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
