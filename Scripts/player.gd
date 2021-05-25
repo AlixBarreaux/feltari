@@ -17,14 +17,6 @@ export var max_health: int = 0
 export var current_melee_attack_damage: int = 1
 export var max_melee_attack_damage: int = 2
 
-enum ABILITIES {
-					NONE = 0,
-					BANDANA,
-					TORSO,
-					TURBAN
-				}
-
-export (ABILITIES) var current_ability = ABILITIES.BANDANA
 
 # Enables/Disables all nodes requiring to be active or not
 # along  with the player inputs and physics
@@ -82,16 +74,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 		self.direction.y = 1
 		self.faced_direction = Vector2(0.0, 1.0)
 
-	
-	# Use abilities
-#	if Input.is_action_just_pressed("ability_one"):
-#		current_
-#
-#	if Input.is_action_just_pressed("ability_two"):
-#
-#
-#	if Input.is_action_just_pressed("ability_three"):
-		
 	
 	if Input.is_action_pressed("attack_melee"):
 		if can_melee_attack:
@@ -151,21 +133,6 @@ func set_enabled(value: bool) -> void:
 func get_enabled() -> bool:
 	return enabled
 
-
-func set_current_ability() -> void:
-	match current_ability:
-		ABILITIES.NONE:
-			pass
-			
-		ABILITIES.BANDANA:
-			self.set_current_speed(max_speed)
-			self.set_current_damage(max_melee_attack_damage)
-			
-		ABILITIES.TORSO:
-			pass
-			
-		ABILITIES.TURBAN:
-			pass
 
 ############################### DECLARE FUNCTIONS ##############################
 
