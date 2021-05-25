@@ -17,14 +17,6 @@ export var max_health: int = 0
 export var current_melee_attack_damage: int = 1
 export var max_melee_attack_damage: int = 2
 
-enum ABILITIES {
-					NONE = 0,
-					BANDANA,
-					TORSO,
-					TURBAN
-				}
-
-export (ABILITIES) var current_ability = ABILITIES.BANDANA
 
 # Enables/Disables all nodes requiring to be active or not
 # along  with the player inputs and physics
@@ -38,6 +30,9 @@ var can_move: bool = true
 var can_melee_attack = true
 
 var targeted_interactable: PhysicsBody2D = null
+
+
+onready var fairy_sprite: Sprite = $FairySprite
 
 ################################# RUN THE CODE #################################
 
@@ -83,17 +78,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		self.faced_direction = Vector2(0.0, 1.0)
 
 	
-	# Use abilities
-#	if Input.is_action_just_pressed("ability_one"):
-#		current_
-#
-#	if Input.is_action_just_pressed("ability_two"):
-#
-#
-#	if Input.is_action_just_pressed("ability_three"):
-		
-	
-	if Input.is_action_pressed("attack_melee"):
+	if Input.is_action_just_pressed("attack_melee"):
 		if can_melee_attack:
 #			can_move = false
 			attack_melee()
@@ -152,21 +137,6 @@ func get_enabled() -> bool:
 	return enabled
 
 
-func set_current_ability() -> void:
-	match current_ability:
-		ABILITIES.NONE:
-			pass
-			
-		ABILITIES.BANDANA:
-			self.set_current_speed(max_speed)
-			self.set_current_damage(max_melee_attack_damage)
-			
-		ABILITIES.TORSO:
-			pass
-			
-		ABILITIES.TURBAN:
-			pass
-
 ############################### DECLARE FUNCTIONS ##############################
 
 
@@ -179,7 +149,7 @@ func _initialize_asserts() -> void:
 
 
 func _initialize() -> void:
-	$FairySprite.hide()
+	fairy_sprite.hide()
 
 
 # Setters and Getters for public variables
@@ -215,9 +185,15 @@ func calculate_velocity() -> void:
 	self.velocity = self.direction * self.current_speed
 
 
+# ANIMATIONS
 func melee_attack_animation_finished() -> void:
 	$MeleeAttackCooldownTimer.start()
 	pass
+
+
+func on_spawn_animation_finished() -> void:
+	$FairyAnimationPlayer.play("Idle")
+
 
 
 func attack_melee() -> void:
@@ -280,17 +256,34 @@ func _on_MeleeAttackCooldownTimer_timeout() -> void:
 	can_melee_attack = true
 
 
-# TEST
+# Affect the Fairy's colors with transparency
+# properly in the FairyAnimationPlayer
+
+var current_fairy_current_color: Color = Color(0, 0, 0, 1) setget set_fairy_current_color, get_fairy_current_color
+func set_fairy_current_color(new_color: Color) -> void:
+	current_fairy_current_color = new_color
+	fairy_sprite.set("self_modulate", self.get_fairy_current_color())
+
+
+func get_fairy_current_color() -> Color:
+	return current_fairy_current_color
+
+#func set_fairy_current_color_transparency(transparency: int) -> void:
+#	self.current_fairy_current_color.a = transparency
+
+
+
+
 func spawn_following_fairy(new_color: Color) -> void:
-	$FairySprite.set("self_modulate", new_color)
-	$FairySprite.show()
+	set_fairy_current_color(new_color)
+	$FairyAnimationPlayer.play("Spawn")
 
 
 func despawn_following_fairy() -> void:
-	$FairySprite.hide()
+	$FairyAnimationPlayer.play("Despawn")
 
 
-# END TEST
+
 
 signal current_health_changed
 

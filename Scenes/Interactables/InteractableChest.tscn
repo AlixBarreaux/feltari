@@ -250,10 +250,9 @@ scale = Vector2( 3, 3 )
 script = ExtResource( 4 )
 
 [node name="Sprite" parent="." index="0"]
-self_modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 2 )
 hframes = 4
-frame = 3
+frame = 1
 
 [node name="AnimationPlayer" parent="." index="2"]
 autoplay = "Idle"
@@ -261,12 +260,14 @@ anims/Enable = SubResource( 1 )
 anims/Idle = SubResource( 2 )
 
 [node name="RevealedItem" type="Sprite" parent="." index="3"]
+visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, -20 )
 texture = ExtResource( 3 )
 hframes = 3
 
 [node name="SpecialEffectSprite" type="Sprite" parent="." index="4"]
+visible = false
 texture = ExtResource( 5 )
 hframes = 10
 frame = 9
