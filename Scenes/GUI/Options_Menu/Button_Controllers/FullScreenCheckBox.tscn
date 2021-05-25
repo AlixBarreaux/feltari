@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://full_screen_checkbox.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/GUI/full_screen_checkbox.gd" type="Script" id=1]
 
 [node name="FullScreenCheckBox" type="CheckBox"]
 margin_left = 356.0

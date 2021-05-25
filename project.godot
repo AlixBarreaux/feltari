@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Panel",
+"class": "CreditsMenu",
+"language": "GDScript",
+"path": "res://credits_menu.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
@@ -19,10 +24,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/enemy_spawn_point.gd"
 }, {
-"base": "CheckBox",
+"base": "Reference",
 "class": "FullScreenCheckbox",
 "language": "GDScript",
-"path": "res://full_screen_checkbox.gd"
+"path": "res://Scripts/GUI/full_screen_checkbox.gd"
 }, {
 "base": "Control",
 "class": "InGameGui",
@@ -49,20 +54,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/interactables_manager.gd"
 }, {
-"base": "HSlider",
+"base": "Reference",
 "class": "MasterSoundSlider",
 "language": "GDScript",
-"path": "res://Scripts/GUI/Sound_Control/master_sound_slider.gd"
+"path": "res://Scripts/GUI/Options_Controllers/Sound_Control/master_sound_slider.gd"
 }, {
 "base": "HSlider",
 "class": "MusicSoundSlider",
 "language": "GDScript",
-"path": "res://Scripts/GUI/Sound_Control/music_slider.gd"
+"path": "res://Scripts/GUI/Options_Controllers/Sound_Control/music_slider.gd"
 }, {
 "base": "Panel",
 "class": "OptionsMenu",
 "language": "GDScript",
-"path": "res://options_menu.gd"
+"path": "res://Scripts/GUI/options_menu.gd"
 }, {
 "base": "Area2D",
 "class": "PatrolZoneEnemy",
@@ -84,12 +89,13 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/GUI/quit_to_desktop_button.gd"
 }, {
-"base": "HSlider",
+"base": "Reference",
 "class": "SoundEffectsSoundSlider",
 "language": "GDScript",
-"path": "res://Scripts/GUI/Sound_Control/sound_effects_slider.gd"
+"path": "res://Scripts/GUI/Options_Controllers/Sound_Control/sound_effects_slider.gd"
 } ]
 _global_script_class_icons={
+"CreditsMenu": "",
 "Enemy": "",
 "EnemySpawnPoint": "",
 "FullScreenCheckbox": "",
@@ -111,7 +117,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Malvens Doors"
-run/main_scene="res://Scenes/World.tscn"
+run/main_scene="res://Scenes/MainMenuWorld.tscn"
 config/icon="res://Miscellaneous/feltari_icon.png"
 config/macos_native_icon="res://Miscellaneous/feltari_icon.icns"
 config/windows_native_icon="res://Miscellaneous/feltari_icon.ico"
