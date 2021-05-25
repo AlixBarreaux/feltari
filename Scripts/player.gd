@@ -48,12 +48,14 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	self.calculate_velocity()
 #	if not self.velocity != Vector2(0.0, 0.0):
+#		animation_tree.set("parameters/Idle/blend_position", faced_direction)
 #		anim_tree_sm_playback.travel("Idle")
 #		return
+#	else:
 
 	if can_move:
 		velocity = move_and_slide(velocity)
-		
+
 
 
 
@@ -191,6 +193,7 @@ func melee_attack_animation_finished() -> void:
 	pass
 
 
+# Must rename to on_fairy_spawn_animation_finished()
 func on_spawn_animation_finished() -> void:
 	$FairyAnimationPlayer.play("Idle")
 
