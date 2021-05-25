@@ -185,9 +185,15 @@ func calculate_velocity() -> void:
 	self.velocity = self.direction * self.current_speed
 
 
+# ANIMATIONS
 func melee_attack_animation_finished() -> void:
 	$MeleeAttackCooldownTimer.start()
 	pass
+
+
+func on_spawn_animation_finished() -> void:
+	$FairyAnimationPlayer.play("Idle")
+
 
 
 func attack_melee() -> void:
@@ -250,14 +256,31 @@ func _on_MeleeAttackCooldownTimer_timeout() -> void:
 	can_melee_attack = true
 
 
+# Affect the Fairy's colors with transparency
+# properly in the FairyAnimationPlayer
+
+var current_fairy_current_color: Color = Color(0, 0, 0, 1) setget set_fairy_current_color, get_fairy_current_color
+func set_fairy_current_color(new_color: Color) -> void:
+	current_fairy_current_color = new_color
+	fairy_sprite.set("self_modulate", current_fairy_current_color)
+
+
+func get_fairy_current_color() -> Color:
+	return current_fairy_current_color
+
+#func set_fairy_current_color_transparency(transparency: int) -> void:
+#	self.current_fairy_current_color.a = transparency
+
+
+
 
 func spawn_following_fairy(new_color: Color) -> void:
-	fairy_sprite.set("self_modulate", new_color)
-	fairy_sprite.show()
+	set_fairy_current_color(new_color)
+	$FairyAnimationPlayer.play("Spawn")
 
 
 func despawn_following_fairy() -> void:
-	fairy_sprite.hide()
+	$FairyAnimationPlayer.play("Despawn")
 
 
 

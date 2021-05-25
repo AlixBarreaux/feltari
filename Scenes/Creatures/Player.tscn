@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Graphics/Spritesheets/beardman_spritesheet_32x32.png" type="Texture" id=2]
@@ -919,11 +919,74 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=45]
 resource_name = "Despawn"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("FairySprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("FairySprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -32 ), Vector2( -28, -52 ), Vector2( -26, -54 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("FairySprite:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("FairySprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("FairySprite:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ), Vector2( 0.425, 0.425 ) ]
+}
 
 [sub_resource type="Animation" id=46]
 resource_name = "Idle"
+loop = true
+step = 0.2
 tracks/0/type = "value"
-tracks/0/path = NodePath("FairySprite:position")
+tracks/0/path = NodePath("FairySprite:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -931,12 +994,169 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("FairySprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, -32 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("FairySprite:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("FairySprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("FairySprite:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 0 ]
 }
 
 [sub_resource type="Animation" id=47]
 resource_name = "Spawn"
+tracks/0/type = "value"
+tracks/0/path = NodePath("FairySprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("FairySprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -26, -64 ), Vector2( -28, -52 ), Vector2( 0, -32 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("FairySprite:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("FairySprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.25, 0.25 ), Vector2( 2, 2 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("FairySprite:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 0 ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "on_spawn_animation_finished"
+} ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0 ],
+"method": "set_fairy_current_color_transparency"
+}, {
+"args": [ 1 ],
+"method": "set_fairy_current_color_transparency"
+} ]
+}
+
+[sub_resource type="Animation" id=50]
+resource_name = "Fly"
+length = 1.2
+loop = true
+step = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("../FairySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
 
 [sub_resource type="RectangleShape2D" id=48]
 extents = Vector2( 15, 30 )
@@ -958,7 +1178,7 @@ max_health = 3
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 hframes = 44
-frame = 30
+frame = 35
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
@@ -966,7 +1186,7 @@ position = Vector2( 0, 1.5 )
 shape = SubResource( 1 )
 
 [node name="FairySprite" type="Sprite" parent="."]
-self_modulate = Color( 0, 0.105882, 0.960784, 1 )
+self_modulate = Color( 1, 1, 1, 0.6 )
 position = Vector2( 0, -32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
@@ -1000,6 +1220,10 @@ anims/Die = SubResource( 32 )
 anims/Despawn = SubResource( 45 )
 anims/Idle = SubResource( 46 )
 anims/Spawn = SubResource( 47 )
+
+[node name="FairyFlyAnimationPlayer" type="AnimationPlayer" parent="FairyAnimationPlayer"]
+autoplay = "Fly"
+anims/Fly = SubResource( 50 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
