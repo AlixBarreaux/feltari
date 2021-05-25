@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tiles_16x16.png-fba4009fd74837662e8f0fa661d05fdb.stex"
+path="res://.import/decorations_tileset_32x32.png-53d5f3e1f53fdd72255a1940bec2552a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/Tilesets/tiles_16x16.png"
-dest_files=[ "res://.import/tiles_16x16.png-fba4009fd74837662e8f0fa661d05fdb.stex" ]
+source_file="res://Assets/Graphics/Tilesets/decorations_tileset_32x32.png"
+dest_files=[ "res://.import/decorations_tileset_32x32.png-53d5f3e1f53fdd72255a1940bec2552a.stex" ]
 
 [params]
 

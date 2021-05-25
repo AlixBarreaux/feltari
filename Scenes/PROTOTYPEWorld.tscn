@@ -22,9 +22,10 @@
 
 [node name="PathsTileMap" parent="TileMaps" instance=ExtResource( 9 )]
 
-[node name="DecorationsTileMap" parent="TileMaps" instance=ExtResource( 2 )]
-
 [node name="CliffsTileMap" parent="TileMaps" instance=ExtResource( 13 )]
+position = Vector2( 0, -1 )
+
+[node name="DecorationsTileMap" parent="TileMaps" instance=ExtResource( 2 )]
 
 [node name="Creatures" type="Node2D" parent="."]
 
@@ -50,7 +51,7 @@ polygon = PoolVector2Array( -108, 151, -137, -122, 87.9993, -67.119, 268, -41, 2
 position = Vector2( 621, 457 )
 
 [node name="Player" parent="Creatures" instance=ExtResource( 1 )]
-position = Vector2( 522.157, 430.943 )
+position = Vector2( 278.912, 413.972 )
 
 [node name="Interactables" type="Node2D" parent="."]
 script = ExtResource( 11 )
@@ -88,6 +89,7 @@ position = Vector2( 796.716, 257.45 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="InGameGUI" parent="CanvasLayer" instance=ExtResource( 7 )]
+visible = false
 
 [node name="Pickables" type="Node2D" parent="."]
 

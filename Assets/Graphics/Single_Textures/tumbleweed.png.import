@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/desert_tileset_16x16.png-9fdff8f3266a50db4dfcc3a387b1db9d.stex"
+path="res://.import/tumbleweed.png-aa4f3c913e535895502a7e9215407518.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/Tilesets/desert_tileset_16x16.png"
-dest_files=[ "res://.import/desert_tileset_16x16.png-9fdff8f3266a50db4dfcc3a387b1db9d.stex" ]
+source_file="res://Assets/Graphics/Single_Textures/tumbleweed.png"
+dest_files=[ "res://.import/tumbleweed.png-aa4f3c913e535895502a7e9215407518.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/desert_tileset.png-f71d2d3df98bacc62c9d786827ae3661.stex"
+path="res://.import/paths_tilesheet_16x16.png-ec2a584d5e730f683f6625c4e31e3609.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/Tilesets/desert_tileset.png"
-dest_files=[ "res://.import/desert_tileset.png-f71d2d3df98bacc62c9d786827ae3661.stex" ]
+source_file="res://Assets/Graphics/Tilesets/paths_tilesheet_16x16.png"
+dest_files=[ "res://.import/paths_tilesheet_16x16.png-ec2a584d5e730f683f6625c4e31e3609.stex" ]
 
 [params]
 

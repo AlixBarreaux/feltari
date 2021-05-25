@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset_32x32.png-3d25dd0283f6bad747f12b7d48ecdac9.stex"
+path="res://.import/cliffs_tileset_16x16.png-cf84ca3a39c3195d27e5343f4aa38aea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/Tilesets/tileset_32x32.png"
-dest_files=[ "res://.import/tileset_32x32.png-3d25dd0283f6bad747f12b7d48ecdac9.stex" ]
+source_file="res://Assets/Graphics/Tilesets/cliffs_tileset_16x16.png"
+dest_files=[ "res://.import/cliffs_tileset_16x16.png-cf84ca3a39c3195d27e5343f4aa38aea.stex" ]
 
 [params]
 
