@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://credits_menu.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/GUI/credits_menu.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Themes/gui_theme_medium.tres" type="Theme" id=2]
 [ext_resource path="res://Resources/Themes/gui_theme_large.tres" type="Theme" id=3]
+[ext_resource path="res://Scenes/GUI/Credits_Menu/ExternalLinkOpenButton.tscn" type="PackedScene" id=4]
 
 [node name="CreditsMenu" type="Panel"]
 anchor_right = 1.0
@@ -76,11 +77,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CTNPhacoButton" type="Button" parent="ScrollContainer/VBoxContainer/CTNPhacoContainer"]
+[node name="CTNPhacoButton" parent="ScrollContainer/VBoxContainer/CTNPhacoContainer" instance=ExtResource( 4 )]
 margin_top = 51.0
 margin_right = 690.0
 margin_bottom = 78.0
 text = "CTN_PHACO_BUTTON"
+link_to_open = "https://ctn-phaco.itch.io"
 
 [node name="OctonyteContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
 margin_top = 239.0
@@ -98,11 +100,12 @@ text = "Octonyte"
 align = 1
 valign = 1
 
-[node name="OctonyteButton" type="Button" parent="ScrollContainer/VBoxContainer/OctonyteContainer"]
+[node name="OctonyteButton" parent="ScrollContainer/VBoxContainer/OctonyteContainer" instance=ExtResource( 4 )]
 margin_top = 51.0
 margin_right = 690.0
 margin_bottom = 78.0
 text = "OCTONYTE_BUTTON"
+link_to_open = "https://soundcloud.com/octonyte"
 
 [node name="RaesayContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
 margin_top = 387.0
@@ -120,11 +123,12 @@ text = "Raesay"
 align = 1
 valign = 1
 
-[node name="RaesayButton" type="Button" parent="ScrollContainer/VBoxContainer/RaesayContainer"]
+[node name="RaesayButton2" parent="ScrollContainer/VBoxContainer/RaesayContainer" instance=ExtResource( 4 )]
 margin_top = 51.0
 margin_right = 690.0
 margin_bottom = 78.0
 text = "RAESAY_BUTTON"
+link_to_open = "https://raesay.itch.io"
 
 [node name="AssetsUsedLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
 margin_top = 535.0

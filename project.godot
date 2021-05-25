@@ -9,10 +9,10 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Panel",
+"base": "Reference",
 "class": "CreditsMenu",
 "language": "GDScript",
-"path": "res://credits_menu.gd"
+"path": "res://Scripts/GUI/credits_menu.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Enemy",
@@ -23,6 +23,11 @@ _global_script_classes=[ {
 "class": "EnemySpawnPoint",
 "language": "GDScript",
 "path": "res://Scripts/enemy_spawn_point.gd"
+}, {
+"base": "Button",
+"class": "ExternalLinkOpenButton",
+"language": "GDScript",
+"path": "res://Scenes/GUI/Credits_Menu/external_link_open_button.gd"
 }, {
 "base": "Reference",
 "class": "FullScreenCheckbox",
@@ -98,6 +103,7 @@ _global_script_class_icons={
 "CreditsMenu": "",
 "Enemy": "",
 "EnemySpawnPoint": "",
+"ExternalLinkOpenButton": "",
 "FullScreenCheckbox": "",
 "InGameGui": "",
 "Interactable": "",

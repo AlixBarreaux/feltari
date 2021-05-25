@@ -43,7 +43,17 @@ func get_scene_to_load() -> PackedScene:
 # Button presses
 
 func _on_PlayButton_pressed() -> void:
-	get_tree().change_scene_to(get_scene_to_load())
+	var _change_scene_to_error: int = 0
+	_change_scene_to_error = get_tree().change_scene_to(get_scene_to_load())
+	
+	match _change_scene_to_error:
+		ERR_CANT_CREATE:
+			printerr("(!) ERROR: In " + self.name + " _on_PlayButton_pressed()")
+			printerr("Can't load the scene! ERR_CANT_CREATE")
+		_:
+			printerr("(!) ERROR: In" + self.name + " _on_PlayButton_pressed()")
+			printerr("Unknown error!")
+
 
 
 func _on_OptionsButton_pressed() -> void:

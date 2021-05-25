@@ -49,7 +49,7 @@ __meta__ = {
 
 [node name="PlayButton" type="Button" parent="ButtonsContainer"]
 margin_right = 560.0
-margin_bottom = 62.0
+margin_bottom = 45.0
 focus_neighbour_left = NodePath("../QuitToDesktopButton")
 focus_neighbour_top = NodePath("../QuitToDesktopButton")
 focus_neighbour_right = NodePath("../OptionsButton")
@@ -62,9 +62,9 @@ text = "PLAY"
 flat = true
 
 [node name="OptionsButton" type="Button" parent="ButtonsContainer"]
-margin_top = 122.0
+margin_top = 105.0
 margin_right = 560.0
-margin_bottom = 184.0
+margin_bottom = 150.0
 focus_neighbour_left = NodePath("../PlayButton")
 focus_neighbour_top = NodePath("../PlayButton")
 focus_neighbour_right = NodePath("../CreditsButton")
@@ -77,9 +77,9 @@ text = "OPTIONS"
 flat = true
 
 [node name="CreditsButton" type="Button" parent="ButtonsContainer"]
-margin_top = 244.0
+margin_top = 210.0
 margin_right = 560.0
-margin_bottom = 306.0
+margin_bottom = 255.0
 focus_neighbour_left = NodePath("../OptionsButton")
 focus_neighbour_top = NodePath("../OptionsButton")
 focus_neighbour_right = NodePath(".")
@@ -92,9 +92,9 @@ text = "CREDITS"
 flat = true
 
 [node name="QuitToDesktopButton" parent="ButtonsContainer" instance=ExtResource( 1 )]
-margin_top = 366.0
+margin_top = 315.0
 margin_right = 560.0
-margin_bottom = 428.0
+margin_bottom = 360.0
 focus_neighbour_left = NodePath("../CreditsButton")
 focus_neighbour_top = NodePath("../CreditsButton")
 focus_neighbour_right = NodePath("../PlayButton")

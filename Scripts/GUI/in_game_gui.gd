@@ -22,6 +22,7 @@ func _initialize_signals() -> void:
 	Events.connect("player_max_health_set", self, "on_player_max_health_set")
 
 
+
 func on_current_health_decreased(amount: int) -> void:
 	print(self.name + ": I received decreased current health value of: " + str(amount)) 
 #	health_points_label_int.set_text(str(health_bar.value + amount))
