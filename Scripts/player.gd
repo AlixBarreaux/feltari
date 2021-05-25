@@ -158,6 +158,7 @@ func _initialize() -> void:
 
 func set_current_health(value: int) -> void:
 	current_health = value
+	Events.emit_signal("player_current_health_set", value)
 
 
 func get_current_health() -> int:
@@ -166,6 +167,7 @@ func get_current_health() -> int:
 
 func set_max_health(value: int) -> void:
 	max_health = value
+	Events.emit_signal("player_max_health_set", value)
 
 
 func get_max_health() -> int:
