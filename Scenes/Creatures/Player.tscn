@@ -1155,7 +1155,7 @@ collision_mask = 13
 script = ExtResource( 1 )
 current_speed = 200
 current_health = 2
-max_health = 3
+max_health = 4
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 3, 3 )

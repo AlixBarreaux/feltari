@@ -152,13 +152,15 @@ func _initialize_asserts() -> void:
 
 func _initialize() -> void:
 	fairy_sprite.hide()
+#	Events.emit_signal("player_current_health_set", self.get_current_health())
+#	Events.emit_signal("player_max_health_set", self.get_max_health())
 
 
-# Setters and Getters for public variables
+# SETTERS AND GETTERS
 
 func set_current_health(value: int) -> void:
 	current_health = value
-	Events.emit_signal("player_current_health_set", value)
+	print(self.name + " Current health set to: " + str(value))
 
 
 func get_current_health() -> int:
@@ -167,7 +169,7 @@ func get_current_health() -> int:
 
 func set_max_health(value: int) -> void:
 	max_health = value
-	Events.emit_signal("player_max_health_set", value)
+	print(self.name + ": max value set to: " + str(value))
 
 
 func get_max_health() -> int:

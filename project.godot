@@ -82,7 +82,9 @@ _global_script_class_icons={
 
 config/name="Malvens Doors"
 run/main_scene="res://Scenes/World.tscn"
-config/icon="res://Miscellaneous/icon.png"
+config/icon="res://Miscellaneous/feltari_icon.png"
+config/macos_native_icon="res://Miscellaneous/feltari_icon.icns"
+config/windows_native_icon="res://Miscellaneous/feltari_icon.ico"
 
 [audio]
 
