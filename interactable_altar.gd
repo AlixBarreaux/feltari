@@ -24,7 +24,7 @@ func receive_interaction() -> void:
 		print(self.name + ": PLAYER HAS NO FAIRY FOLLOWING HIM: ", Global.has_player_following_fairy)
 		
 		if self.is_enabled:
-			# NO FAIRY AT ALL ON GAME START?
+			animation_player.play("Idle")
 			Global.pickup_fairy_from_altar(self.id)
 			is_enabled = false
 	else:

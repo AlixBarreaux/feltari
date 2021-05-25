@@ -4,6 +4,7 @@ extends Interactable
 
 ############################### DECLARE VARIABLES ##############################
 
+onready var collision_shape2D: CollisionShape2D = $CollisionShape2D
 
 ################################# RUN THE CODE #################################
 
@@ -14,6 +15,7 @@ extends Interactable
 func receive_interaction() -> void:
 	print("Sending fairy to you player!")
 	print(self.name + ": I just received an interaction!")
+	collision_shape2D.set_deferred("disabled", true)
 	animation_player.play("Enable")
 	
 	# Give fairy to player
