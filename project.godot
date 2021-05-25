@@ -92,6 +92,7 @@ default_bus_layout="res://Resources/Others/default_bus_layout.tres"
 
 Settings="*res://Autoloads/settings.gd"
 Global="*res://Autoloads/global.gd"
+Events="*res://Autoloads/events.gd"
 
 [display]
 

@@ -12,7 +12,7 @@ export var normal_speed: int = 150
 export var max_speed = 300
 
 export var current_health: int = 0
-export var max_health: int = 0
+export var max_health: int = 0 setget set_max_health, get_max_health
 
 export var current_melee_attack_damage: int = 1
 export var max_melee_attack_damage: int = 2
@@ -155,6 +155,23 @@ func _initialize() -> void:
 
 
 # Setters and Getters for public variables
+
+func set_current_health(value: int) -> void:
+	current_health = value
+
+
+func get_current_health() -> int:
+	return current_health
+
+
+func set_max_health(value: int) -> void:
+	max_health = value
+
+
+func get_max_health() -> int:
+	return max_health
+
+
 func set_current_speed(new_speed: int) -> void:
 	current_speed = new_speed
 
@@ -183,6 +200,15 @@ func set_velocity(new_velocity: Vector2) -> void:
 	velocity = new_velocity
 
 
+func set_can_melee_attack(value: bool) -> void:
+	can_melee_attack = value
+
+
+# GENERIC FUNCTIONS
+func get_can_melee_attack() -> bool:
+	return can_melee_attack
+
+
 func calculate_velocity() -> void:
 	self.velocity = self.direction * self.current_speed
 
@@ -203,36 +229,6 @@ func attack_melee() -> void:
 	set_can_interact(false)
 	animation_tree.set("parameters/Melee Attack/blend_position", faced_direction)
 	anim_tree_sm_playback.travel("Melee Attack")
-
-
-func set_can_melee_attack(value: bool) -> void:
-	can_melee_attack = value
-
-
-func get_can_melee_attack() -> bool:
-	return can_melee_attack
-
-
-func take_damage(amount: int) -> void:
-	self.current_health -= amount
-	print(self.name + ": I took " + str(amount) + " damage!")
-	anim_tree_sm_playback.travel("Take Damage")
-	
-	self.check_if_dead()
-	
-	
-
-func check_if_dead() -> void:
-	if self.current_health <= 0:
-			self.current_health = 0
-			self.die()
-	print(self.name + ": Health status: " + str(current_health) + " / " + str(max_health))
-
-
-func die() -> void:
-	print(self.name + str(": I died!"))
-	self.set_enabled(false)
-	anim_tree_sm_playback.travel("Die")
 
 
 # Send damage from the weapon collision zone (HurtBox) to whatever is in 
@@ -275,8 +271,6 @@ func get_fairy_current_color() -> Color:
 #	self.current_fairy_current_color.a = transparency
 
 
-
-
 func spawn_following_fairy(new_color: Color) -> void:
 	set_fairy_current_color(new_color)
 	$FairyAnimationPlayer.play("Spawn")
@@ -288,17 +282,42 @@ func despawn_following_fairy() -> void:
 
 
 
-signal current_health_changed
-
-func set_current_health(value: int) -> void:
-	current_health = value
-#	emit_signal("current_health_changed", cur)
 
 
-func get_current_health() -> int:
-	return current_health
+func check_if_dead() -> void:
+	if self.current_health <= 0:
+			self.current_health = 0
+			self.die()
+	print(self.name + ": Health status: " + str(current_health) + " / " + str(max_health))
 
-func add_current_health(amount: int) -> void:
-	self.current_health += amount
+
+func die() -> void:
+	print(self.name + str(": I died!"))
+	self.set_enabled(false)
+	anim_tree_sm_playback.travel("Die")
+
+
+func take_damage(amount: int) -> void:
+	decrease_current_health(amount)
+
+
+
+
+# Loose Health AND Send an update to the InGameGUI for the Health Bar
+func decrease_current_health(amount: int) -> void:
+#	self.current_health -= amount
+	self.set_current_health(get_current_health() - amount)
+	
+	print(self.name + ": I took " + str(amount) + " damage!")
+	anim_tree_sm_playback.travel("Take Damage")
+	self.check_if_dead()
+	
+	Events.emit_signal("player_current_health_decreased", amount)
+
+
+# Gain Health AND Send an update to the InGameGUI for the Health Bar
+func increase_current_health(amount: int) -> void:
+#	self.current_health += amount
 	self.set_current_health(get_current_health() + amount)
-	print("ADD HEALTH TRIGGGERED, NEEDS TO UPDATE HEALTH!")
+	print(self.name + ": I was healed by " + str(amount) + " health points!")
+	Events.emit_signal("player_current_health_increased", amount)

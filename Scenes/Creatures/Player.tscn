@@ -1228,7 +1228,6 @@ shape = SubResource( 48 )
 disabled = true
 
 [node name="InteractZone" type="Area2D" parent="."]
-rotation = -1.57079
 collision_layer = 0
 collision_mask = 8
 
