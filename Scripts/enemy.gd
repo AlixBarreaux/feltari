@@ -59,6 +59,13 @@ func _physics_process(_delta: float) -> void:
 		
 		self.target_destination = get_current_target().global_position
 		
+		
+		if velocity.x > 0:
+			$Sprite.flip_h = false
+		else:
+			$Sprite.flip_h = true
+			
+		
 #		print("Physics Process: Destination: ", self.target_destination)
 	
 #	self.move_and_slide(velocity)

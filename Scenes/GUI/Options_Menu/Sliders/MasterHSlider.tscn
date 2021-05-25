@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/GUI/Sound_Control/master_sound_slider.gd" type="Script" id=1]
+
+[node name="MasterHSlider" type="HSlider"]
+margin_right = 853.0
+margin_bottom = 16.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="value_changed" from="." to="." method="_on_MasterHSlider_value_changed"]

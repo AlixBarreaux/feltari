@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://full_screen_checkbox.gd" type="Script" id=1]
+
+[node name="FullScreenCheckBox" type="CheckBox"]
+margin_left = 356.0
+margin_right = 380.0
+margin_bottom = 29.0
+focus_neighbour_left = NodePath("../../../BackButton")
+focus_neighbour_top = NodePath("../../../BackButton")
+focus_neighbour_right = NodePath("../../SoundContainer/MasterHSlider")
+focus_neighbour_bottom = NodePath("../../SoundContainer/MasterHSlider")
+focus_next = NodePath("../../SoundContainer/MasterHSlider")
+focus_previous = NodePath("../../../BackButton")
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="toggled" from="." to="." method="_on_FullScreenCheckBox_toggled"]

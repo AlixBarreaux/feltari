@@ -24,11 +24,12 @@ func _initialize_signals() -> void:
 
 func on_current_health_decreased(amount: int) -> void:
 	print(self.name + ": I received decreased current health value of: " + str(amount)) 
-#	health_points_label_int.set_text(str(health_bar.value))
+#	health_points_label_int.set_text(str(health_bar.value + amount))
 
 
 func on_current_health_increased(amount: int) -> void:
 	print(self.name + ": I received an added current health value of: " + str(amount)) 
+#	health_points_label_int.set_text(str(health_bar.value - amount))
 #	health_points_label_int.set_text(str(health_bar.value))
 #	on_player_current_health_set()
 
