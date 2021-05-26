@@ -9,9 +9,6 @@ onready var first_button_to_focus_button: Button = self.get_node(first_button_to
 
 ################################# RUN THE CODE #################################
 
-func _ready() -> void:
-	self.hide()
-
 
 ############################### DECLARE FUNCTIONS ##############################
 

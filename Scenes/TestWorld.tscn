@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/Creatures/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tilemaps/DecorationsTileMap.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Lake.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Interactables/InteractableColorCheckGate.tscn" type="PackedScene" id=16]
 [ext_resource path="res://LabelDisplayer.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/Sound/Ambient/wind.ogg" type="AudioStream" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 285.92, 200.66 )
@@ -175,6 +176,11 @@ text = "Wait a little for the Fairy to follow you.
 This is a Color Gate.
 
 To pass through it, you need to find a fairy of the same color. Go find one!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+autoplay = true
+bus = "Ambient"
 
 [editable path="LabelDisplayer"]
 [editable path="LabelDisplayer2"]
