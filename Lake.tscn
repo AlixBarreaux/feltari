@@ -91,6 +91,11 @@ bus = "Ambient"
 "anims/Fade Sound In" = SubResource( 1 )
 "anims/Fade Sound Out" = SubResource( 2 )
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -22.7068, -23.0264, -13.3041, -23.1588, -4.43111, -16.9345, 13.4473, -16.802, 14.1095, -13.8885, 23.3798, -13.4912, 28.942, -8.32634, 32.915, 2.00343, 33.0474, 7.96291, 18.7446, 22.9278, 8.41488, 20.8089, -5.09328, 24.9143, -19.9258, 19.2197, -25.3555, 18.8224, -32.7717, 13.5251, -32.9042, 7.30074, -28.9312, 3.59262, -32.3744, -1.70469, -33.3015, -14.4183 )
+
 [connection signal="tween_completed" from="SoundFadeOutTween" to="." method="_on_SoundFadeOutTween_tween_completed"]
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
