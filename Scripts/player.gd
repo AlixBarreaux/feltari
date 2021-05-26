@@ -46,6 +46,7 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	print(self.name, ": Player positions: ", self.global_position, self.position)
 	self.calculate_velocity()
 #	if not self.velocity != Vector2(0.0, 0.0):
 #		animation_tree.set("parameters/Idle/blend_position", faced_direction)

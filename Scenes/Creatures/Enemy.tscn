@@ -72,18 +72,23 @@ anims/Idle = SubResource( 4 )
 anims/Move = SubResource( 5 )
 anims/take_damage_animation = ExtResource( 3 )
 
+[node name="TargetPosition" type="Position2D" parent="."]
+
 [node name="IdleTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
-
-[node name="TargetPosition" type="Position2D" parent="."]
 
 [node name="WanderTimer" type="Timer" parent="."]
 wait_time = 2.5
 one_shot = true
 
+[node name="HurtTargetTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="CreatureDetectionZone" to="." method="_on_CreatureDetectionZone_body_entered"]
 [connection signal="body_exited" from="CreatureDetectionZone" to="." method="_on_CreatureDetectionZone_body_exited"]
 [connection signal="body_entered" from="HurtBox" to="." method="_on_HurtBox_body_entered"]
+[connection signal="body_exited" from="HurtBox" to="." method="_on_HurtBox_body_exited"]
 [connection signal="timeout" from="IdleTimer" to="." method="_on_IdleTimer_timeout"]
 [connection signal="timeout" from="WanderTimer" to="." method="_on_WanderTimer_timeout"]
+[connection signal="timeout" from="HurtTargetTimer" to="." method="_on_HurtTargetTimer_timeout"]

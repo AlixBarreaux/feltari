@@ -123,7 +123,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Feltari"
-run/main_scene="res://Scenes/MainMenuWorld.tscn"
+run/main_scene="res://Scenes/TestWorld.tscn"
 config/icon="res://Miscellaneous/feltari_icon.png"
 config/macos_native_icon="res://Miscellaneous/feltari_icon.icns"
 config/windows_native_icon="res://Miscellaneous/feltari_icon.ico"
