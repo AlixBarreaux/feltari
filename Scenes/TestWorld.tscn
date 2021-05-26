@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/Creatures/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tilemaps/DecorationsTileMap.tscn" type="PackedScene" id=2]
@@ -10,11 +10,12 @@
 [ext_resource path="res://Scenes/Pickables/PickableHeart.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Tilemaps/PathsTileMap.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/EnemySpawnPoint.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/interactables_manager.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/interactables_manager.gd" type="Script" id=11]
 [ext_resource path="res://Scenes/PatrolZoneEnemy.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Tilemaps/CliffsTilemap.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/Graphics/Single_Textures/obelisk.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Graphics/Single_Textures/lake.png" type="Texture" id=15]
+[ext_resource path="res://InteractableColorCheckGate.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 285.92, 200.66 )
@@ -79,13 +80,27 @@ position = Vector2( 734.392, -1230.43 )
 position = Vector2( 2113.8, 143.711 )
 
 [node name="InteractableChest2" parent="Interactables/Chests" instance=ExtResource( 4 )]
-position = Vector2( 501.172, -483.513 )
+position = Vector2( 2181.27, 158.322 )
 
 [node name="InteractableChest3" parent="Interactables/Chests" instance=ExtResource( 4 )]
 position = Vector2( 3726.69, -824.469 )
 
 [node name="InteractableChest4" parent="Interactables/Chests" instance=ExtResource( 4 )]
 position = Vector2( 1966.9, -2068.64 )
+
+[node name="ColorCheckGates" type="Node2D" parent="Interactables"]
+
+[node name="InteractableColorCheckGate" parent="Interactables/ColorCheckGates" instance=ExtResource( 16 )]
+position = Vector2( 2129.38, 332.244 )
+
+[node name="InteractableColorCheckGate2" parent="Interactables/ColorCheckGates" instance=ExtResource( 16 )]
+position = Vector2( 2212.44, 237.856 )
+
+[node name="InteractableColorCheckGate3" parent="Interactables/ColorCheckGates" instance=ExtResource( 16 )]
+position = Vector2( 2593.77, 64.1835 )
+
+[node name="InteractableColorCheckGate4" parent="Interactables/ColorCheckGates" instance=ExtResource( 16 )]
+position = Vector2( 2748.56, 60.408 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -114,6 +129,6 @@ shape = SubResource( 1 )
 ] instance=ExtResource( 3 )]
 
 [node name="Player" parent="Creatures" instance=ExtResource( 1 )]
-position = Vector2( 2122.26, -91.6322 )
+position = Vector2( 2141.14, 429.386 )
 current_speed = 500
 current_health = 4

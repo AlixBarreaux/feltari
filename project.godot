@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Interactable",
+"class": "ColorCheckGate",
+"language": "GDScript",
+"path": "res://color_check_gate.gd"
+}, {
 "base": "Reference",
 "class": "CreditsMenu",
 "language": "GDScript",
@@ -57,7 +62,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "InteractablesManager",
 "language": "GDScript",
-"path": "res://Scenes/interactables_manager.gd"
+"path": "res://Scripts/interactables_manager.gd"
 }, {
 "base": "Reference",
 "class": "MasterSoundSlider",
@@ -100,6 +105,7 @@ _global_script_classes=[ {
 "path": "res://Scripts/GUI/Options_Controllers/Sound_Control/sound_effects_slider.gd"
 } ]
 _global_script_class_icons={
+"ColorCheckGate": "",
 "CreditsMenu": "",
 "Enemy": "",
 "EnemySpawnPoint": "",

@@ -11,6 +11,7 @@ var can_interact: bool = true setget set_can_interact, get_can_interact
 
 # Node References
 onready var player_respawn_point: Position2D = $PlayerRespawnPoint
+onready var light_2D: Light2D = $Light2D
 
 ################################# RUN THE CODE #################################
 
@@ -62,4 +63,4 @@ func receive_interaction() -> void:
 func _set_current_color(new_color: Color) -> void:
 	current_color = new_color
 	sprite.set("self_modulate", new_color)
-	$Light2D.color = new_color
+	light_2D.color = new_color
