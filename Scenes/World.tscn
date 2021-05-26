@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Creatures/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tilemaps/DecorationsTileMap.tscn" type="PackedScene" id=2]
@@ -12,19 +12,17 @@
 [ext_resource path="res://Scenes/EnemySpawnPoint.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/interactables_manager.gd" type="Script" id=11]
 [ext_resource path="res://Scenes/PatrolZoneEnemy.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Tilemaps/CliffsTilemap.tscn" type="PackedScene" id=13]
 
 [node name="World" type="Node2D"]
 
 [node name="TileMaps" type="Node2D" parent="."]
+scale = Vector2( 3, 3 )
 
 [node name="GroundTileMap" parent="TileMaps" instance=ExtResource( 5 )]
 
 [node name="PathsTileMap" parent="TileMaps" instance=ExtResource( 9 )]
 
 [node name="DecorationsTileMap" parent="TileMaps" instance=ExtResource( 2 )]
-
-[node name="CliffsTileMap" parent="TileMaps" instance=ExtResource( 13 )]
 
 [node name="Creatures" type="Node2D" parent="."]
 
@@ -50,7 +48,7 @@ polygon = PoolVector2Array( -108, 151, -137, -122, 87.9993, -67.119, 268, -41, 2
 position = Vector2( 621, 457 )
 
 [node name="Player" parent="Creatures" instance=ExtResource( 1 )]
-position = Vector2( 522.157, 430.943 )
+position = Vector2( 64.1572, 0.942825 )
 
 [node name="Interactables" type="Node2D" parent="."]
 script = ExtResource( 11 )
