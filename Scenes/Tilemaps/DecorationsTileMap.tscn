@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Assets/Graphics/Tilesets/decorations_tileset_32x32.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Graphics/Tilesets/oasis_plants_tileset_16x16.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Graphics/Tilesets/decorations_tilesheet_32x32.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Graphics/Tilesets/oasis_plants_tilesheet_16x16.png" type="Texture" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
