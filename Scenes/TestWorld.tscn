@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Creatures/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tilemaps/DecorationsTileMap.tscn" type="PackedScene" id=2]
@@ -14,8 +14,9 @@
 [ext_resource path="res://Scenes/Others/PatrolZoneEnemy.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Tilemaps/CliffsTilemap.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/Graphics/Single_Textures/obelisk.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Graphics/Single_Textures/lake.png" type="Texture" id=15]
+[ext_resource path="res://Lake.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Interactables/InteractableColorCheckGate.tscn" type="PackedScene" id=16]
+[ext_resource path="res://LabelDisplayer.tscn" type="PackedScene" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 285.92, 200.66 )
@@ -44,14 +45,13 @@ tile_data = PoolIntArray( -655322, 536870914, 0, -655321, 536870913, 0, -655320,
 scale = Vector2( 1, 1 )
 tile_data = PoolIntArray( -262124, 536870919, 0, -262121, 536870919, 0, -65547, 536870917, 0, -65546, 536870917, 0, -65545, 536870917, 0, -65544, 536870917, 0, -65543, 536870917, 0, -65542, 536870917, 0, -65541, 536870917, 0, -65540, 536870917, 0, -65539, 536870917, 0, -65538, 536870917, 0, -65537, 536870917, 0, -131072, 536870917, 0, -131071, 536870917, 0, -131070, 536870917, 0, -131069, 536870917, 0, -131068, 536870917, 0, -131067, 536870917, 0, -131066, 536870917, 0, -131065, 536870917, 0, -131064, 536870917, 0, -131063, 536870917, 0, -131062, 536870917, 0, -131061, 536870917, 0, -131060, 536870917, 0, -131059, 536870917, 0, -131058, 536870917, 0, -131057, 536870917, 0, -131056, 536870917, 0, -131055, 536870917, 0, -131054, 536870917, 0, -131047, 536870917, 0, -131046, 536870917, 0, -131045, 536870917, 0, -131044, 536870917, 0, -131043, 536870917, 0, -131042, 536870917, 0, -131041, 536870917, 0, -131040, 536870917, 0, -131039, 536870917, 0, -131038, 536870917, 0, -131037, 536870917, 0, -131036, 536870917, 0, -131035, 536870917, 0, -131034, 536870917, 0, -131033, 536870917, 0, -131032, 536870917, 0, -131031, 536870917, 0, -131030, 536870917, 0, -131029, 536870917, 0, -131028, 536870917, 0, -131027, 536870917, 0, -131026, 536870917, 0, -131025, 536870917, 0, -131024, 536870917, 0, -131023, 536870917, 0, -131022, 536870917, 0, -131021, 536870917, 0, -131020, 536870917, 0, -131019, 536870917, 0, -131018, 536870917, 0, -131017, 536870917, 0, -131016, 536870917, 0, -131015, 536870917, 0, -131014, 536870917, 0, -131013, 536870917, 0, -131012, 536870917, 0, -131011, 536870917, 0, -131010, 536870917, 0, -65517, 536870916, 0, -65512, 536870916, 0, 20, 536870915, 0, 23, 536870915, 0, 65556, 536870917, 0, 65559, 536870917, 0, 131091, 536870915, 0, 131096, 536870915, 0, 196627, 536870916, 0, 196632, 536870916, 0, 196634, 536870913, 0, 262160, 536870920, 0, 262163, 5, 0, 262168, 5, 0, 327698, 4, 0, 327705, 4, 0, 393235, 3, 0, 393240, 3, 0, 393242, 536870918, 0, 458767, 536870914, 0, 458770, 9, 0, 458772, 5, 0, 458773, 4, 0, 458774, 3, 0, 458775, 5, 0 )
 
-[node name="DecorationSprites" type="Node2D" parent="Map"]
+[node name="Decorations" type="Node2D" parent="Map"]
 scale = Vector2( 3, 3 )
 
-[node name="LakeSprite" type="Sprite" parent="Map/DecorationSprites"]
-position = Vector2( 792.07, 258.704 )
-texture = ExtResource( 15 )
+[node name="Lake" parent="Map/Decorations" instance=ExtResource( 15 )]
+position = Vector2( 723.047, -107.769 )
 
-[node name="ObeliskSprite" type="Sprite" parent="Map/DecorationSprites"]
+[node name="ObeliskSprite" type="Sprite" parent="Map/Decorations"]
 position = Vector2( 789.551, 257.024 )
 texture = ExtResource( 14 )
 
@@ -132,3 +132,50 @@ shape = SubResource( 1 )
 position = Vector2( 2141.14, 429.386 )
 current_speed = 500
 current_health = 4
+
+[node name="LabelDisplayer" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1991.74, 469.054 )
+
+[node name="DisplayTextLabel" parent="LabelDisplayer" index="1"]
+margin_left = -89.0
+margin_top = -74.0
+margin_right = 107.0
+margin_bottom = 87.0
+text = "Move with these keys:
+WASD/ZQSD
+OR
+Left Stick"
+
+[node name="LabelDisplayer2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 2014.4, 129.26 )
+
+[node name="DisplayTextLabel" parent="LabelDisplayer2" index="1"]
+margin_left = -89.0
+margin_top = -74.0
+margin_right = 107.0
+margin_bottom = 87.0
+text = "Interact with the Chest
+by pressing:
+E
+OR
+Xbox A / PS Cross
+Nintendo B
+
+Maybe what it contains would would make you feel less lonely!"
+
+[node name="LabelDisplayer3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1990.39, 634.646 )
+
+[node name="DisplayTextLabel" parent="LabelDisplayer3" index="1"]
+margin_left = -89.0
+margin_top = -74.0
+margin_right = 107.0
+margin_bottom = 87.0
+text = "Wait a little for the Fairy to follow you.
+This is a Color Gate.
+
+To pass through it, you need to find a fairy of the same color. Go find one!"
+
+[editable path="LabelDisplayer"]
+[editable path="LabelDisplayer2"]
+[editable path="LabelDisplayer3"]

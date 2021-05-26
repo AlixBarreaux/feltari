@@ -9,11 +9,16 @@ var default_master_current_volume_db: int = self.get_default_master_max_volume_d
 
 var default_music_min_volume_db: int = -60 setget set_default_music_min_volume_db, get_default_music_min_volume_db
 var default_music_max_volume_db: int = 0 setget set_default_music_max_volume_db, get_default_music_max_volume_db
-var default_music_current_volume_db: int = get_default_music_max_volume_db() setget set_default_music_current_volume_db, get_default_music_current_volume_db
+var default_music_current_volume_db: int = self.get_default_music_max_volume_db() setget set_default_music_current_volume_db, get_default_music_current_volume_db
 
 var default_sound_effects_min_volume_db: int = -60 setget set_default_sound_effects_min_volume_db, get_default_sound_effects_min_volume_db
 var default_sound_effects_max_volume_db: int = 0 setget set_default_sound_effects_max_volume_db, get_default_sound_effects_max_volume_db
-var default_sound_effects_current_volume_db: int = get_default_sound_effects_max_volume_db() setget set_default_sound_effects_current_volume_db, get_default_sound_effects_current_volume_db
+var default_sound_effects_current_volume_db: int = self.get_default_sound_effects_max_volume_db() setget set_default_sound_effects_current_volume_db, get_default_sound_effects_current_volume_db
+
+
+var default_ambient_sounds_min_volume_db: int = -60 setget set_default_ambient_sounds_min_volume_db, get_default_ambient_sounds_min_volume_db
+var default_ambient_sounds_max_volume_db: int = 0 setget set_default_ambient_sounds_max_volume_db, get_default_ambient_sounds_max_volume_db
+var default_ambient_sounds_current_volume_db: int = self.get_default_ambient_sounds_max_volume_db()
 
 ################################# RUN THE CODE #################################
 
@@ -80,6 +85,7 @@ func set_default_music_current_volume_db(value: int) -> void:
 func get_default_music_current_volume_db() -> int:
 	return default_music_current_volume_db
 
+
 # --------------------------------------------------------------
 
 func set_default_sound_effects_min_volume_db(value: int) -> void:
@@ -104,3 +110,28 @@ func set_default_sound_effects_current_volume_db(value: int) -> void:
 
 func get_default_sound_effects_current_volume_db() -> int:
 	return default_sound_effects_current_volume_db
+
+# --------------------------------------------------------------
+
+func set_default_ambient_sounds_min_volume_db(value: int) -> void:
+	default_ambient_sounds_min_volume_db = value
+
+
+func get_default_ambient_sounds_min_volume_db() -> int:
+	return default_ambient_sounds_min_volume_db
+
+
+func set_default_ambient_sounds_max_volume_db(value: int) -> void:
+	default_ambient_sounds_max_volume_db = value
+
+
+func get_default_ambient_sounds_max_volume_db() -> int:
+	return default_ambient_sounds_max_volume_db
+
+
+func set_default_ambient_sounds_current_volume_db(value: int) -> void:
+	default_ambient_sounds_current_volume_db = value
+
+
+func get_default_ambient_sounds_current_volume_db() -> int:
+	return default_ambient_sounds_current_volume_db

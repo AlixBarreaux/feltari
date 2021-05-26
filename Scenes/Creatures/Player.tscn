@@ -131,7 +131,7 @@ graph_offset = Vector2( 64.775, 184.802 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=31]
 
-[sub_resource type="Animation" id=51]
+[sub_resource type="Animation" id=32]
 resource_name = "Die"
 length = 3.4
 step = 0.01
@@ -174,7 +174,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=52]
+[sub_resource type="Animation" id=33]
 length = 1.5
 loop = true
 tracks/0/type = "value"
@@ -214,7 +214,7 @@ tracks/2/keys = {
 "values": [ -89.9999 ]
 }
 
-[sub_resource type="Animation" id=53]
+[sub_resource type="Animation" id=34]
 length = 1.5
 loop = true
 tracks/0/type = "value"
@@ -254,7 +254,7 @@ tracks/2/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=54]
+[sub_resource type="Animation" id=35]
 length = 1.5
 loop = true
 tracks/0/type = "value"
@@ -294,7 +294,7 @@ tracks/2/keys = {
 "values": [ 180.0 ]
 }
 
-[sub_resource type="Animation" id=55]
+[sub_resource type="Animation" id=36]
 length = 1.5
 loop = true
 tracks/0/type = "value"
@@ -334,7 +334,7 @@ tracks/2/keys = {
 "values": [ 90.0 ]
 }
 
-[sub_resource type="Animation" id=56]
+[sub_resource type="Animation" id=37]
 length = 0.2
 step = 0.04
 tracks/0/type = "value"
@@ -443,7 +443,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=57]
+[sub_resource type="Animation" id=38]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -552,7 +552,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=58]
+[sub_resource type="Animation" id=39]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -661,7 +661,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=59]
+[sub_resource type="Animation" id=40]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -770,7 +770,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=61]
+[sub_resource type="Animation" id=41]
 length = 0.6
 loop = true
 step = 0.05
@@ -811,7 +811,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=62]
+[sub_resource type="Animation" id=42]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -851,7 +851,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=63]
+[sub_resource type="Animation" id=43]
 length = 0.6
 loop = true
 step = 0.05
@@ -892,7 +892,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=64]
+[sub_resource type="Animation" id=44]
 length = 0.6
 loop = true
 step = 0.05
@@ -933,7 +933,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=69]
+[sub_resource type="Animation" id=45]
 resource_name = "Hurt"
 length = 0.5
 tracks/0/type = "value"
@@ -949,7 +949,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=65]
+[sub_resource type="Animation" id=46]
 resource_name = "Despawn"
 step = 0.2
 tracks/0/type = "value"
@@ -1013,7 +1013,7 @@ tracks/4/keys = {
 "values": [ Vector2( 2, 2 ), Vector2( 0.425, 0.425 ) ]
 }
 
-[sub_resource type="Animation" id=66]
+[sub_resource type="Animation" id=47]
 resource_name = "Idle"
 loop = true
 step = 0.2
@@ -1078,7 +1078,7 @@ tracks/4/keys = {
 "values": [ 1, 2, 0 ]
 }
 
-[sub_resource type="Animation" id=67]
+[sub_resource type="Animation" id=48]
 resource_name = "Spawn"
 tracks/0/type = "value"
 tracks/0/path = NodePath("FairySprite:visible")
@@ -1155,7 +1155,7 @@ tracks/5/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=68]
+[sub_resource type="Animation" id=49]
 resource_name = "Fly"
 length = 1.2
 loop = true
@@ -1173,10 +1173,10 @@ tracks/0/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[sub_resource type="RectangleShape2D" id=49]
+[sub_resource type="RectangleShape2D" id=50]
 extents = Vector2( 15, 30 )
 
-[sub_resource type="RectangleShape2D" id=50]
+[sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 37.1911, 38.1541 )
 
 [node name="Player" type="KinematicBody2D" groups=[
@@ -1216,31 +1216,31 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( 1.11387, 0.22069 )
 
 [node name="PlayerAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Die = SubResource( 51 )
-"anims/Idle Down" = SubResource( 52 )
-"anims/Idle Left" = SubResource( 53 )
-"anims/Idle Right" = SubResource( 54 )
-"anims/Idle Up" = SubResource( 55 )
-"anims/Melee Attack Down" = SubResource( 56 )
-"anims/Melee Attack Left" = SubResource( 57 )
-"anims/Melee Attack Right" = SubResource( 58 )
-"anims/Melee Attack Up" = SubResource( 59 )
-"anims/Walk Down" = SubResource( 61 )
-"anims/Walk Left" = SubResource( 62 )
-"anims/Walk Right" = SubResource( 63 )
-"anims/Walk Up" = SubResource( 64 )
+anims/Die = SubResource( 32 )
+"anims/Idle Down" = SubResource( 33 )
+"anims/Idle Left" = SubResource( 34 )
+"anims/Idle Right" = SubResource( 35 )
+"anims/Idle Up" = SubResource( 36 )
+"anims/Melee Attack Down" = SubResource( 37 )
+"anims/Melee Attack Left" = SubResource( 38 )
+"anims/Melee Attack Right" = SubResource( 39 )
+"anims/Melee Attack Up" = SubResource( 40 )
+"anims/Walk Down" = SubResource( 41 )
+"anims/Walk Left" = SubResource( 42 )
+"anims/Walk Right" = SubResource( 43 )
+"anims/Walk Up" = SubResource( 44 )
 
 [node name="PlayerHurtAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Hurt = SubResource( 69 )
+anims/Hurt = SubResource( 45 )
 
 [node name="FairyAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Despawn = SubResource( 65 )
-anims/Idle = SubResource( 66 )
-anims/Spawn = SubResource( 67 )
+anims/Despawn = SubResource( 46 )
+anims/Idle = SubResource( 47 )
+anims/Spawn = SubResource( 48 )
 
 [node name="FairyFlyAnimationPlayer" type="AnimationPlayer" parent="FairyAnimationPlayer"]
 autoplay = "Fly"
-anims/Fly = SubResource( 68 )
+anims/Fly = SubResource( 49 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -1258,7 +1258,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxBoxPivot/HurtBox"]
 light_mask = 0
-shape = SubResource( 49 )
+shape = SubResource( 50 )
 disabled = true
 
 [node name="InteractZone" type="Area2D" parent="."]
@@ -1269,7 +1269,7 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone"]
 light_mask = 0
 position = Vector2( -59, 1.4 )
-shape = SubResource( 50 )
+shape = SubResource( 51 )
 
 [node name="MeleeAttackCooldownTimer" type="Timer" parent="."]
 wait_time = 0.75
