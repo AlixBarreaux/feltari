@@ -74,3 +74,6 @@ energy = 0.583333
 autoplay = "Idle"
 anims/Enable = SubResource( 1 )
 anims/Idle = SubResource( 2 )
+
+[node name="PlayerRespawnPoint" type="Position2D" parent="." index="4"]
+position = Vector2( 0, 30 )

@@ -9,6 +9,9 @@ var has_fairy_inside: bool = false
 # Prevent the player from spamming the Altar's interaction
 var can_interact: bool = true setget set_can_interact, get_can_interact
 
+# Node References
+onready var player_respawn_point: Position2D = $PlayerRespawnPoint
+
 ################################# RUN THE CODE #################################
 
 
@@ -40,7 +43,7 @@ func receive_interaction() -> void:
 			get_tree().call_group("player", "spawn_following_fairy", self.get_current_color())
 			is_enabled = false
 	else:
-		if not Global.following_fairy_id == self.id: #or Global.has_player_following_fairy:
+		if not Global.following_fairy_id == self.id:
 			print(self.name + ": The player has a following fairy or a fairy of different ID from me!")
 			print("Submitted fairy ID: ", Global.following_fairy_id, " Altar's ID: ", self.id)
 			return
@@ -52,6 +55,8 @@ func receive_interaction() -> void:
 			get_tree().call_group("player", "despawn_following_fairy")
 			has_fairy_inside = true
 			is_enabled = true
+			
+			get_tree().call_group("player", "set_spawn_point", player_respawn_point.global_position)
 
 
 func _set_current_color(new_color: Color) -> void:

@@ -36,6 +36,7 @@ export (AI_STATES) var current_ai_state = AI_STATES.IDLE setget set_current_ai_s
 # Where the Enemy spawned (is placed in the World) at first.
 # It'll go back to this point after it's done chasing the player
 onready var initial_spawn_point: Vector2 = self.global_position setget set_initial_spawn_position, get_initial_spawn_position
+var current_target: Node2D = null setget set_current_target, get_current_target
 var target_destination: Vector2 = Vector2(0.0, 0.0)
 
 var velocity: Vector2 = Vector2(0.0, 0.0)
@@ -44,21 +45,23 @@ var velocity: Vector2 = Vector2(0.0, 0.0)
 
 onready var sprite: Sprite = $Sprite
 onready var target_position: Position2D = $TargetPosition
+
+# Collision Shapes
+onready var collision_shape2D: CollisionShape2D = $CollisionShape2D
+onready var creature_detection_zone_collision_shape2D: CollisionShape2D = $CreatureDetectionZone/CollisionShape2D
+onready var hurt_box_collision_shape2D: CollisionShape2D = $HurtBox/CollisionShape2D
+
 # Timers
 onready var idle_timer: Timer = $IdleTimer
 onready var wander_timer: Timer = $WanderTimer
 onready var hurt_target_timer: Timer = $HurtTargetTimer
 
+
 ################################# RUN THE CODE #################################
 
 
-#var knockback: Vector2 = Vector2(0.0, 0.0)
-
 func _ready() -> void:
 	self._initialize_asserts()
-
-
-var current_target: Node2D = null setget set_current_target, get_current_target
 
 
 func _physics_process(_delta: float) -> void:
@@ -77,14 +80,7 @@ func _physics_process(_delta: float) -> void:
 			sprite.flip_h = false
 		else:
 			sprite.flip_h = true
-			
-		
-#		print("Physics Process: Destination: ", self.target_destination)
-	
-#	self.move_and_slide(velocity)
-	
-#	knockback = knockback.move_toward(Vector2(0.0, 0.0), 200 * delta)
-#	knockback = move_and_slide(knockback)
+
 
 ############################### DECLARE FUNCTIONS ##############################
 
@@ -96,15 +92,33 @@ func _initialize_asserts() -> void:
 	assert(self.current_health <= self.max_health)
 
 
-func seek_player() -> void:
-	pass
+func set_enabled(value: bool) -> void:
+	if value:
+		# Enable the Collision Shapes (Physics first)
+		collision_shape2D.set_deferred("disabled", false)
+		creature_detection_zone_collision_shape2D.set_deferred("disable", false)
+		hurt_box_collision_shape2D.set_deferred("disabled", false)
+		
+		# Ensable the visual part
+		sprite.show()
+		
+		# Enable the timers
+		idle_timer.start()
+	else:
+		# Disable the Collision Shapes (Physics first)
+		collision_shape2D.set_deferred("disabled", true)
+		creature_detection_zone_collision_shape2D.set_deferred("disable", true)
+		hurt_box_collision_shape2D.set_deferred("disabled", false)
+
+		# Disable the visual part
+		sprite.hide()
+		
+		# Disable the timers
+		idle_timer.stop()
 
 
-# AI
+# AI Behaviors
 func _on_CreatureDetectionZone_body_entered(body: PhysicsBody2D) -> void:
-#	knockback = Vector2.DOWN * 200
-#	knockback = knockback.direction_to(body.global_position)
-#	print(knockback)
 	print(self.name + ": I was entered by: " + body.name)
 	self.set_current_target(body)
 	self.set_current_ai_state(AI_STATES.CHASE)
@@ -112,7 +126,6 @@ func _on_CreatureDetectionZone_body_entered(body: PhysicsBody2D) -> void:
 
 func _on_CreatureDetectionZone_body_exited(_body: PhysicsBody2D) -> void:
 	self.set_current_ai_state(AI_STATES.IDLE)
-	pass
 
 
 func _on_HurtBox_body_entered(body: PhysicsBody2D) -> void:
@@ -193,6 +206,8 @@ func wander() -> void:
 #	print("TargetPosition position set to: ", target_position.global_position)
 
 
+# This function is replaced by some code but it should've
+# been used
 func chase_target() -> void:
 	pass
 
@@ -243,6 +258,11 @@ func check_if_dead() -> void:
 
 func die() -> void:
 	print(self.name + str(": I died!"))
+	self.set_enabled(false)
+
+
+func resurrect() -> void:
+	self.set_enabled(true)
 
 
 func _on_HurtTargetTimer_timeout() -> void:
