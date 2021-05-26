@@ -12,7 +12,7 @@ radius = 222.0
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 23, 23 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "Move"
 length = 1.4
 loop = true
@@ -30,7 +30,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 4 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 resource_name = "Take Damage"
 length = 0.4
 tracks/0/type = "value"
@@ -83,10 +83,10 @@ shape = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Move"
-anims/Move = SubResource( 5 )
+anims/Move = SubResource( 4 )
 
 [node name="AnimationPlayerDamage" type="AnimationPlayer" parent="."]
-"anims/Take Damage" = SubResource( 7 )
+"anims/Take Damage" = SubResource( 5 )
 
 [node name="TargetPosition" type="Position2D" parent="."]
 

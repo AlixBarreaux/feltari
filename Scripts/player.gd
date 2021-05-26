@@ -46,6 +46,7 @@ onready var death_wait_timer: Timer = $DeathWaitTimer
 
 # Other nodes
 onready var fairy_sprite: Sprite = $FairySprite
+onready var player_hurt_animation_player: AnimationPlayer = $PlayerHurtAnimationPlayer
 
 ################################# RUN THE CODE #################################
 
@@ -352,7 +353,7 @@ func decrease_current_health(amount: int) -> void:
 	self.set_current_health(get_current_health() - amount)
 	
 	print(self.name + ": I took " + str(amount) + " damage!")
-	anim_tree_sm_playback.travel("Take Damage")
+	player_hurt_animation_player.play("Hurt")
 	self.check_if_dead()
 	
 	Events.emit_signal("player_current_health_decreased", amount)

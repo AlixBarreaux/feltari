@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Graphics/Spritesheets/beardman_spritesheet_32x32.png" type="Texture" id=2]
-[ext_resource path="res://Resources/Animations/take_damage_animation.tres" type="Animation" id=3]
 [ext_resource path="res://Assets/Graphics/Spritesheets/fairy_spritesheet.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -128,11 +127,11 @@ states/Walk/node = SubResource( 18 )
 states/Walk/position = Vector2( 552, 194 )
 transitions = [ "Idle", "Take Damage", SubResource( 19 ), "Take Damage", "Idle", SubResource( 20 ), "Melee Attack", "Idle", SubResource( 21 ), "Walk", "Idle", SubResource( 22 ), "Idle", "Walk", SubResource( 23 ), "Idle", "Melee Attack", SubResource( 24 ), "Walk", "Melee Attack", SubResource( 25 ), "Take Damage", "Die", SubResource( 26 ), "Melee Attack", "Die", SubResource( 27 ), "Walk", "Die", SubResource( 28 ), "Idle", "Die", SubResource( 29 ) ]
 start_node = "Idle"
-graph_offset = Vector2( 180.775, 16.8017 )
+graph_offset = Vector2( 64.775, 184.802 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=31]
 
-[sub_resource type="Animation" id=32]
+[sub_resource type="Animation" id=51]
 resource_name = "Die"
 length = 3.4
 step = 0.01
@@ -175,7 +174,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=33]
+[sub_resource type="Animation" id=52]
 length = 1.5
 loop = true
 tracks/0/type = "value"
@@ -215,7 +214,7 @@ tracks/2/keys = {
 "values": [ -89.9999 ]
 }
 
-[sub_resource type="Animation" id=34]
+[sub_resource type="Animation" id=53]
 length = 1.5
 loop = true
 tracks/0/type = "value"
@@ -255,7 +254,7 @@ tracks/2/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=35]
+[sub_resource type="Animation" id=54]
 length = 1.5
 loop = true
 tracks/0/type = "value"
@@ -295,7 +294,7 @@ tracks/2/keys = {
 "values": [ 180.0 ]
 }
 
-[sub_resource type="Animation" id=36]
+[sub_resource type="Animation" id=55]
 length = 1.5
 loop = true
 tracks/0/type = "value"
@@ -335,7 +334,7 @@ tracks/2/keys = {
 "values": [ 90.0 ]
 }
 
-[sub_resource type="Animation" id=37]
+[sub_resource type="Animation" id=56]
 length = 0.2
 step = 0.04
 tracks/0/type = "value"
@@ -444,7 +443,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=57]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -553,7 +552,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=39]
+[sub_resource type="Animation" id=58]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -662,7 +661,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=40]
+[sub_resource type="Animation" id=59]
 length = 0.2
 step = 0.05
 tracks/0/type = "value"
@@ -771,7 +770,7 @@ tracks/7/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=41]
+[sub_resource type="Animation" id=61]
 length = 0.6
 loop = true
 step = 0.05
@@ -812,7 +811,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=42]
+[sub_resource type="Animation" id=62]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -852,7 +851,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=43]
+[sub_resource type="Animation" id=63]
 length = 0.6
 loop = true
 step = 0.05
@@ -893,7 +892,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=44]
+[sub_resource type="Animation" id=64]
 length = 0.6
 loop = true
 step = 0.05
@@ -934,7 +933,23 @@ tracks/2/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=45]
+[sub_resource type="Animation" id=69]
+resource_name = "Hurt"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=65]
 resource_name = "Despawn"
 step = 0.2
 tracks/0/type = "value"
@@ -998,7 +1013,7 @@ tracks/4/keys = {
 "values": [ Vector2( 2, 2 ), Vector2( 0.425, 0.425 ) ]
 }
 
-[sub_resource type="Animation" id=46]
+[sub_resource type="Animation" id=66]
 resource_name = "Idle"
 loop = true
 step = 0.2
@@ -1063,7 +1078,7 @@ tracks/4/keys = {
 "values": [ 1, 2, 0 ]
 }
 
-[sub_resource type="Animation" id=47]
+[sub_resource type="Animation" id=67]
 resource_name = "Spawn"
 tracks/0/type = "value"
 tracks/0/path = NodePath("FairySprite:visible")
@@ -1140,7 +1155,7 @@ tracks/5/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=48]
+[sub_resource type="Animation" id=68]
 resource_name = "Fly"
 length = 1.2
 loop = true
@@ -1178,7 +1193,7 @@ max_health = 4
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 hframes = 64
-frame = 55
+frame = 54
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
@@ -1187,8 +1202,8 @@ shape = SubResource( 1 )
 
 [node name="FairySprite" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.6 )
-position = Vector2( 0, -32 )
-scale = Vector2( 2, 2 )
+position = Vector2( -14, -42 )
+scale = Vector2( 1.685, 1.685 )
 texture = ExtResource( 4 )
 hframes = 3
 
@@ -1201,29 +1216,31 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( 1.11387, 0.22069 )
 
 [node name="PlayerAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Die = SubResource( 32 )
-"anims/Idle Down" = SubResource( 33 )
-"anims/Idle Left" = SubResource( 34 )
-"anims/Idle Right" = SubResource( 35 )
-"anims/Idle Up" = SubResource( 36 )
-"anims/Melee Attack Down" = SubResource( 37 )
-"anims/Melee Attack Left" = SubResource( 38 )
-"anims/Melee Attack Right" = SubResource( 39 )
-"anims/Melee Attack Up" = SubResource( 40 )
-"anims/Take Damage" = ExtResource( 3 )
-"anims/Walk Down" = SubResource( 41 )
-"anims/Walk Left" = SubResource( 42 )
-"anims/Walk Right" = SubResource( 43 )
-"anims/Walk Up" = SubResource( 44 )
+anims/Die = SubResource( 51 )
+"anims/Idle Down" = SubResource( 52 )
+"anims/Idle Left" = SubResource( 53 )
+"anims/Idle Right" = SubResource( 54 )
+"anims/Idle Up" = SubResource( 55 )
+"anims/Melee Attack Down" = SubResource( 56 )
+"anims/Melee Attack Left" = SubResource( 57 )
+"anims/Melee Attack Right" = SubResource( 58 )
+"anims/Melee Attack Up" = SubResource( 59 )
+"anims/Walk Down" = SubResource( 61 )
+"anims/Walk Left" = SubResource( 62 )
+"anims/Walk Right" = SubResource( 63 )
+"anims/Walk Up" = SubResource( 64 )
+
+[node name="PlayerHurtAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Hurt = SubResource( 69 )
 
 [node name="FairyAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Despawn = SubResource( 45 )
-anims/Idle = SubResource( 46 )
-anims/Spawn = SubResource( 47 )
+anims/Despawn = SubResource( 65 )
+anims/Idle = SubResource( 66 )
+anims/Spawn = SubResource( 67 )
 
 [node name="FairyFlyAnimationPlayer" type="AnimationPlayer" parent="FairyAnimationPlayer"]
 autoplay = "Fly"
-anims/Fly = SubResource( 48 )
+anims/Fly = SubResource( 68 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
