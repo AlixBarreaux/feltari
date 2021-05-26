@@ -127,3 +127,4 @@ position = Vector2( 9.69055, 6.00952 )
 [node name="Player" parent="Creatures" instance=ExtResource( 1 )]
 position = Vector2( 1115.13, 1128.41 )
 current_speed = 500
+current_health = 4

@@ -62,7 +62,7 @@ var current_target: Node2D = null setget set_current_target, get_current_target
 
 
 func _physics_process(_delta: float) -> void:
-	print(self.name, ": Target: ", current_target, " Positions: ", target_destination, target_position.global_position)
+#	print(self.name, ": Target: ", current_target, " Positions: ", target_destination, target_position.global_position)
 	
 	if self.get_current_target() != null:
 		velocity = global_position.direction_to(target_destination) * current_speed
@@ -247,3 +247,4 @@ func die() -> void:
 
 func _on_HurtTargetTimer_timeout() -> void:
 	current_target.take_damage(damage)
+	self.hurt_target_timer.start()
