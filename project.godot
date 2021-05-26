@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Panel",
+"base": "Reference",
 "class": "CreditsMenu",
 "language": "GDScript",
 "path": "res://Scripts/GUI/credits_menu.gd"
@@ -29,7 +29,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/GUI/Credits_Menu/external_link_open_button.gd"
 }, {
-"base": "CheckBox",
+"base": "Reference",
 "class": "FullScreenCheckbox",
 "language": "GDScript",
 "path": "res://Scripts/GUI/full_screen_checkbox.gd"
@@ -59,7 +59,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/interactables_manager.gd"
 }, {
-"base": "HSlider",
+"base": "Reference",
 "class": "MasterSoundSlider",
 "language": "GDScript",
 "path": "res://Scripts/GUI/Options_Controllers/Sound_Control/master_sound_slider.gd"
@@ -94,7 +94,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/GUI/quit_to_desktop_button.gd"
 }, {
-"base": "HSlider",
+"base": "Reference",
 "class": "SoundEffectsSoundSlider",
 "language": "GDScript",
 "path": "res://Scripts/GUI/Options_Controllers/Sound_Control/sound_effects_slider.gd"
