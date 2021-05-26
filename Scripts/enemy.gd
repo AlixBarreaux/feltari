@@ -41,10 +41,17 @@ var target_destination: Vector2 = Vector2(0.0, 0.0)
 
 var velocity: Vector2 = Vector2(0.0, 0.0)
 
+
+var is_dead: bool = false setget set_is_dead, get_is_dead
+
 # Node References
 
 onready var sprite: Sprite = $Sprite
 onready var target_position: Position2D = $TargetPosition
+
+# Animations Players
+onready var animation_player: AnimationPlayer = $AnimationPlayer
+onready var animation_player_damage: AnimationPlayer = $AnimationPlayerDamage
 
 # Collision Shapes
 onready var collision_shape2D: CollisionShape2D = $CollisionShape2D
@@ -96,7 +103,7 @@ func set_enabled(value: bool) -> void:
 	if value:
 		# Enable the Collision Shapes (Physics first)
 		collision_shape2D.set_deferred("disabled", false)
-		creature_detection_zone_collision_shape2D.set_deferred("disable", false)
+		creature_detection_zone_collision_shape2D.set_deferred("disabled", false)
 		hurt_box_collision_shape2D.set_deferred("disabled", false)
 		
 		# Ensable the visual part
@@ -105,16 +112,25 @@ func set_enabled(value: bool) -> void:
 		# Enable the timers
 		idle_timer.start()
 	else:
+		print(self.name + ": I'M NOW DISABLED!")
 		# Disable the Collision Shapes (Physics first)
 		collision_shape2D.set_deferred("disabled", true)
-		creature_detection_zone_collision_shape2D.set_deferred("disable", true)
-		hurt_box_collision_shape2D.set_deferred("disabled", false)
+		creature_detection_zone_collision_shape2D.set_deferred("disabled", true)
+		hurt_box_collision_shape2D.set_deferred("disabled", true)
 
 		# Disable the visual part
 		sprite.hide()
 		
 		# Disable the timers
 		idle_timer.stop()
+
+
+func set_is_dead(value: bool) -> void:
+	is_dead = value
+
+
+func get_is_dead() -> bool:
+	return is_dead
 
 
 # AI Behaviors
@@ -244,10 +260,10 @@ func get_current_ai_state() -> int:
 func take_damage(amount: int) -> void:
 	self.current_health -= amount
 	print(self.name + ": I took " + str(amount) + " damage!")
+	animation_player_damage.play("Take Damage")
 	
 	self.check_if_dead()
-	
-	
+
 
 func check_if_dead() -> void:
 	if self.current_health <= 0:
@@ -259,6 +275,7 @@ func check_if_dead() -> void:
 func die() -> void:
 	print(self.name + str(": I died!"))
 	self.set_enabled(false)
+	self.set_is_dead(true)
 
 
 func resurrect() -> void:
@@ -268,3 +285,9 @@ func resurrect() -> void:
 func _on_HurtTargetTimer_timeout() -> void:
 	current_target.take_damage(damage)
 	self.hurt_target_timer.start()
+
+
+
+func _on_VisibilityNotifier2D_viewport_entered(viewport: Viewport) -> void:
+	if self.get_is_dead():
+		self.resurrect()

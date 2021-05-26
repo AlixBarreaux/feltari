@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/enemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Graphics/Spritesheets/shrine_guardian_spritesheet.png" type="Texture" id=2]
-[ext_resource path="res://Resources/Animations/take_damage_animation.tres" type="Animation" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 20.5682
@@ -12,9 +11,6 @@ radius = 222.0
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 23, 23 )
-
-[sub_resource type="Animation" id=4]
-resource_name = "Idle"
 
 [sub_resource type="Animation" id=5]
 resource_name = "Move"
@@ -34,6 +30,22 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 4 ]
 }
 
+[sub_resource type="Animation" id=7]
+resource_name = "Take Damage"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="Enemy" type="KinematicBody2D" groups=[
 "enemies",
 ]]
@@ -48,6 +60,7 @@ current_speed = 50
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 hframes = 6
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 2 )
@@ -70,11 +83,14 @@ shape = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Move"
-anims/Idle = SubResource( 4 )
 anims/Move = SubResource( 5 )
-anims/take_damage_animation = ExtResource( 3 )
+
+[node name="AnimationPlayerDamage" type="AnimationPlayer" parent="."]
+"anims/Take Damage" = SubResource( 7 )
 
 [node name="TargetPosition" type="Position2D" parent="."]
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
 [node name="IdleTimer" type="Timer" parent="."]
 wait_time = 3.0
@@ -91,6 +107,7 @@ one_shot = true
 [connection signal="body_exited" from="CreatureDetectionZone" to="." method="_on_CreatureDetectionZone_body_exited"]
 [connection signal="body_entered" from="HurtBox" to="." method="_on_HurtBox_body_entered"]
 [connection signal="body_exited" from="HurtBox" to="." method="_on_HurtBox_body_exited"]
+[connection signal="viewport_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_viewport_entered"]
 [connection signal="timeout" from="IdleTimer" to="." method="_on_IdleTimer_timeout"]
 [connection signal="timeout" from="WanderTimer" to="." method="_on_WanderTimer_timeout"]
 [connection signal="timeout" from="HurtTargetTimer" to="." method="_on_HurtTargetTimer_timeout"]
