@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Interactable",
 "class": "ColorCheckGate",
 "language": "GDScript",
-"path": "res://color_check_gate.gd"
+"path": "res://Scripts/Interactables/interactable_color_check_gate.gd"
 }, {
 "base": "Reference",
 "class": "CreditsMenu",
@@ -49,10 +49,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Interactables/interactable.gd"
 }, {
-"base": "Interactable",
+"base": "Reference",
 "class": "InteractableAltar",
 "language": "GDScript",
-"path": "res://Scripts/interactable_altar.gd"
+"path": "res://Scripts/Interactables/interactable_altar.gd"
 }, {
 "base": "Interactable",
 "class": "InteractableChest",
