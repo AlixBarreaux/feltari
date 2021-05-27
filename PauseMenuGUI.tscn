@@ -1,0 +1,113 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://pause_menu_gui.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/MainMenuWorld.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/Themes/gui_theme_medium.tres" type="Theme" id=3]
+[ext_resource path="res://Resources/Themes/gui_theme_large.tres" type="Theme" id=4]
+[ext_resource path="res://Scenes/GUI/QuitToDesktopButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/GUI/Options_Menu/OptionsMenu.tscn" type="PackedScene" id=6]
+
+[node name="PauseMenuGUI" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene_to_load = ExtResource( 2 )
+first_button_to_focus_node_path = NodePath("Panel/ButtonsContainer/ResumeButton")
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -99.0
+margin_top = 39.0
+margin_right = 99.0
+margin_bottom = 77.0
+theme = ExtResource( 4 )
+text = "PAUSE_MENU"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -202.0
+margin_top = -202.0
+margin_right = 203.0
+margin_bottom = 203.0
+custom_constants/separation = 30
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResumeButton" type="Button" parent="Panel/ButtonsContainer"]
+margin_top = 103.0
+margin_right = 405.0
+margin_bottom = 130.0
+focus_neighbour_left = NodePath("../QuitToDesktopButton")
+focus_neighbour_top = NodePath("../QuitToDesktopButton")
+focus_neighbour_right = NodePath("../OptionsButton")
+focus_neighbour_bottom = NodePath("../OptionsButton")
+focus_next = NodePath("../OptionsButton")
+focus_previous = NodePath("../QuitToDesktopButton")
+text = "RESUME"
+
+[node name="OptionsButton" type="Button" parent="Panel/ButtonsContainer"]
+margin_top = 160.0
+margin_right = 405.0
+margin_bottom = 187.0
+focus_neighbour_left = NodePath("../ResumeButton")
+focus_neighbour_top = NodePath("../ResumeButton")
+focus_neighbour_right = NodePath("../QuitToMainMenuButton")
+focus_neighbour_bottom = NodePath("../QuitToMainMenuButton")
+focus_next = NodePath("../QuitToMainMenuButton")
+focus_previous = NodePath("../ResumeButton")
+text = "OPTIONS"
+
+[node name="QuitToMainMenuButton" type="Button" parent="Panel/ButtonsContainer"]
+margin_top = 217.0
+margin_right = 405.0
+margin_bottom = 244.0
+focus_neighbour_left = NodePath("../OptionsButton")
+focus_neighbour_top = NodePath("../OptionsButton")
+focus_neighbour_right = NodePath("../QuitToDesktopButton")
+focus_neighbour_bottom = NodePath("../QuitToDesktopButton")
+focus_next = NodePath("../QuitToDesktopButton")
+focus_previous = NodePath("../OptionsButton")
+text = "QUIT_TO_MAIN_MENU"
+
+[node name="QuitToDesktopButton" parent="Panel/ButtonsContainer" instance=ExtResource( 5 )]
+margin_top = 274.0
+margin_right = 405.0
+margin_bottom = 301.0
+focus_neighbour_left = NodePath("../QuitToMainMenuButton")
+focus_neighbour_top = NodePath("../QuitToMainMenuButton")
+focus_neighbour_right = NodePath("../ResumeButton")
+focus_neighbour_bottom = NodePath("../ResumeButton")
+focus_next = NodePath("../ResumeButton")
+focus_previous = NodePath("../QuitToMainMenuButton")
+
+[node name="OptionsMenu" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[connection signal="visibility_changed" from="." to="." method="_on_PauseMenuGUI_visibility_changed"]
+[connection signal="pressed" from="Panel/ButtonsContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="Panel/ButtonsContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="Panel/ButtonsContainer/QuitToMainMenuButton" to="." method="_on_QuitToMainMenuButton_pressed"]
+[connection signal="visibility_changed" from="OptionsMenu" to="." method="_on_OptionsMenu_visibility_changed"]

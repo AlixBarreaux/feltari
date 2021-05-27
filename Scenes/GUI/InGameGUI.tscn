@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Resources/Sprites/heart_icon_over_atlastex.tres" type="Texture" id=1]
+[ext_resource path="res://Scripts/GUI/in_game_gui.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Sprites/heart_icon_progress_atlastex.tres" type="Texture" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Montserrat-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = SubResource( 1 )
+
+[node name="InGameGUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBar" type="TextureProgress" parent="."]
+margin_left = 47.0
+margin_top = 35.0
+margin_right = 303.0
+margin_bottom = 291.0
+rect_scale = Vector2( 0.5, 0.5 )
+max_value = 4.0
+value = 4.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 3 )
+fill_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="HealthBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 81.0
+margin_top = 98.3529
+margin_right = -82.0
+margin_bottom = -64.6471
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthPointsIntLabel" type="Label" parent="HealthBar/CenterContainer"]
+margin_left = 35.0
+margin_top = 9.0
+margin_right = 58.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 2 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

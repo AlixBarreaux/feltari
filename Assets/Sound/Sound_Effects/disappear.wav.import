@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/disappear.wav-d11e866ebc5655e85e799d5d78838de6.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Sound_Effects/disappear.wav"
+dest_files=[ "res://.import/disappear.wav-d11e866ebc5655e85e799d5d78838de6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

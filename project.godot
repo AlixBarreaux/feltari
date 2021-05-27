@@ -1,0 +1,287 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "HSlider",
+"class": "AmbientSoundSlider",
+"language": "GDScript",
+"path": "res://ambient_sounds_slider.gd"
+}, {
+"base": "Interactable",
+"class": "ColorCheckGate",
+"language": "GDScript",
+"path": "res://Scripts/Interactables/interactable_color_check_gate.gd"
+}, {
+"base": "Panel",
+"class": "CreditsMenu",
+"language": "GDScript",
+"path": "res://Scripts/GUI/credits_menu.gd"
+}, {
+"base": "Area2D",
+"class": "EndGameArea2D",
+"language": "GDScript",
+"path": "res://end_game_area2D.gd"
+}, {
+"base": "Control",
+"class": "EndGameGUI",
+"language": "GDScript",
+"path": "res://end_game_gui.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Scripts/enemy.gd"
+}, {
+"base": "Position2D",
+"class": "EnemySpawnPoint",
+"language": "GDScript",
+"path": "res://Scripts/enemy_spawn_point.gd"
+}, {
+"base": "Button",
+"class": "ExternalLinkOpenButton",
+"language": "GDScript",
+"path": "res://Scenes/GUI/Credits_Menu/external_link_open_button.gd"
+}, {
+"base": "Path2D",
+"class": "FairyPathFollow",
+"language": "GDScript",
+"path": "res://fairy_path_follow.gd"
+}, {
+"base": "StaticBody2D",
+"class": "FinalBlockZone",
+"language": "GDScript",
+"path": "res://Scenes/final_block_zone.gd"
+}, {
+"base": "CheckBox",
+"class": "FullScreenCheckbox",
+"language": "GDScript",
+"path": "res://Scripts/GUI/full_screen_checkbox.gd"
+}, {
+"base": "Control",
+"class": "InGameGui",
+"language": "GDScript",
+"path": "res://Scripts/GUI/in_game_gui.gd"
+}, {
+"base": "Node2D",
+"class": "Interactable",
+"language": "GDScript",
+"path": "res://Scripts/Interactables/interactable.gd"
+}, {
+"base": "Interactable",
+"class": "InteractableAltar",
+"language": "GDScript",
+"path": "res://Scripts/Interactables/interactable_altar.gd"
+}, {
+"base": "Interactable",
+"class": "InteractableChest",
+"language": "GDScript",
+"path": "res://Scripts/Interactables/interactable_chest.gd"
+}, {
+"base": "Node2D",
+"class": "InteractablesManager",
+"language": "GDScript",
+"path": "res://Scripts/interactables_manager.gd"
+}, {
+"base": "Node2D",
+"class": "LevelCameraManager",
+"language": "GDScript",
+"path": "res://level_camera_manager.gd"
+}, {
+"base": "HSlider",
+"class": "MasterSoundSlider",
+"language": "GDScript",
+"path": "res://Scripts/GUI/Options_Controllers/Sound_Control/master_sound_slider.gd"
+}, {
+"base": "HSlider",
+"class": "MusicSoundSlider",
+"language": "GDScript",
+"path": "res://Scripts/GUI/Options_Controllers/Sound_Control/music_slider.gd"
+}, {
+"base": "Panel",
+"class": "OptionsMenu",
+"language": "GDScript",
+"path": "res://Scripts/GUI/options_menu.gd"
+}, {
+"base": "Area2D",
+"class": "PatrolZoneEnemy",
+"language": "GDScript",
+"path": "res://Scripts/patrol_zone_enemy.gd"
+}, {
+"base": "Node2D",
+"class": "Pickable",
+"language": "GDScript",
+"path": "res://Scripts/pickable.gd"
+}, {
+"base": "Area2D",
+"class": "PlayMusicArea2D",
+"language": "GDScript",
+"path": "res://Scenes/play_music_area2D.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Scripts/player.gd"
+}, {
+"base": "Button",
+"class": "QuitToDesktopButton",
+"language": "GDScript",
+"path": "res://Scripts/GUI/quit_to_desktop_button.gd"
+}, {
+"base": "HSlider",
+"class": "SoundEffectsSoundSlider",
+"language": "GDScript",
+"path": "res://Scripts/GUI/Options_Controllers/Sound_Control/sound_effects_slider.gd"
+} ]
+_global_script_class_icons={
+"AmbientSoundSlider": "",
+"ColorCheckGate": "",
+"CreditsMenu": "",
+"EndGameArea2D": "",
+"EndGameGUI": "",
+"Enemy": "",
+"EnemySpawnPoint": "",
+"ExternalLinkOpenButton": "",
+"FairyPathFollow": "",
+"FinalBlockZone": "",
+"FullScreenCheckbox": "",
+"InGameGui": "",
+"Interactable": "",
+"InteractableAltar": "",
+"InteractableChest": "",
+"InteractablesManager": "",
+"LevelCameraManager": "",
+"MasterSoundSlider": "",
+"MusicSoundSlider": "",
+"OptionsMenu": "",
+"PatrolZoneEnemy": "",
+"Pickable": "",
+"PlayMusicArea2D": "",
+"Player": "",
+"QuitToDesktopButton": "",
+"SoundEffectsSoundSlider": ""
+}
+
+[application]
+
+config/name="Feltari"
+run/main_scene="res://Scenes/World.tscn"
+config/icon="res://Miscellaneous/feltari_icon.png"
+config/macos_native_icon="res://Miscellaneous/feltari_icon.icns"
+config/windows_native_icon="res://Miscellaneous/feltari_icon.ico"
+
+[audio]
+
+default_bus_layout="res://Resources/Others/default_bus_layout.tres"
+
+[autoload]
+
+Settings="*res://Autoloads/settings.gd"
+Global="*res://Autoloads/global.gd"
+Events="*res://Autoloads/events.gd"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
+[input]
+
+move_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":-1.0,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":1.0,"script":null)
+ ]
+}
+move_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":-1.0,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":1.0,"script":null)
+ ]
+}
+attack_melee={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":7,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+interact={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+pause_menu={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":80,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="Environment"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemies"
+2d_physics/layer_4="Containers"
+2d_physics/layer_5="Pickables"
+
+[locale]
+
+translations=PoolStringArray( "res://Translations/GUI/gui_translations.en_US.translation", "res://Translations/GUI/gui_translations.fr_FR.translation", "res://Translations/General/general_translations.en_US.translation", "res://Translations/General/general_translations.fr_FR.translation" )
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://Resources/Others/default_env.tres"

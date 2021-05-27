@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lake_ambience.ogg-5032a17d0ab82c182ac1b4654d55f33e.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/Ambient/lake_ambience.ogg"
+dest_files=[ "res://.import/lake_ambience.ogg-5032a17d0ab82c182ac1b4654d55f33e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

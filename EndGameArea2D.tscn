@@ -1,0 +1,334 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Assets/Graphics/Spritesheets/fairy_spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://FairyPathFollow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Graphics/light.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Themes/gui_theme_large.tres" type="Theme" id=4]
+[ext_resource path="res://end_game_area2D.gd" type="Script" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 148.103
+
+[sub_resource type="Animation" id=14]
+resource_name = "Fly"
+length = 0.75
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("PathFollow2D/FairySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 220.916, -197.556, -220.916, 197.556, 24.5922, 117.73, -196.221, 54.7284, 196.221, -54.7284, -104.397, -56.2, 0, 0, 0, 0, 54.103, 72.8, 0, 0, 0, 0, 24.5922, 117.73 )
+}
+
+[sub_resource type="GDScript" id=5]
+script/source = "#class_name FairyPathFollow
+extends Path2D
+
+
+############################### DECLARE VARIABLES ##############################
+
+onready var path_follow_2D: PathFollow2D = $PathFollow2D
+
+################################# RUN THE CODE #################################
+
+func _physics_process(delta: float) -> void:
+	path_follow_2D.set_offset(path_follow_2D.get_offset() + 150 * delta)
+
+############################### DECLARE FUNCTIONS ##############################
+"
+
+[sub_resource type="Animation" id=10]
+resource_name = "Glow"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("FairySprite/Light2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.25, 0.5 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "Fly"
+length = 0.75
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("FairySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 1, 0 ]
+}
+
+[sub_resource type="Curve2D" id=6]
+_data = {
+"points": PoolVector2Array( 220.916, -197.556, -220.916, 197.556, -7.44394, 133.08, -174.864, 96.7759, 174.864, -96.7759, -225.69, 23.6236, -24.0271, -22.6923, 24.0271, 22.6923, -55.4982, 67.0059, 42.0475, -60.0678, -42.0475, 60.0678, -7.44394, 133.08 )
+}
+
+[sub_resource type="GDScript" id=7]
+script/source = "class_name FairyPathFollow
+extends Path2D
+
+
+############################### DECLARE VARIABLES ##############################
+
+onready var path_follow_2D: PathFollow2D = $PathFollow2D
+
+################################# RUN THE CODE #################################
+
+func _physics_process(delta: float) -> void:
+	path_follow_2D.set_offset(path_follow_2D.get_offset() + 150 * delta)
+
+############################### DECLARE FUNCTIONS ##############################
+"
+
+[sub_resource type="Animation" id=11]
+resource_name = "Glow"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PathFollow2D/FairySprite/Light2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.25, 0.5 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "Fly"
+length = 0.75
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("PathFollow2D/FairySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Curve2D" id=8]
+_data = {
+"points": PoolVector2Array( 220.916, -197.556, -220.916, 197.556, -7.44394, 133.08, -174.864, 96.7759, 174.864, -96.7759, -225.69, 23.6236, -24.0271, -22.6923, 24.0271, 22.6923, -55.4982, 67.0059, 42.0475, -60.0678, -42.0475, 60.0678, -7.44394, 133.08 )
+}
+
+[sub_resource type="GDScript" id=9]
+script/source = "class_name FairyPathFollow
+extends Path2D
+
+
+############################### DECLARE VARIABLES ##############################
+
+onready var path_follow_2D: PathFollow2D = $PathFollow2D
+
+################################# RUN THE CODE #################################
+
+func _physics_process(delta: float) -> void:
+	path_follow_2D.set_offset(path_follow_2D.get_offset() + 150 * delta)
+
+############################### DECLARE FUNCTIONS ##############################
+"
+
+[sub_resource type="Animation" id=12]
+resource_name = "Glow"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("FairySprite/Light2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.75 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.25, 0.5 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "Fly"
+length = 0.75
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("FairySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[node name="EndGameArea2D" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+light_mask = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -243.432
+margin_top = -73.7284
+margin_right = 68.568
+margin_bottom = -35.7284
+theme = ExtResource( 4 )
+text = "END_GAME_MESSAGE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FairyPathFollow" parent="." instance=ExtResource( 2 )]
+
+[node name="FlyAnimationPlayer" type="AnimationPlayer" parent="FairyPathFollow"]
+autoplay = "Fly"
+anims/Fly = SubResource( 14 )
+
+[node name="GreenFairyPathFollow2" type="Path2D" parent="."]
+position = Vector2( 123.473, -113.461 )
+curve = SubResource( 4 )
+script = SubResource( 5 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="GreenFairyPathFollow2"]
+position = Vector2( -188.093, 139.806 )
+rotation = -0.70511
+offset = 244.886
+rotate = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GreenFairyPathFollow2/PathFollow2D"]
+autoplay = "Glow"
+anims/Glow = SubResource( 10 )
+
+[node name="FlyAnimationPlayer" type="AnimationPlayer" parent="GreenFairyPathFollow2/PathFollow2D"]
+autoplay = "Fly"
+anims/Fly = SubResource( 15 )
+
+[node name="FairySprite" type="Sprite" parent="GreenFairyPathFollow2/PathFollow2D"]
+self_modulate = Color( 0.172549, 0.705882, 0, 1 )
+rotation = 0.70511
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+hframes = 3
+frame = 2
+
+[node name="Light2D" type="Light2D" parent="GreenFairyPathFollow2/PathFollow2D/FairySprite"]
+texture = ExtResource( 3 )
+color = Color( 0.172549, 0.705882, 0, 1 )
+energy = 0.25
+
+[node name="OrangeFairyPathFollow3" type="Path2D" parent="."]
+position = Vector2( 109.457, -8.67648 )
+curve = SubResource( 6 )
+script = SubResource( 7 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="OrangeFairyPathFollow3"]
+position = Vector2( -229.403, 207.988 )
+rotation = -0.70511
+offset = 244.886
+rotate = false
+
+[node name="FairySprite" type="Sprite" parent="OrangeFairyPathFollow3/PathFollow2D"]
+self_modulate = Color( 0.796078, 0.466667, 0, 1 )
+rotation = 0.70511
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+hframes = 3
+
+[node name="Light2D" type="Light2D" parent="OrangeFairyPathFollow3/PathFollow2D/FairySprite"]
+texture = ExtResource( 3 )
+color = Color( 0.796078, 0.466667, 0, 1 )
+energy = 0.25
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OrangeFairyPathFollow3"]
+autoplay = "Glow"
+anims/Glow = SubResource( 11 )
+
+[node name="FlyAnimationPlayer" type="AnimationPlayer" parent="OrangeFairyPathFollow3"]
+autoplay = "Fly"
+anims/Fly = SubResource( 16 )
+
+[node name="YellowFairyPathFollow4" type="Path2D" parent="."]
+position = Vector2( 66.7419, -176.866 )
+curve = SubResource( 8 )
+script = SubResource( 9 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="YellowFairyPathFollow4"]
+position = Vector2( -229.403, 207.988 )
+rotation = -0.70511
+offset = 244.886
+rotate = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YellowFairyPathFollow4/PathFollow2D"]
+autoplay = "Glow"
+anims/Glow = SubResource( 12 )
+
+[node name="FlyAnimationPlayer" type="AnimationPlayer" parent="YellowFairyPathFollow4/PathFollow2D"]
+autoplay = "Fly"
+anims/Fly = SubResource( 13 )
+
+[node name="FairySprite" type="Sprite" parent="YellowFairyPathFollow4/PathFollow2D"]
+self_modulate = Color( 0.796078, 0.764706, 0, 1 )
+rotation = 0.70511
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+hframes = 3
+frame = 2
+
+[node name="Light2D" type="Light2D" parent="YellowFairyPathFollow4/PathFollow2D/FairySprite"]
+texture = ExtResource( 3 )
+color = Color( 0.796078, 0.764706, 0, 1 )
+energy = 0.35
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[connection signal="body_entered" from="." to="." method="_on_EndGameArea2D_body_entered"]
+
+[editable path="FairyPathFollow"]
