@@ -68,7 +68,6 @@ func _physics_process(_delta: float) -> void:
 			animation_tree.set("parameters/Idle/blend_position", faced_direction)
 			anim_tree_sm_playback.travel("Idle")
 	else:
-		print(velocity)
 		if not is_attacking:
 			animation_tree.set("parameters/Walk/blend_position", faced_direction)
 			anim_tree_sm_playback.travel("Walk")
@@ -339,6 +338,7 @@ func check_if_dead() -> void:
 func die() -> void:
 	print(self.name + str(": I died!"))
 	self.set_enabled(false)
+	player_hurt_animation_player.stop()
 	anim_tree_sm_playback.travel("Die")
 
 
