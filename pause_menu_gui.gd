@@ -29,8 +29,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause_menu"):
 		if not self.visible:
+			get_tree().set_pause(true)
 			self.show()
 		else:
+			get_tree().set_pause(false)
 			self.hide()
 
 
