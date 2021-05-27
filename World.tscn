@@ -295,21 +295,24 @@ position = Vector2( 2748.56, 60.408 )
 scale = Vector2( 3, 3 )
 
 [node name="Lake" parent="Decorations" instance=ExtResource( 14 )]
-position = Vector2( -76, 633 )
+position = Vector2( -824.381, 1268.03 )
 
-[node name="ObeliskSprite" type="Sprite" parent="Decorations"]
+[node name="Obelisks" type="Node2D" parent="Decorations"]
+position = Vector2( -744.667, 594.667 )
+
+[node name="ObeliskSprite" type="Sprite" parent="Decorations/Obelisks"]
 position = Vector2( -15.4714, 613.274 )
 texture = ExtResource( 6 )
 
-[node name="ObeliskSprite2" type="Sprite" parent="Decorations"]
+[node name="ObeliskSprite2" type="Sprite" parent="Decorations/Obelisks"]
 position = Vector2( -120.766, 551.087 )
 texture = ExtResource( 6 )
 
-[node name="ObeliskSprite3" type="Sprite" parent="Decorations"]
+[node name="ObeliskSprite3" type="Sprite" parent="Decorations/Obelisks"]
 position = Vector2( -162.355, 681.984 )
 texture = ExtResource( 6 )
 
-[node name="ObeliskSprite4" type="Sprite" parent="Decorations"]
+[node name="ObeliskSprite4" type="Sprite" parent="Decorations/Obelisks"]
 position = Vector2( -35.9804, 777.133 )
 texture = ExtResource( 6 )
 
@@ -350,7 +353,7 @@ shape = SubResource( 1 )
 ] instance=ExtResource( 17 )]
 
 [node name="Player" parent="Creatures" instance=ExtResource( 21 )]
-position = Vector2( 2037.93, 422.451 )
+position = Vector2( 2038.13, 421.984 )
 current_health = 4
 
 [node name="LabelDisplayers" type="Node2D" parent="."]
@@ -383,7 +386,7 @@ One heart replenishes one health point.
 Don't take much more than needed!"
 
 [node name="LabelDisplayerFinalArea" parent="LabelDisplayers" instance=ExtResource( 18 )]
-position = Vector2( -2346.05, 1615.07 )
+position = Vector2( -3642.05, 2923.07 )
 
 [node name="DisplayTextLabel" parent="LabelDisplayers/LabelDisplayerFinalArea" index="1"]
 margin_left = -89.0
@@ -741,7 +744,7 @@ shape = SubResource( 51 )
 shape = SubResource( 52 )
 
 [node name="EndAreaMusicPlayer" parent="PlayMusicArea2Ds" instance=ExtResource( 22 )]
-position = Vector2( -226.923, 1900.81 )
+position = Vector2( -2430.81, 3800.22 )
 
 [node name="AudioStreamPlayer" parent="PlayMusicArea2Ds/EndAreaMusicPlayer" index="0"]
 stream = ExtResource( 24 )
@@ -763,10 +766,11 @@ bus = "Ambient"
 visible = false
 
 [node name="FinalArea" parent="." instance=ExtResource( 26 )]
-position = Vector2( -226, 1898 )
+position = Vector2( -2656.01, 3800.65 )
 
 [node name="EndGameArea2D" parent="." instance=ExtResource( 27 )]
-position = Vector2( -229.381, 1900.58 )
+visible = true
+position = Vector2( -2430.6, 3798.46 )
 
 [node name="CollisionShape2D" parent="EndGameArea2D" index="0"]
 shape = SubResource( 54 )
@@ -784,6 +788,7 @@ position = Vector2( -229.404, 207.988 )
 position = Vector2( -229.404, 207.988 )
 
 [node name="FinalBlockZone" parent="." instance=ExtResource( 28 )]
+position = Vector2( -2429.89, 3797.41 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinalBlockZone"]
 position = Vector2( 596.807, 6.34448 )
