@@ -9,12 +9,24 @@
 config_version=4
 
 _global_script_classes=[ {
+<<<<<<< HEAD
 "base": "Interactable",
 "class": "ColorCheckGate",
 "language": "GDScript",
 "path": "res://Scripts/Interactables/interactable_color_check_gate.gd"
 }, {
+=======
+<<<<<<< Updated upstream
+>>>>>>> 5904932407f96667cc71d8ce832f39a515bf62d3
 "base": "Reference",
+=======
+"base": "Interactable",
+"class": "ColorCheckGate",
+"language": "GDScript",
+"path": "res://Scripts/Interactables/interactable_color_check_gate.gd"
+}, {
+"base": "Panel",
+>>>>>>> Stashed changes
 "class": "CreditsMenu",
 "language": "GDScript",
 "path": "res://Scripts/GUI/credits_menu.gd"
@@ -34,7 +46,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/GUI/Credits_Menu/external_link_open_button.gd"
 }, {
-"base": "Reference",
+"base": "CheckBox",
 "class": "FullScreenCheckbox",
 "language": "GDScript",
 "path": "res://Scripts/GUI/full_screen_checkbox.gd"
@@ -59,12 +71,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Interactables/interactable_chest.gd"
 }, {
-"base": "Node2D",
+"base": "Reference",
 "class": "InteractablesManager",
 "language": "GDScript",
 "path": "res://Scripts/interactables_manager.gd"
 }, {
-"base": "Reference",
+"base": "HSlider",
 "class": "MasterSoundSlider",
 "language": "GDScript",
 "path": "res://Scripts/GUI/Options_Controllers/Sound_Control/master_sound_slider.gd"
@@ -99,7 +111,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/GUI/quit_to_desktop_button.gd"
 }, {
-"base": "Reference",
+"base": "HSlider",
 "class": "SoundEffectsSoundSlider",
 "language": "GDScript",
 "path": "res://Scripts/GUI/Options_Controllers/Sound_Control/sound_effects_slider.gd"
