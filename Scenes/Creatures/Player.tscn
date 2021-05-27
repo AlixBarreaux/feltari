@@ -471,7 +471,7 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id=34]
 length = 0.2
-step = 0.05
+step = 0.025
 tracks/0/type = "value"
 tracks/0/path = NodePath("HurtBoxBoxPivot:rotation_degrees")
 tracks/0/interp = 1
@@ -546,10 +546,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.05, 0.075, 0.1, 0.125 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 22, 23, 24, 25 ]
+"values": [ 49, 50, 51, 52, 48 ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("PlayerSprite:flip_h")
@@ -592,7 +592,7 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id=35]
 length = 0.2
-step = 0.05
+step = 0.025
 tracks/0/type = "value"
 tracks/0/path = NodePath("HurtBoxBoxPivot:rotation_degrees")
 tracks/0/interp = 1
@@ -667,10 +667,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.05, 0.075, 0.1, 0.125 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 22, 23, 24, 25 ]
+"values": [ 49, 50, 51, 52, 48 ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("PlayerSprite:flip_h")
@@ -713,7 +713,7 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id=36]
 length = 0.2
-step = 0.025
+step = 0.035
 tracks/0/type = "value"
 tracks/0/path = NodePath("HurtBoxBoxPivot/HurtBox:position")
 tracks/0/interp = 1
@@ -788,10 +788,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.035, 0.07, 0.105, 0.14, 0.175 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 26, 27, 28, 19 ]
+"values": [ 33, 34, 35, 36, 37, 38 ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("PlayerSprite:flip_h")
@@ -1310,7 +1310,7 @@ max_health = 4
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 hframes = 64
-frame = 22
+frame = 48
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
@@ -1366,7 +1366,7 @@ current = true
 rotation = 1.57079
 
 [node name="HurtBox" type="Area2D" parent="HurtBoxBoxPivot"]
-position = Vector2( -35, -30 )
+position = Vector2( 35, -30 )
 collision_layer = 0
 collision_mask = 4
 __meta__ = {
@@ -1376,9 +1376,10 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxBoxPivot/HurtBox"]
 light_mask = 0
 shape = SubResource( 46 )
+disabled = true
 
 [node name="InteractZone" type="Area2D" parent="."]
-rotation = 1.57079
+rotation = -1.57079
 collision_layer = 0
 collision_mask = 8
 
