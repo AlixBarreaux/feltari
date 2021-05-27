@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "HSlider",
+"class": "AmbientSoundSlider",
+"language": "GDScript",
+"path": "res://ambient_sounds_slider.gd"
+}, {
 "base": "Interactable",
 "class": "ColorCheckGate",
 "language": "GDScript",
@@ -18,6 +23,16 @@ _global_script_classes=[ {
 "class": "CreditsMenu",
 "language": "GDScript",
 "path": "res://Scripts/GUI/credits_menu.gd"
+}, {
+"base": "Area2D",
+"class": "EndGameArea2D",
+"language": "GDScript",
+"path": "res://end_game_area2D.gd"
+}, {
+"base": "Control",
+"class": "EndGameGUI",
+"language": "GDScript",
+"path": "res://end_game_gui.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Enemy",
@@ -33,6 +48,16 @@ _global_script_classes=[ {
 "class": "ExternalLinkOpenButton",
 "language": "GDScript",
 "path": "res://Scenes/GUI/Credits_Menu/external_link_open_button.gd"
+}, {
+"base": "Path2D",
+"class": "FairyPathFollow",
+"language": "GDScript",
+"path": "res://fairy_path_follow.gd"
+}, {
+"base": "StaticBody2D",
+"class": "FinalBlockZone",
+"language": "GDScript",
+"path": "res://Scenes/final_block_zone.gd"
 }, {
 "base": "CheckBox",
 "class": "FullScreenCheckbox",
@@ -64,6 +89,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/interactables_manager.gd"
 }, {
+"base": "Node2D",
+"class": "LevelCameraManager",
+"language": "GDScript",
+"path": "res://level_camera_manager.gd"
+}, {
 "base": "HSlider",
 "class": "MasterSoundSlider",
 "language": "GDScript",
@@ -89,6 +119,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/pickable.gd"
 }, {
+"base": "Area2D",
+"class": "PlayMusicArea2D",
+"language": "GDScript",
+"path": "res://Scenes/play_music_area2D.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -105,22 +140,29 @@ _global_script_classes=[ {
 "path": "res://Scripts/GUI/Options_Controllers/Sound_Control/sound_effects_slider.gd"
 } ]
 _global_script_class_icons={
+"AmbientSoundSlider": "",
 "ColorCheckGate": "",
 "CreditsMenu": "",
+"EndGameArea2D": "",
+"EndGameGUI": "",
 "Enemy": "",
 "EnemySpawnPoint": "",
 "ExternalLinkOpenButton": "",
+"FairyPathFollow": "",
+"FinalBlockZone": "",
 "FullScreenCheckbox": "",
 "InGameGui": "",
 "Interactable": "",
 "InteractableAltar": "",
 "InteractableChest": "",
 "InteractablesManager": "",
+"LevelCameraManager": "",
 "MasterSoundSlider": "",
 "MusicSoundSlider": "",
 "OptionsMenu": "",
 "PatrolZoneEnemy": "",
 "Pickable": "",
+"PlayMusicArea2D": "",
 "Player": "",
 "QuitToDesktopButton": "",
 "SoundEffectsSoundSlider": ""
@@ -129,7 +171,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Feltari"
-run/main_scene="res://Scenes/TestWorld.tscn"
+run/main_scene="res://Scenes/World.tscn"
 config/icon="res://Miscellaneous/feltari_icon.png"
 config/macos_native_icon="res://Miscellaneous/feltari_icon.icns"
 config/windows_native_icon="res://Miscellaneous/feltari_icon.ico"
@@ -231,7 +273,7 @@ pause_menu={
 
 [locale]
 
-translations=PoolStringArray( "res://Translations/General/general_translations.en_US.translation", "res://Translations/General/general_translations.fr_FR.translation", "res://Translations/GUI/gui_translations.en_US.translation", "res://Translations/GUI/gui_translations.fr_FR.translation" )
+translations=PoolStringArray( "res://Translations/GUI/gui_translations.en_US.translation", "res://Translations/GUI/gui_translations.fr_FR.translation", "res://Translations/General/general_translations.en_US.translation", "res://Translations/General/general_translations.fr_FR.translation" )
 
 [physics]
 

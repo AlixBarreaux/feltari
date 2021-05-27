@@ -132,4 +132,4 @@ func assign_colors_to_interactables() -> void:
 	for gate in color_check_gates.get_children():
 		_color_index += 1
 		gate._set_current_color(interactables_colors[_color_index])
-	
+

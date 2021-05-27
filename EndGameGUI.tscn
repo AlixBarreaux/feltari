@@ -1,0 +1,113 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Fonts/permian_sans_typeface.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://end_game_gui.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/MainMenuWorld.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Resources/Themes/gui_theme_medium.tres" type="Theme" id=4]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Fade In"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="EndGameGUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene_to_load = ExtResource( 3 )
+first_button_to_focus_node_path = NodePath("ButtonsContainer/CreditsButton")
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -258.5
+margin_top = -65.5
+margin_right = 258.5
+margin_bottom = 65.5
+custom_fonts/font = SubResource( 1 )
+text = "END_GAME_MESSAGE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 332.0
+margin_top = -198.0
+margin_right = -332.0
+margin_bottom = -82.0
+theme = ExtResource( 4 )
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsButton" type="Button" parent="ButtonsContainer"]
+margin_right = 283.0
+margin_bottom = 116.0
+focus_neighbour_left = NodePath("../QuitToMainMenuButton")
+focus_neighbour_top = NodePath("../QuitToMainMenuButton")
+focus_neighbour_right = NodePath("../QuitToMainMenuButton")
+focus_neighbour_bottom = NodePath("../QuitToMainMenuButton")
+focus_next = NodePath("../QuitToMainMenuButton")
+focus_previous = NodePath("../QuitToMainMenuButton")
+size_flags_horizontal = 3
+text = "CREDITS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitToMainMenuButton" type="Button" parent="ButtonsContainer"]
+margin_left = 333.0
+margin_right = 616.0
+margin_bottom = 116.0
+focus_neighbour_left = NodePath("../CreditsButton")
+focus_neighbour_top = NodePath("../CreditsButton")
+focus_neighbour_right = NodePath("../CreditsButton")
+focus_neighbour_bottom = NodePath("../CreditsButton")
+focus_next = NodePath("../CreditsButton")
+focus_previous = NodePath("../CreditsButton")
+size_flags_horizontal = 3
+text = "QUIT_TO_MAIN_MENU"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Fade In" = SubResource( 3 )
+
+[connection signal="visibility_changed" from="." to="." method="_on_EndGameGUI_visibility_changed"]
+[connection signal="pressed" from="ButtonsContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="ButtonsContainer/QuitToMainMenuButton" to="." method="_on_QuitToMainMenuButton_pressed"]

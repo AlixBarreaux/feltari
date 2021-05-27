@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/GUI/Options_Menu/Button_Controllers/Sliders/MusicHSlider.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Themes/gui_theme_medium.tres" type="Theme" id=2]
 [ext_resource path="res://Scenes/GUI/Options_Menu/Button_Controllers/Sliders/MasterHSlider.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/GUI/Options_Menu/Button_Controllers/Sliders/SoundEffectsHSlider.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/GUI/options_menu.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/GUI/Options_Menu/Button_Controllers/Sliders/AmbientSoundsHSlider.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Resources/Themes/gui_theme_large.tres" type="Theme" id=7]
 [ext_resource path="res://Scenes/GUI/Options_Menu/Button_Controllers/FullScreenCheckBox.tscn" type="PackedScene" id=8]
 
@@ -38,10 +39,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -283.0
-margin_top = -159.0
-margin_right = 282.0
-margin_bottom = 159.0
+margin_left = -282.5
+margin_top = -173.5
+margin_right = 282.5
+margin_bottom = 173.5
 custom_constants/separation = 30
 alignment = 1
 __meta__ = {
@@ -49,9 +50,8 @@ __meta__ = {
 }
 
 [node name="FullScreenContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 24.0
 margin_right = 565.0
-margin_bottom = 53.0
+margin_bottom = 29.0
 custom_constants/separation = 10
 alignment = 1
 
@@ -67,9 +67,9 @@ margin_bottom = 25.0
 text = "FULL_SCREEN"
 
 [node name="SoundContainer" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 83.0
+margin_top = 59.0
 margin_right = 565.0
-margin_bottom = 294.0
+margin_bottom = 347.0
 custom_constants/separation = 20
 alignment = 1
 
@@ -78,6 +78,7 @@ margin_right = 565.0
 margin_bottom = 21.0
 text = "MASTER_VOLUME"
 align = 1
+valign = 1
 
 [node name="MasterHSlider" parent="VBoxContainer/SoundContainer" instance=ExtResource( 3 )]
 margin_top = 41.0
@@ -94,6 +95,7 @@ margin_right = 565.0
 margin_bottom = 98.0
 text = "MUSIC_VOLUME"
 align = 1
+valign = 1
 
 [node name="MusicHSlider" parent="VBoxContainer/SoundContainer" instance=ExtResource( 1 )]
 margin_top = 118.0
@@ -110,6 +112,7 @@ margin_right = 565.0
 margin_bottom = 175.0
 text = "SOUND_EFFECTS_VOLUME"
 align = 1
+valign = 1
 
 [node name="SoundEffectsHSlider" parent="VBoxContainer/SoundContainer" instance=ExtResource( 4 )]
 margin_top = 195.0
@@ -120,15 +123,28 @@ focus_neighbour_bottom = NodePath("../../../BackButton")
 focus_next = NodePath("../../../BackButton")
 focus_previous = NodePath("../MusicHSlider")
 
+[node name="AmbientSoundsLabel" type="Label" parent="VBoxContainer/SoundContainer"]
+margin_top = 231.0
+margin_right = 565.0
+margin_bottom = 252.0
+text = "AMBIENT_SOUNDS_VOLUME"
+align = 1
+valign = 1
+
+[node name="AmbientSoundsHSlider" parent="VBoxContainer/SoundContainer" instance=ExtResource( 6 )]
+margin_top = 272.0
+margin_right = 565.0
+margin_bottom = 288.0
+
 [node name="BackButton" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -114.5
-margin_top = -80.0
+margin_top = -90.0
 margin_right = 114.5
-margin_bottom = -30.0
+margin_bottom = -40.0
 focus_neighbour_left = NodePath("../VBoxContainer/SoundContainer/SoundEffectsHSlider")
 focus_neighbour_top = NodePath("../VBoxContainer/SoundContainer/SoundEffectsHSlider")
 focus_neighbour_right = NodePath("../VBoxContainer/FullScreenContainer/CheckBox")

@@ -48,28 +48,37 @@ onready var death_wait_timer: Timer = $DeathWaitTimer
 onready var fairy_sprite: Sprite = $FairySprite
 onready var player_hurt_animation_player: AnimationPlayer = $PlayerHurtAnimationPlayer
 
+
 ################################# RUN THE CODE #################################
+
 
 func _ready() -> void:
 	self._initialize_asserts()
+	self._initialize_signals()
 	self._initialize()
 	
 	animation_tree.set_active(true)
 	anim_tree_sm_playback.start("Idle")
 	
+	self.set_enabled(false)
+	$Camera2D._set_current(false)
+	
 
-
+var is_attacking: bool = false
 func _physics_process(_delta: float) -> void:
 	self.calculate_velocity()
-#	if not self.velocity != Vector2(0.0, 0.0):
-#		animation_tree.set("parameters/Idle/blend_position", faced_direction)
-#		anim_tree_sm_playback.travel("Idle")
-#		return
-#	else:
+	if not self.velocity != Vector2(0.0, 0.0):
+		if not is_attacking:
+			animation_tree.set("parameters/Idle/blend_position", faced_direction)
+			anim_tree_sm_playback.travel("Idle")
+	else:
+		if not is_attacking:
+			animation_tree.set("parameters/Walk/blend_position", faced_direction)
+			anim_tree_sm_playback.travel("Walk")
+
 
 	if can_move:
 		velocity = move_and_slide(velocity)
-
 
 
 
@@ -102,9 +111,11 @@ func _unhandled_input(_event: InputEvent) -> void:
 	
 	# Interact
 	if Input.is_action_just_pressed("interact"):
-		if targeted_interactable != null:
-			targeted_interactable.receive_interaction()
-			targeted_interactable = null
+		print(get_can_interact())
+		if self.get_can_interact():
+			if targeted_interactable != null:
+				targeted_interactable.receive_interaction()
+				targeted_interactable = null
 	
 	
 	self.direction = self.direction.normalized()
@@ -168,6 +179,10 @@ func _initialize_asserts() -> void:
 	assert(self.max_health > 0)
 	# Current Health mus be less or equal to max health!
 	assert(self.current_health <= self.max_health)
+
+
+func _initialize_signals() -> void:
+	Events.connect("game_started", self, "on_game_started")
 
 
 func _initialize() -> void:
@@ -249,7 +264,8 @@ func calculate_velocity() -> void:
 # ANIMATIONS
 func melee_attack_animation_finished() -> void:
 	melee_attack_cooldown_timer.start()
-	pass
+	is_attacking = false
+	self.set_can_interact(true)
 
 
 func on_die_animation_finished() -> void:
@@ -265,6 +281,7 @@ func on_spawn_animation_finished() -> void:
 
 func attack_melee() -> void:
 	set_can_interact(false)
+	is_attacking = true
 	animation_tree.set("parameters/Melee Attack/blend_position", faced_direction)
 	anim_tree_sm_playback.travel("Melee Attack")
 
@@ -332,6 +349,7 @@ func check_if_dead() -> void:
 func die() -> void:
 	print(self.name + str(": I died!"))
 	self.set_enabled(false)
+	player_hurt_animation_player.stop()
 	anim_tree_sm_playback.travel("Die")
 
 
@@ -370,3 +388,9 @@ func increase_current_health(amount: int) -> void:
 func _on_DeathWaitTimer_timeout() -> void:
 	print("DEATH TIMEOUT!")
 	self.resurrect()
+
+
+func on_game_started() -> void:
+	yield(get_tree().create_timer(2.0), "timeout")
+	self.set_enabled(true)
+	$Camera2D._set_current(true)

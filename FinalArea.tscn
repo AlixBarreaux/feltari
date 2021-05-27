@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Graphics/light.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Glow"
+length = 12.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.45, 1.15 ]
+}
+
+[node name="FinalArea" type="Node2D"]
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 1 )
+color = Color( 0, 0.835294, 1, 1 )
+energy = 0.45
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Glow"
+anims/Glow = SubResource( 1 )
