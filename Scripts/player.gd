@@ -48,7 +48,9 @@ onready var death_wait_timer: Timer = $DeathWaitTimer
 onready var fairy_sprite: Sprite = $FairySprite
 onready var player_hurt_animation_player: AnimationPlayer = $PlayerHurtAnimationPlayer
 
+
 ################################# RUN THE CODE #################################
+
 
 func _ready() -> void:
 	self._initialize_asserts()
@@ -58,18 +60,22 @@ func _ready() -> void:
 	anim_tree_sm_playback.start("Idle")
 	
 
-
+var is_attacking: bool = false
 func _physics_process(_delta: float) -> void:
 	self.calculate_velocity()
-#	if not self.velocity != Vector2(0.0, 0.0):
-#		animation_tree.set("parameters/Idle/blend_position", faced_direction)
-#		anim_tree_sm_playback.travel("Idle")
-#		return
-#	else:
+	if not self.velocity != Vector2(0.0, 0.0):
+		if not is_attacking:
+			animation_tree.set("parameters/Idle/blend_position", faced_direction)
+			anim_tree_sm_playback.travel("Idle")
+	else:
+		print(velocity)
+		if not is_attacking:
+			animation_tree.set("parameters/Walk/blend_position", faced_direction)
+			anim_tree_sm_playback.travel("Walk")
+
 
 	if can_move:
 		velocity = move_and_slide(velocity)
-
 
 
 
@@ -249,7 +255,7 @@ func calculate_velocity() -> void:
 # ANIMATIONS
 func melee_attack_animation_finished() -> void:
 	melee_attack_cooldown_timer.start()
-	pass
+	is_attacking = false
 
 
 func on_die_animation_finished() -> void:
@@ -265,6 +271,7 @@ func on_spawn_animation_finished() -> void:
 
 func attack_melee() -> void:
 	set_can_interact(false)
+	is_attacking = true
 	animation_tree.set("parameters/Melee Attack/blend_position", faced_direction)
 	anim_tree_sm_playback.travel("Melee Attack")
 
