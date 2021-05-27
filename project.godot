@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Interactables/interactable_color_check_gate.gd"
 }, {
-"base": "Panel",
+"base": "Reference",
 "class": "CreditsMenu",
 "language": "GDScript",
 "path": "res://Scripts/GUI/credits_menu.gd"
@@ -34,7 +34,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/GUI/Credits_Menu/external_link_open_button.gd"
 }, {
-"base": "CheckBox",
+"base": "Reference",
 "class": "FullScreenCheckbox",
 "language": "GDScript",
 "path": "res://Scripts/GUI/full_screen_checkbox.gd"
@@ -64,7 +64,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/interactables_manager.gd"
 }, {
-"base": "HSlider",
+"base": "Reference",
 "class": "MasterSoundSlider",
 "language": "GDScript",
 "path": "res://Scripts/GUI/Options_Controllers/Sound_Control/master_sound_slider.gd"
@@ -99,7 +99,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/GUI/quit_to_desktop_button.gd"
 }, {
-"base": "HSlider",
+"base": "Reference",
 "class": "SoundEffectsSoundSlider",
 "language": "GDScript",
 "path": "res://Scripts/GUI/Options_Controllers/Sound_Control/sound_effects_slider.gd"
@@ -129,7 +129,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Feltari"
-run/main_scene="res://Scenes/TestWorld.tscn"
+run/main_scene="res://Scenes/MainMenuWorld.tscn"
 config/icon="res://Miscellaneous/feltari_icon.png"
 config/macos_native_icon="res://Miscellaneous/feltari_icon.icns"
 config/windows_native_icon="res://Miscellaneous/feltari_icon.ico"
@@ -212,12 +212,6 @@ interact={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
- ]
-}
-pause_menu={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"unicode":0,"echo":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":80,"unicode":0,"echo":false,"script":null)
  ]
 }
 
