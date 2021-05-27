@@ -36,23 +36,46 @@ export (AI_STATES) var current_ai_state = AI_STATES.IDLE setget set_current_ai_s
 # Where the Enemy spawned (is placed in the World) at first.
 # It'll go back to this point after it's done chasing the player
 onready var initial_spawn_point: Vector2 = self.global_position setget set_initial_spawn_position, get_initial_spawn_position
+var current_target: Node2D = null setget set_current_target, get_current_target
 var target_destination: Vector2 = Vector2(0.0, 0.0)
+
+var velocity: Vector2 = Vector2(0.0, 0.0)
+
+
+var is_dead: bool = false setget set_is_dead, get_is_dead
+
+# Node References
+
+onready var sprite: Sprite = $Sprite
+onready var target_position: Position2D = $TargetPosition
+
+# Animations Players
+onready var animation_player: AnimationPlayer = $AnimationPlayer
+onready var animation_player_damage: AnimationPlayer = $AnimationPlayerDamage
+
+# Collision Shapes
+onready var collision_shape2D: CollisionShape2D = $CollisionShape2D
+onready var creature_detection_zone_collision_shape2D: CollisionShape2D = $CreatureDetectionZone/CollisionShape2D
+onready var hurt_box_collision_shape2D: CollisionShape2D = $HurtBox/CollisionShape2D
+
+# Timers
+onready var idle_timer: Timer = $IdleTimer
+onready var wander_timer: Timer = $WanderTimer
+onready var hurt_target_timer: Timer = $HurtTargetTimer
+
 
 ################################# RUN THE CODE #################################
 
-var velocity: Vector2 = Vector2(0.0, 0.0)
-var knockback: Vector2 = Vector2(0.0, 0.0)
 
 func _ready() -> void:
 	self._initialize_asserts()
 
 
-var current_target: Node2D = null setget set_current_target, get_current_target
-
-
 func _physics_process(_delta: float) -> void:
+#	print(self.name, ": Target: ", current_target, " Positions: ", target_destination, target_position.global_position)
+	
 	if self.get_current_target() != null:
-		velocity = position.direction_to(target_destination) * current_speed
+		velocity = global_position.direction_to(target_destination) * current_speed
 
 		if self.position.distance_to(target_destination) > 5:
 			velocity = move_and_slide(velocity)
@@ -61,17 +84,10 @@ func _physics_process(_delta: float) -> void:
 		
 		
 		if velocity.x > 0:
-			$Sprite.flip_h = false
+			sprite.flip_h = false
 		else:
-			$Sprite.flip_h = true
-			
-		
-#		print("Physics Process: Destination: ", self.target_destination)
-	
-#	self.move_and_slide(velocity)
-	
-#	knockback = knockback.move_toward(Vector2(0.0, 0.0), 200 * delta)
-#	knockback = move_and_slide(knockback)
+			sprite.flip_h = true
+
 
 ############################### DECLARE FUNCTIONS ##############################
 
@@ -83,28 +99,58 @@ func _initialize_asserts() -> void:
 	assert(self.current_health <= self.max_health)
 
 
-func seek_player() -> void:
-	pass
+func set_enabled(value: bool) -> void:
+	if value:
+		# Enable the Collision Shapes (Physics first)
+		collision_shape2D.set_deferred("disabled", false)
+		creature_detection_zone_collision_shape2D.set_deferred("disabled", false)
+		hurt_box_collision_shape2D.set_deferred("disabled", false)
+		
+		# Ensable the visual part
+		sprite.show()
+		
+		# Enable the timers
+		idle_timer.start()
+	else:
+		print(self.name + ": I'M NOW DISABLED!")
+		# Disable the Collision Shapes (Physics first)
+		collision_shape2D.set_deferred("disabled", true)
+		creature_detection_zone_collision_shape2D.set_deferred("disabled", true)
+		hurt_box_collision_shape2D.set_deferred("disabled", true)
+
+		# Disable the visual part
+		sprite.hide()
+		
+		# Disable the timers
+		idle_timer.stop()
 
 
-# AI
+func set_is_dead(value: bool) -> void:
+	is_dead = value
+
+
+func get_is_dead() -> bool:
+	return is_dead
+
+
+# AI Behaviors
 func _on_CreatureDetectionZone_body_entered(body: PhysicsBody2D) -> void:
-#	knockback = Vector2.DOWN * 200
-#	knockback = knockback.direction_to(body.global_position)
-#	print(knockback)
+	print(self.name + ": I was entered by: " + body.name)
 	self.set_current_target(body)
 	self.set_current_ai_state(AI_STATES.CHASE)
 
 
 func _on_CreatureDetectionZone_body_exited(_body: PhysicsBody2D) -> void:
 	self.set_current_ai_state(AI_STATES.IDLE)
-	pass
 
 
 func _on_HurtBox_body_entered(body: PhysicsBody2D) -> void:
-	print(self.name, ": I was entered by: ", body.name)
 	body.take_damage(damage)
+	hurt_target_timer.start()
 
+
+func _on_HurtBox_body_exited(_body: PhysicsBody2D) -> void:
+	hurt_target_timer.stop()
 
 
 
@@ -170,12 +216,14 @@ func wander() -> void:
 	random_destination_y_axis = rand_range(min_random_destination_axis_length, max_random_destination_axis_length)
 #	print("Random destination: ", random_destination_x_axis, " ", random_destination_y_axis)
 
-	$TargetPosition.global_position.x = self.global_position.x + random_destination_x_axis
-	$TargetPosition.global_position.y = self.global_position.y + random_destination_y_axis
-	set_current_target($TargetPosition)
-#	print("TargetPosition position set to: ", $TargetPosition.global_position)
+	target_position.global_position.x = self.global_position.x + random_destination_x_axis
+	target_position.global_position.y = self.global_position.y + random_destination_y_axis
+	set_current_target(target_position)
+#	print("TargetPosition position set to: ", target_position.global_position)
 
 
+# This function is replaced by some code but it should've
+# been used
 func chase_target() -> void:
 	pass
 
@@ -183,7 +231,7 @@ func chase_target() -> void:
 # clear the target (which should be the player)
 func teleport_to_spawn_point() -> void:
 	self.set_current_target(null)
-	self.set_position(get_initial_spawn_position())
+	self.set_global_position(get_initial_spawn_position())
 
 
 func _on_IdleTimer_timeout() -> void:
@@ -193,14 +241,14 @@ func _on_IdleTimer_timeout() -> void:
 		return
 	
 	self.wander()
-	$WanderTimer.start()
+	wander_timer.start()
 
 
 func _on_WanderTimer_timeout() -> void:
 	if self.current_ai_state == AI_STATES.CHASE:
 		return
 
-	$IdleTimer.start()
+	idle_timer.start()
 	set_current_ai_state(AI_STATES.IDLE)
 
 
@@ -212,10 +260,10 @@ func get_current_ai_state() -> int:
 func take_damage(amount: int) -> void:
 	self.current_health -= amount
 	print(self.name + ": I took " + str(amount) + " damage!")
+	animation_player_damage.play("Take Damage")
 	
 	self.check_if_dead()
-	
-	
+
 
 func check_if_dead() -> void:
 	if self.current_health <= 0:
@@ -226,3 +274,20 @@ func check_if_dead() -> void:
 
 func die() -> void:
 	print(self.name + str(": I died!"))
+	self.set_enabled(false)
+	self.set_is_dead(true)
+
+
+func resurrect() -> void:
+	self.set_enabled(true)
+
+
+func _on_HurtTargetTimer_timeout() -> void:
+	current_target.take_damage(damage)
+	self.hurt_target_timer.start()
+
+
+
+func _on_VisibilityNotifier2D_viewport_entered(viewport: Viewport) -> void:
+	if self.get_is_dead():
+		self.resurrect()

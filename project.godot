@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Interactable",
+"class": "ColorCheckGate",
+"language": "GDScript",
+"path": "res://Scripts/Interactables/interactable_color_check_gate.gd"
+}, {
 "base": "Panel",
 "class": "CreditsMenu",
 "language": "GDScript",
@@ -47,7 +52,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "InteractableAltar",
 "language": "GDScript",
-"path": "res://Scripts/interactable_altar.gd"
+"path": "res://Scripts/Interactables/interactable_altar.gd"
 }, {
 "base": "Interactable",
 "class": "InteractableChest",
@@ -57,7 +62,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "InteractablesManager",
 "language": "GDScript",
-"path": "res://Scenes/interactables_manager.gd"
+"path": "res://Scripts/interactables_manager.gd"
 }, {
 "base": "HSlider",
 "class": "MasterSoundSlider",
@@ -100,6 +105,7 @@ _global_script_classes=[ {
 "path": "res://Scripts/GUI/Options_Controllers/Sound_Control/sound_effects_slider.gd"
 } ]
 _global_script_class_icons={
+"ColorCheckGate": "",
 "CreditsMenu": "",
 "Enemy": "",
 "EnemySpawnPoint": "",

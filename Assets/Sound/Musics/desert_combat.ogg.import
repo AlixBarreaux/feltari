@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/desert_combat.ogg-75b63de5d5135ebefd4d376192788d6a.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/Musics/desert_combat.ogg"
+dest_files=[ "res://.import/desert_combat.ogg-75b63de5d5135ebefd4d376192788d6a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

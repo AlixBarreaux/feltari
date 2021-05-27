@@ -17,9 +17,11 @@ export var interactables_colors: PoolColorArray = []
 var unassigned_color: Color = Color("000000")
 var interactable_pairs_count: int = 0
 
-
+# Node References
 onready var altars: Node2D = $Altars
 onready var chests: Node2D = $Chests
+onready var color_check_gates: Node2D = $ColorCheckGates
+
 
 ################################# RUN THE CODE #################################
 
@@ -53,7 +55,12 @@ func verify_interactables_parity() -> void:
 	for chest in chests.get_children():
 		_chests_count += 1
 	
+	var _gates_count: int = 0
+	for gate in color_check_gates.get_children():
+		_gates_count += 1
+	
 	assert(_altars_count == _chests_count)
+	assert(_chests_count == _gates_count)
 # Non programmer: Look comment on top of this function for crash explanation!
 
 
@@ -95,6 +102,13 @@ func assign_ids_to_interactables() -> void:
 	for chest in chests.get_children():
 		_id_to_assign += 1
 		chest.set_id(_id_to_assign)
+	
+	
+	# ColorCheckGates
+	_id_to_assign = -1
+	for gate in color_check_gates.get_children():
+		_id_to_assign += 1
+		gate.set_id(_id_to_assign)
 
 
 func assign_colors_to_interactables() -> void:
@@ -110,3 +124,12 @@ func assign_colors_to_interactables() -> void:
 	for chest in chests.get_children():
 		_color_index += 1
 		chest._set_current_color(interactables_colors[_color_index])
+
+	
+	# Color gates
+	_color_index = -1
+	
+	for gate in color_check_gates.get_children():
+		_color_index += 1
+		gate._set_current_color(interactables_colors[_color_index])
+	
