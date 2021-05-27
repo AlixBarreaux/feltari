@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/enemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Graphics/Spritesheets/shrine_guardian_spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sound/Sound_Effects/enemy_hurt.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 20.5682
@@ -45,6 +46,22 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("HurtSound2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="AudioStreamRandomPitch" id=6]
+audio_stream = ExtResource( 3 )
+random_pitch = 1.25
 
 [node name="Enemy" type="KinematicBody2D" groups=[
 "enemies",
@@ -102,6 +119,9 @@ one_shot = true
 
 [node name="HurtTargetTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="HurtSound2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource( 6 )
 
 [connection signal="body_entered" from="CreatureDetectionZone" to="." method="_on_CreatureDetectionZone_body_entered"]
 [connection signal="body_exited" from="CreatureDetectionZone" to="." method="_on_CreatureDetectionZone_body_exited"]
