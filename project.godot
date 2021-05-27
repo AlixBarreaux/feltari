@@ -49,7 +49,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Interactables/interactable.gd"
 }, {
-"base": "Reference",
+"base": "Interactable",
 "class": "InteractableAltar",
 "language": "GDScript",
 "path": "res://Scripts/Interactables/interactable_altar.gd"
@@ -59,7 +59,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Interactables/interactable_chest.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
 "class": "InteractablesManager",
 "language": "GDScript",
 "path": "res://Scripts/interactables_manager.gd"
