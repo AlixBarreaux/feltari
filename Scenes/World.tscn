@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://Scenes/Interactables/InteractableChest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tilemaps/DecorationsTileMap.tscn" type="PackedScene" id=2]
@@ -15,10 +15,13 @@
 [ext_resource path="res://Scenes/Others/PatrolZoneEnemy.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Lake.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/GUI/InGameGUI.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Creatures/Player.tscn" type="PackedScene" id=16]
+[ext_resource path="res://level_camera_manager.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/Creatures/Enemy.tscn" type="PackedScene" id=17]
 [ext_resource path="res://LabelDisplayer.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Pickables/PickableHeart.tscn" type="PackedScene" id=19]
+[ext_resource path="res://EndGameGUI.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Creatures/Player.tscn" type="PackedScene" id=21]
+[ext_resource path="res://PlayMusicArea2D.tscn" type="PackedScene" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 285.92, 200.66 )
@@ -158,6 +161,44 @@ extents = Vector2( 12, 120 )
 [sub_resource type="RectangleShape2D" id=46]
 extents = Vector2( 10, 106 )
 
+[sub_resource type="Animation" id=47]
+resource_name = "Zoom In"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("LevelCamera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=48]
+resource_name = "Zoom Out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("LevelCamera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=50]
+extents = Vector2( 59.6982, 32.3414 )
+
+[sub_resource type="RectangleShape2D" id=49]
+extents = Vector2( 28.6776, 135.004 )
+
 [node name="World" type="Node2D"]
 
 [node name="TileMaps" type="Node2D" parent="."]
@@ -234,19 +275,19 @@ scale = Vector2( 3, 3 )
 position = Vector2( -76, 633 )
 
 [node name="ObeliskSprite" type="Sprite" parent="Decorations"]
-position = Vector2( -15, 579.333 )
+position = Vector2( -15.4714, 613.274 )
 texture = ExtResource( 6 )
 
 [node name="ObeliskSprite2" type="Sprite" parent="Decorations"]
-position = Vector2( -97.6667, 569 )
+position = Vector2( -120.766, 551.087 )
 texture = ExtResource( 6 )
 
 [node name="ObeliskSprite3" type="Sprite" parent="Decorations"]
-position = Vector2( -127, 657 )
+position = Vector2( -162.355, 681.984 )
 texture = ExtResource( 6 )
 
 [node name="ObeliskSprite4" type="Sprite" parent="Decorations"]
-position = Vector2( -24.6667, 677.667 )
+position = Vector2( -35.9804, 777.133 )
 texture = ExtResource( 6 )
 
 [node name="Pickables" type="Node2D" parent="."]
@@ -255,16 +296,16 @@ texture = ExtResource( 6 )
 position = Vector2( 2240, 377 )
 
 [node name="PickableHeart2" parent="Pickables" instance=ExtResource( 19 )]
-position = Vector2( -1894, -1773 )
+position = Vector2( 330, -1381 )
 
 [node name="PickableHeart3" parent="Pickables" instance=ExtResource( 19 )]
-position = Vector2( 289, -2270 )
+position = Vector2( -775.5, -1446 )
 
 [node name="PickableHeart4" parent="Pickables" instance=ExtResource( 19 )]
-position = Vector2( -751, -1586 )
+position = Vector2( -668.306, -1542.14 )
 
 [node name="PickableHeart5" parent="Pickables" instance=ExtResource( 19 )]
-position = Vector2( -1389, -1443 )
+position = Vector2( -804.5, -1583.5 )
 
 [node name="Creatures" type="Node2D" parent="."]
 
@@ -282,12 +323,8 @@ shape = SubResource( 1 )
 "enemy",
 ] instance=ExtResource( 17 )]
 
-[node name="Enemy" parent="Creatures/Enemies" instance=ExtResource( 17 )]
-position = Vector2( 1389, -1817 )
-
-[node name="Player" parent="Creatures" instance=ExtResource( 16 )]
-position = Vector2( 2984.01, -306.005 )
-current_health = 4
+[node name="Player" parent="Creatures" instance=ExtResource( 21 )]
+position = Vector2( 1074, -1668 )
 
 [node name="LabelDisplayers" type="Node2D" parent="."]
 position = Vector2( 2020, -416 )
@@ -552,6 +589,23 @@ shape = SubResource( 45 )
 position = Vector2( 947, -665 )
 shape = SubResource( 46 )
 
+[node name="LevelCameraManager" type="Node2D" parent="."]
+position = Vector2( 2194, 412 )
+script = ExtResource( 16 )
+
+[node name="LevelCamera2D" type="Camera2D" parent="LevelCameraManager"]
+current = true
+
+[node name="TutorialArea" type="Position2D" parent="LevelCameraManager"]
+
+[node name="EndArea" type="Position2D" parent="LevelCameraManager"]
+position = Vector2( -2426, 1486 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LevelCameraManager"]
+autoplay = "Zoom In"
+"anims/Zoom In" = SubResource( 47 )
+"anims/Zoom Out" = SubResource( 48 )
+
 [node name="AmbientDesertSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 autoplay = true
@@ -564,7 +618,26 @@ bus = "Ambient"
 [node name="PauseMenuGUI" parent="CanvasLayer" instance=ExtResource( 9 )]
 visible = false
 
+[node name="EndGameGUI" parent="CanvasLayer" instance=ExtResource( 20 )]
+visible = false
+
+[node name="PlayMusicArea2Ds" type="Node2D" parent="."]
+
+[node name="PlayMusicArea2D" parent="PlayMusicArea2Ds" instance=ExtResource( 22 )]
+position = Vector2( 887.302, -1641.49 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayMusicArea2Ds/PlayMusicArea2D/ExitPointArea2D" index="0"]
+position = Vector2( -1630.48, 491.519 )
+shape = SubResource( 50 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayMusicArea2Ds/PlayMusicArea2D"]
+self_modulate = Color( 0.133333, 0, 0.776471, 1 )
+shape = SubResource( 49 )
+
+[connection signal="animation_finished" from="LevelCameraManager/AnimationPlayer" to="LevelCameraManager" method="_on_AnimationPlayer_animation_finished"]
+
 [editable path="LabelDisplayers/LabelDisplayerMove"]
 [editable path="LabelDisplayers/LabelDisplayerChest"]
 [editable path="LabelDisplayers/LabelDisplayerGate"]
 [editable path="LabelDisplayers/LabelDisplayerEnemy"]
+[editable path="PlayMusicArea2Ds/PlayMusicArea2D"]

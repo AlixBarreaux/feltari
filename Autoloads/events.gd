@@ -3,6 +3,8 @@ extends Node
 
 ############################### DECLARE VARIABLES ##############################
 
+signal game_started
+
 signal player_current_health_set
 signal player_current_health_increased
 signal player_current_health_decreased

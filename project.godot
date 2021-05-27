@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/GUI/credits_menu.gd"
 }, {
+"base": "Control",
+"class": "EndGameGUI",
+"language": "GDScript",
+"path": "res://end_game_gui.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
@@ -69,6 +74,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/interactables_manager.gd"
 }, {
+"base": "Node2D",
+"class": "LevelCameraManager",
+"language": "GDScript",
+"path": "res://level_camera_manager.gd"
+}, {
 "base": "HSlider",
 "class": "MasterSoundSlider",
 "language": "GDScript",
@@ -94,6 +104,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/pickable.gd"
 }, {
+"base": "Area2D",
+"class": "PlayMusicArea2D",
+"language": "GDScript",
+"path": "res://Scenes/play_music_area2D.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -113,6 +128,7 @@ _global_script_class_icons={
 "AmbientSoundSlider": "",
 "ColorCheckGate": "",
 "CreditsMenu": "",
+"EndGameGUI": "",
 "Enemy": "",
 "EnemySpawnPoint": "",
 "ExternalLinkOpenButton": "",
@@ -122,11 +138,13 @@ _global_script_class_icons={
 "InteractableAltar": "",
 "InteractableChest": "",
 "InteractablesManager": "",
+"LevelCameraManager": "",
 "MasterSoundSlider": "",
 "MusicSoundSlider": "",
 "OptionsMenu": "",
 "PatrolZoneEnemy": "",
 "Pickable": "",
+"PlayMusicArea2D": "",
 "Player": "",
 "QuitToDesktopButton": "",
 "SoundEffectsSoundSlider": ""
@@ -135,7 +153,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Feltari"
-run/main_scene="res://Scenes/TestWorld.tscn"
+run/main_scene="res://Scenes/World.tscn"
 config/icon="res://Miscellaneous/feltari_icon.png"
 config/macos_native_icon="res://Miscellaneous/feltari_icon.icns"
 config/windows_native_icon="res://Miscellaneous/feltari_icon.ico"
@@ -237,7 +255,7 @@ pause_menu={
 
 [locale]
 
-translations=PoolStringArray( "res://Translations/General/general_translations.en_US.translation", "res://Translations/General/general_translations.fr_FR.translation", "res://Translations/GUI/gui_translations.en_US.translation", "res://Translations/GUI/gui_translations.fr_FR.translation" )
+translations=PoolStringArray( "res://Translations/GUI/gui_translations.en_US.translation", "res://Translations/GUI/gui_translations.fr_FR.translation", "res://Translations/General/general_translations.en_US.translation", "res://Translations/General/general_translations.fr_FR.translation" )
 
 [physics]
 

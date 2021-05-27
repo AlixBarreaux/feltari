@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/altar_activation.wav-65ff52419f73cbc430091d1f5b7c3db1.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Sound_Effects/altar_activation.wav"
+dest_files=[ "res://.import/altar_activation.wav-65ff52419f73cbc430091d1f5b7c3db1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

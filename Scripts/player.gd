@@ -54,10 +54,14 @@ onready var player_hurt_animation_player: AnimationPlayer = $PlayerHurtAnimation
 
 func _ready() -> void:
 	self._initialize_asserts()
+	self._initialize_signals()
 	self._initialize()
 	
 	animation_tree.set_active(true)
 	anim_tree_sm_playback.start("Idle")
+	
+	self.set_enabled(false)
+	$Camera2D._set_current(false)
 	
 
 var is_attacking: bool = false
@@ -175,6 +179,10 @@ func _initialize_asserts() -> void:
 	assert(self.max_health > 0)
 	# Current Health mus be less or equal to max health!
 	assert(self.current_health <= self.max_health)
+
+
+func _initialize_signals() -> void:
+	Events.connect("game_started", self, "on_game_started")
 
 
 func _initialize() -> void:
@@ -380,3 +388,9 @@ func increase_current_health(amount: int) -> void:
 func _on_DeathWaitTimer_timeout() -> void:
 	print("DEATH TIMEOUT!")
 	self.resurrect()
+
+
+func on_game_started() -> void:
+	yield(get_tree().create_timer(2.0), "timeout")
+	self.set_enabled(true)
+	$Camera2D._set_current(true)

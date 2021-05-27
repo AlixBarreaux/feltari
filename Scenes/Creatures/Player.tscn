@@ -1383,7 +1383,7 @@ current = true
 rotation = 1.57079
 
 [node name="HurtBox" type="Area2D" parent="HurtBoxBoxPivot"]
-position = Vector2( 35, -45 )
+position = Vector2( 35, -30 )
 collision_layer = 0
 collision_mask = 4
 __meta__ = {
