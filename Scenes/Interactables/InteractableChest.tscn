@@ -276,7 +276,7 @@ scale = Vector2( 3, 3 )
 script = ExtResource( 4 )
 
 [node name="Sprite" parent="." index="0"]
-self_modulate = Color( 1, 1, 1, 0.219064 )
+self_modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 2 )
 hframes = 4
 frame = 3
@@ -287,6 +287,7 @@ anims/Enable = SubResource( 1 )
 anims/Idle = SubResource( 2 )
 
 [node name="RevealedItem" type="Sprite" parent="." index="3"]
+visible = false
 position = Vector2( 0, -20 )
 texture = ExtResource( 3 )
 hframes = 3

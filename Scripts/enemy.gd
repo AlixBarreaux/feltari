@@ -232,6 +232,9 @@ func chase_target() -> void:
 func teleport_to_spawn_point() -> void:
 	self.set_current_target(null)
 	self.set_global_position(get_initial_spawn_position())
+	# Running out of time for the game jam:
+	# animation put in the AnimationPlayerDamage Node!
+	animation_player_damage.play("Teleport")
 
 
 func _on_IdleTimer_timeout() -> void:
