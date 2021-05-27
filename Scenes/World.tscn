@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://Scenes/Interactables/InteractableChest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tilemaps/DecorationsTileMap.tscn" type="PackedScene" id=2]
@@ -19,9 +19,15 @@
 [ext_resource path="res://Scenes/Creatures/Enemy.tscn" type="PackedScene" id=17]
 [ext_resource path="res://LabelDisplayer.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Pickables/PickableHeart.tscn" type="PackedScene" id=19]
-[ext_resource path="res://EndGameGUI.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/Sound/Musics/desert_combat.ogg" type="AudioStream" id=20]
 [ext_resource path="res://Scenes/Creatures/Player.tscn" type="PackedScene" id=21]
 [ext_resource path="res://PlayMusicArea2D.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Assets/Sound/Musics/desert_music.ogg" type="AudioStream" id=23]
+[ext_resource path="res://Assets/Sound/Musics/fairy_dust_music.ogg" type="AudioStream" id=24]
+[ext_resource path="res://EndGameGUI.tscn" type="PackedScene" id=25]
+[ext_resource path="res://FinalArea.tscn" type="PackedScene" id=26]
+[ext_resource path="res://EndGameArea2D.tscn" type="PackedScene" id=27]
+[ext_resource path="res://FinalBlockZone.tscn" type="PackedScene" id=28]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 285.92, 200.66 )
@@ -193,11 +199,29 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=50]
-extents = Vector2( 59.6982, 32.3414 )
-
 [sub_resource type="RectangleShape2D" id=49]
-extents = Vector2( 28.6776, 135.004 )
+extents = Vector2( 60.8185, 10 )
+
+[sub_resource type="RectangleShape2D" id=50]
+extents = Vector2( 27.8058, 136.607 )
+
+[sub_resource type="RectangleShape2D" id=51]
+extents = Vector2( 192.205, 169.837 )
+
+[sub_resource type="CircleShape2D" id=52]
+radius = 210.098
+
+[sub_resource type="RectangleShape2D" id=53]
+extents = Vector2( 608.235, 531.179 )
+
+[sub_resource type="RectangleShape2D" id=56]
+extents = Vector2( 467.606, 389.471 )
+
+[sub_resource type="RectangleShape2D" id=54]
+extents = Vector2( 22.9822, 540.314 )
+
+[sub_resource type="RectangleShape2D" id=55]
+extents = Vector2( 22.9822, 611.295 )
 
 [node name="World" type="Node2D"]
 
@@ -324,7 +348,7 @@ shape = SubResource( 1 )
 ] instance=ExtResource( 17 )]
 
 [node name="Player" parent="Creatures" instance=ExtResource( 21 )]
-position = Vector2( 1074, -1668 )
+position = Vector2( 386.859, 1813.01 )
 
 [node name="LabelDisplayers" type="Node2D" parent="."]
 position = Vector2( 2020, -416 )
@@ -595,6 +619,7 @@ script = ExtResource( 16 )
 
 [node name="LevelCamera2D" type="Camera2D" parent="LevelCameraManager"]
 current = true
+zoom = Vector2( 1.5, 1.5 )
 
 [node name="TutorialArea" type="Position2D" parent="LevelCameraManager"]
 
@@ -605,6 +630,44 @@ position = Vector2( -2426, 1486 )
 autoplay = "Zoom In"
 "anims/Zoom In" = SubResource( 47 )
 "anims/Zoom Out" = SubResource( 48 )
+
+[node name="PlayMusicArea2Ds" type="Node2D" parent="."]
+
+[node name="MazeAreaMusic" parent="PlayMusicArea2Ds" instance=ExtResource( 22 )]
+position = Vector2( 883.664, -1640.52 )
+
+[node name="AudioStreamPlayer" parent="PlayMusicArea2Ds/MazeAreaMusic" index="0"]
+stream = ExtResource( 23 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayMusicArea2Ds/MazeAreaMusic/ExitPointArea2D" index="0"]
+position = Vector2( -1629.28, 511.103 )
+shape = SubResource( 49 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayMusicArea2Ds/MazeAreaMusic"]
+self_modulate = Color( 1, 0, 0.937255, 1 )
+shape = SubResource( 50 )
+
+[node name="ActionAreaMusic" parent="PlayMusicArea2Ds" instance=ExtResource( 22 )]
+position = Vector2( 777.818, -469.519 )
+
+[node name="AudioStreamPlayer" parent="PlayMusicArea2Ds/ActionAreaMusic" index="0"]
+stream = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayMusicArea2Ds/ActionAreaMusic/ExitPointArea2D" index="0"]
+shape = SubResource( 51 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayMusicArea2Ds/ActionAreaMusic"]
+shape = SubResource( 52 )
+
+[node name="EndAreaMusicPlayer" parent="PlayMusicArea2Ds" instance=ExtResource( 22 )]
+position = Vector2( -226.923, 1900.81 )
+
+[node name="AudioStreamPlayer" parent="PlayMusicArea2Ds/EndAreaMusicPlayer" index="0"]
+stream = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayMusicArea2Ds/EndAreaMusicPlayer"]
+self_modulate = Color( 1, 0, 0.937255, 1 )
+shape = SubResource( 53 )
 
 [node name="AmbientDesertSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
@@ -618,21 +681,41 @@ bus = "Ambient"
 [node name="PauseMenuGUI" parent="CanvasLayer" instance=ExtResource( 9 )]
 visible = false
 
-[node name="EndGameGUI" parent="CanvasLayer" instance=ExtResource( 20 )]
+[node name="EndGameGUI" parent="CanvasLayer" instance=ExtResource( 25 )]
 visible = false
 
-[node name="PlayMusicArea2Ds" type="Node2D" parent="."]
+[node name="FinalArea" parent="." instance=ExtResource( 26 )]
+position = Vector2( -226, 1898 )
 
-[node name="PlayMusicArea2D" parent="PlayMusicArea2Ds" instance=ExtResource( 22 )]
-position = Vector2( 887.302, -1641.49 )
+[node name="EndGameArea2D" parent="." instance=ExtResource( 27 )]
+position = Vector2( -229.381, 1900.58 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayMusicArea2Ds/PlayMusicArea2D/ExitPointArea2D" index="0"]
-position = Vector2( -1630.48, 491.519 )
-shape = SubResource( 50 )
+[node name="CollisionShape2D" parent="EndGameArea2D" index="0"]
+shape = SubResource( 56 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayMusicArea2Ds/PlayMusicArea2D"]
-self_modulate = Color( 0.133333, 0, 0.776471, 1 )
-shape = SubResource( 49 )
+[node name="FinalBlockZone" parent="." instance=ExtResource( 28 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinalBlockZone"]
+position = Vector2( 596.807, 6.34448 )
+shape = SubResource( 54 )
+disabled = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FinalBlockZone"]
+position = Vector2( -596.79, 6.34448 )
+shape = SubResource( 54 )
+disabled = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="FinalBlockZone"]
+position = Vector2( -14.1335, -502.772 )
+rotation = 1.57079
+shape = SubResource( 55 )
+disabled = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="FinalBlockZone"]
+position = Vector2( -14.1335, 518.29 )
+rotation = 1.57079
+shape = SubResource( 55 )
+disabled = true
 
 [connection signal="animation_finished" from="LevelCameraManager/AnimationPlayer" to="LevelCameraManager" method="_on_AnimationPlayer_animation_finished"]
 
@@ -640,4 +723,8 @@ shape = SubResource( 49 )
 [editable path="LabelDisplayers/LabelDisplayerChest"]
 [editable path="LabelDisplayers/LabelDisplayerGate"]
 [editable path="LabelDisplayers/LabelDisplayerEnemy"]
-[editable path="PlayMusicArea2Ds/PlayMusicArea2D"]
+[editable path="PlayMusicArea2Ds/MazeAreaMusic"]
+[editable path="PlayMusicArea2Ds/ActionAreaMusic"]
+[editable path="PlayMusicArea2Ds/EndAreaMusicPlayer"]
+[editable path="EndGameArea2D"]
+[editable path="EndGameArea2D/FairyPathFollow"]

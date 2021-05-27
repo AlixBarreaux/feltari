@@ -6,7 +6,7 @@ CTN_PHACO_BUTTON,CTN Phaco Itch.io (external link),CTN Phaco Itch.io (lien exter
 CTN_PHACO_LABEL,"Programming, Team Management, Game Design:\nCtn Phaco","Programmation, Gestion de l’Équipe, Game Design:\CTN Phaco"
 FULL_SCREEN,Full Screen,Plein Écran
 CREDITS_INTRO_LABEL,Thank you for playing the game!\n We are grateful about that after 1 week non stop work.\n We hope you enjoyed it! :)\n\n\n  Development Team:,Merci d'avoir joué au jeu!\n Nous vous en sommes reconnaissant après une semaine de travail sans relâche.\n Nous espérons que cela vous a plu! :)\n\n\n  L'Équipe de développement:
-END_GAME_MESSAGE,THE END\nThanks for playing!,FIN\n Merci d’avoir joué!
+END_GAME_MESSAGE,"THE END\nThanks for playing!\nMay the light guide you, guardian.","FIN\n Merci d’avoir joué!\nQue la lumière soit avec vous, gardien."
 MASTER_VOLUME,Master Volume,Volume Master
 MUSIC_VOLUME,Music Volume,Volume Musique
 OCTONYTE_BUTTON,Octonyte Itch.io (external link),Octonyte Itch.io (lien externe)
