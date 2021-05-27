@@ -24,10 +24,10 @@
 extents = Vector2( 285.92, 200.66 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 6, 399 )
+extents = Vector2( 7.77319, 163.653 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 297, 7 )
+extents = Vector2( 115.836, 8.34863 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 217, 23 )
@@ -286,7 +286,7 @@ shape = SubResource( 1 )
 position = Vector2( 1389, -1817 )
 
 [node name="Player" parent="Creatures" instance=ExtResource( 1 )]
-position = Vector2( 2984.01, -306.005 )
+position = Vector2( 2182.57, -419.374 )
 current_health = 4
 
 [node name="LabelDisplayers" type="Node2D" parent="."]
