@@ -26,13 +26,27 @@ var direction: Vector2 = Vector2(0.0, 0.0) setget set_direction, get_direction
 var velocity: Vector2 = Vector2(0.0, 0.0) setget set_velocity
 var faced_direction: Vector2 = Vector2(0.0, 0.0)
 
+var spawn_point: Vector2 = Vector2(0.0, 0.0) setget set_spawn_point, get_spawn_point
+
 var can_move: bool = true
 var can_melee_attack = true
 
 var targeted_interactable: PhysicsBody2D = null
 
+# Node References
 
+# Collision Shapes 2D
+onready var collision_shape2D: CollisionShape2D = $CollisionShape2D
+onready var hurt_box_collision_shape2D: CollisionShape2D = $HurtBoxBoxPivot/HurtBox/CollisionShape2D
+onready var interact_zone_collision_shape2D: CollisionShape2D = $InteractZone/CollisionShape2D
+
+# Timers
+onready var melee_attack_cooldown_timer: Timer = $MeleeAttackCooldownTimer
+onready var death_wait_timer: Timer = $DeathWaitTimer
+
+# Other nodes
 onready var fairy_sprite: Sprite = $FairySprite
+onready var player_hurt_animation_player: AnimationPlayer = $PlayerHurtAnimationPlayer
 
 ################################# RUN THE CODE #################################
 
@@ -122,17 +136,23 @@ func set_enabled(value: bool) -> void:
 	if value:
 		set_physics_process(true)
 		set_process_unhandled_input(true)
-		$CollisionShape2D.set_deferred("disabled", false)
-		$HurtBoxBoxPivot/HurtBox/CollisionShape2D.set_deferred("disabled", false)
-		$InteractZone/CollisionShape2D.set_deferred("disabled", false)
-		$MeleeAttackCooldownTimer.start()
+		
+		collision_shape2D.set_deferred("disabled", false)
+		hurt_box_collision_shape2D.set_deferred("disabled", false)
+		interact_zone_collision_shape2D.set_deferred("disabled", false)
+		
+		anim_tree_sm_playback.start("Idle")
+		
+		melee_attack_cooldown_timer.start()
 	else:
 		set_physics_process(false)
 		set_process_unhandled_input(false)
-		$CollisionShape2D.set_deferred("disabled", true)
-		$HurtBoxBoxPivot/HurtBox/CollisionShape2D.set_deferred("disabled", true)
-		$InteractZone/CollisionShape2D.set_deferred("disabled", true)
-		$MeleeAttackCooldownTimer.stop()
+		
+		collision_shape2D.set_deferred("disabled", true)
+		hurt_box_collision_shape2D.set_deferred("disabled", true)
+		interact_zone_collision_shape2D.set_deferred("disabled", true)
+		
+		melee_attack_cooldown_timer.stop()
 
 
 func get_enabled() -> bool:
@@ -152,6 +172,7 @@ func _initialize_asserts() -> void:
 
 func _initialize() -> void:
 	fairy_sprite.hide()
+	self.set_spawn_point(self.global_position)
 #	Events.emit_signal("player_current_health_set", self.get_current_health())
 #	Events.emit_signal("player_max_health_set", self.get_max_health())
 
@@ -208,6 +229,14 @@ func set_can_melee_attack(value: bool) -> void:
 	can_melee_attack = value
 
 
+func set_spawn_point(new_spawn_point: Vector2) -> void:
+	spawn_point = new_spawn_point
+
+
+func get_spawn_point() -> Vector2:
+	return spawn_point
+
+
 # GENERIC FUNCTIONS
 func get_can_melee_attack() -> bool:
 	return can_melee_attack
@@ -219,8 +248,13 @@ func calculate_velocity() -> void:
 
 # ANIMATIONS
 func melee_attack_animation_finished() -> void:
-	$MeleeAttackCooldownTimer.start()
+	melee_attack_cooldown_timer.start()
 	pass
+
+
+func on_die_animation_finished() -> void:
+	Events.emit_signal("player_died")
+	death_wait_timer.start()
 
 
 # Must rename to on_fairy_spawn_animation_finished()
@@ -301,6 +335,12 @@ func die() -> void:
 	anim_tree_sm_playback.travel("Die")
 
 
+func resurrect() -> void:
+	set_current_health(get_max_health())
+	self.set_global_position(get_spawn_point())
+	self.set_enabled(true)
+
+
 func take_damage(amount: int) -> void:
 	decrease_current_health(amount)
 
@@ -313,7 +353,7 @@ func decrease_current_health(amount: int) -> void:
 	self.set_current_health(get_current_health() - amount)
 	
 	print(self.name + ": I took " + str(amount) + " damage!")
-	anim_tree_sm_playback.travel("Take Damage")
+	player_hurt_animation_player.play("Hurt")
 	self.check_if_dead()
 	
 	Events.emit_signal("player_current_health_decreased", amount)
@@ -325,3 +365,8 @@ func increase_current_health(amount: int) -> void:
 	self.set_current_health(get_current_health() + amount)
 	print(self.name + ": I was healed by " + str(amount) + " health points!")
 	Events.emit_signal("player_current_health_increased", amount)
+
+
+func _on_DeathWaitTimer_timeout() -> void:
+	print("DEATH TIMEOUT!")
+	self.resurrect()

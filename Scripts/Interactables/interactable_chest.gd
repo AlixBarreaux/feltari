@@ -4,7 +4,6 @@ extends Interactable
 
 ############################### DECLARE VARIABLES ##############################
 
-onready var collision_shape2D: CollisionShape2D = $CollisionShape2D
 
 ################################# RUN THE CODE #################################
 

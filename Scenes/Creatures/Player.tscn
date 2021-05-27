@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Graphics/Spritesheets/beardman_spritesheet_32x32.png" type="Texture" id=2]
-[ext_resource path="res://Resources/Animations/take_damage_animation.tres" type="Animation" id=3]
 [ext_resource path="res://Assets/Graphics/Spritesheets/fairy_spritesheet.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -128,15 +127,16 @@ states/Walk/node = SubResource( 18 )
 states/Walk/position = Vector2( 552, 194 )
 transitions = [ "Idle", "Take Damage", SubResource( 19 ), "Take Damage", "Idle", SubResource( 20 ), "Melee Attack", "Idle", SubResource( 21 ), "Walk", "Idle", SubResource( 22 ), "Idle", "Walk", SubResource( 23 ), "Idle", "Melee Attack", SubResource( 24 ), "Walk", "Melee Attack", SubResource( 25 ), "Take Damage", "Die", SubResource( 26 ), "Melee Attack", "Die", SubResource( 27 ), "Walk", "Die", SubResource( 28 ), "Idle", "Die", SubResource( 29 ) ]
 start_node = "Idle"
-graph_offset = Vector2( 180.775, 16.8017 )
+graph_offset = Vector2( 64.775, 184.802 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=31]
 
 [sub_resource type="Animation" id=32]
 resource_name = "Die"
 length = 3.4
+step = 0.01
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -148,7 +148,7 @@ tracks/0/keys = {
 "values": [ 53, 54, 55, 56, 59, 59, 60, 61, 62, 63 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/path = NodePath("PlayerSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -159,12 +159,26 @@ tracks/1/keys = {
 "update": 1,
 "values": [ false, true, false, true ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 3.37 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "on_die_animation_finished"
+} ]
+}
 
 [sub_resource type="Animation" id=33]
 length = 1.5
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -176,7 +190,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/path = NodePath("PlayerSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -194,28 +208,29 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -89.9999, -89.9999 ]
+"values": [ -89.9999 ]
 }
 
 [sub_resource type="Animation" id=34]
+length = 1.5
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 39, 40 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/path = NodePath("PlayerSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -233,28 +248,29 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0, 0.0 ]
+"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=35]
+length = 1.5
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( -0.1, 0.5 ),
+"times": PoolRealArray( -0.1, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 39, 40 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/path = NodePath("PlayerSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -272,17 +288,17 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 180.0, 180.0 ]
+"values": [ 180.0 ]
 }
 
 [sub_resource type="Animation" id=36]
 length = 1.5
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -294,7 +310,7 @@ tracks/0/keys = {
 "values": [ 10, 11 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/path = NodePath("PlayerSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -312,15 +328,15 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 90.0, 90.0 ]
+"values": [ 90.0 ]
 }
 
 [sub_resource type="Animation" id=37]
 length = 0.2
-step = 0.05
+step = 0.04
 tracks/0/type = "value"
 tracks/0/path = NodePath("HurtBoxBoxPivot:rotation_degrees")
 tracks/0/interp = 1
@@ -389,19 +405,19 @@ tracks/4/keys = {
 } ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:frame")
+tracks/5/path = NodePath("PlayerSprite:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.04, 0.08, 0.12, 0.16 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 18, 19, 20, 21 ]
+"values": [ 12, 13, 14, 15, 16 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Sprite:flip_h")
+tracks/6/path = NodePath("PlayerSprite:flip_h")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -498,7 +514,7 @@ tracks/4/keys = {
 } ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:frame")
+tracks/5/path = NodePath("PlayerSprite:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -510,7 +526,7 @@ tracks/5/keys = {
 "values": [ 22, 23, 24, 25 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Sprite:flip_h")
+tracks/6/path = NodePath("PlayerSprite:flip_h")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -607,7 +623,7 @@ tracks/4/keys = {
 } ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:frame")
+tracks/5/path = NodePath("PlayerSprite:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -619,7 +635,7 @@ tracks/5/keys = {
 "values": [ 22, 23, 24, 25 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Sprite:flip_h")
+tracks/6/path = NodePath("PlayerSprite:flip_h")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -716,7 +732,7 @@ tracks/4/keys = {
 } ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Sprite:frame")
+tracks/5/path = NodePath("PlayerSprite:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -728,7 +744,7 @@ tracks/5/keys = {
 "values": [ 26, 27, 28, 29 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Sprite:flip_h")
+tracks/6/path = NodePath("PlayerSprite:flip_h")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -771,7 +787,7 @@ tracks/0/keys = {
 "values": [ -89.9999 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:frame")
+tracks/1/path = NodePath("PlayerSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -783,7 +799,7 @@ tracks/1/keys = {
 "values": [ 2, 3, 4, 5 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:flip_h")
+tracks/2/path = NodePath("PlayerSprite:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -811,7 +827,7 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:frame")
+tracks/1/path = NodePath("PlayerSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -823,7 +839,7 @@ tracks/1/keys = {
 "values": [ 12, 13, 14, 15, 16, 17 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:flip_h")
+tracks/2/path = NodePath("PlayerSprite:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -852,7 +868,7 @@ tracks/0/keys = {
 "values": [ 180.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:frame")
+tracks/1/path = NodePath("PlayerSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -864,7 +880,7 @@ tracks/1/keys = {
 "values": [ 12, 13, 14, 15, 16, 17 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:flip_h")
+tracks/2/path = NodePath("PlayerSprite:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -893,7 +909,7 @@ tracks/0/keys = {
 "values": [ 89.9999 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:frame")
+tracks/1/path = NodePath("PlayerSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -905,7 +921,7 @@ tracks/1/keys = {
 "values": [ 6, 7, 8, 9 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:flip_h")
+tracks/2/path = NodePath("PlayerSprite:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -918,6 +934,22 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=45]
+resource_name = "Hurt"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=46]
 resource_name = "Despawn"
 step = 0.2
 tracks/0/type = "value"
@@ -981,7 +1013,7 @@ tracks/4/keys = {
 "values": [ Vector2( 2, 2 ), Vector2( 0.425, 0.425 ) ]
 }
 
-[sub_resource type="Animation" id=46]
+[sub_resource type="Animation" id=47]
 resource_name = "Idle"
 loop = true
 step = 0.2
@@ -1046,7 +1078,7 @@ tracks/4/keys = {
 "values": [ 1, 2, 0 ]
 }
 
-[sub_resource type="Animation" id=47]
+[sub_resource type="Animation" id=48]
 resource_name = "Spawn"
 tracks/0/type = "value"
 tracks/0/path = NodePath("FairySprite:visible")
@@ -1123,7 +1155,7 @@ tracks/5/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=48]
+[sub_resource type="Animation" id=49]
 resource_name = "Fly"
 length = 1.2
 loop = true
@@ -1141,10 +1173,10 @@ tracks/0/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[sub_resource type="RectangleShape2D" id=49]
+[sub_resource type="RectangleShape2D" id=50]
 extents = Vector2( 15, 30 )
 
-[sub_resource type="RectangleShape2D" id=50]
+[sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 37.1911, 38.1541 )
 
 [node name="Player" type="KinematicBody2D" groups=[
@@ -1157,11 +1189,11 @@ current_speed = 200
 current_health = 2
 max_health = 4
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="PlayerSprite" type="Sprite" parent="."]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 hframes = 64
-frame = 39
+frame = 54
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
@@ -1170,8 +1202,8 @@ shape = SubResource( 1 )
 
 [node name="FairySprite" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.6 )
-position = Vector2( 0, -32 )
-scale = Vector2( 2, 2 )
+position = Vector2( -14, -42 )
+scale = Vector2( 1.685, 1.685 )
 texture = ExtResource( 4 )
 hframes = 3
 
@@ -1180,7 +1212,7 @@ tree_root = SubResource( 30 )
 anim_player = NodePath("../PlayerAnimationPlayer")
 parameters/playback = SubResource( 31 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
-"parameters/Melee Attack/blend_position" = Vector2( 0.807126, 0.0827587 )
+"parameters/Melee Attack/blend_position" = Vector2( 0.0251176, 0.655172 )
 parameters/Walk/blend_position = Vector2( 1.11387, 0.22069 )
 
 [node name="PlayerAnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1193,25 +1225,28 @@ anims/Die = SubResource( 32 )
 "anims/Melee Attack Left" = SubResource( 38 )
 "anims/Melee Attack Right" = SubResource( 39 )
 "anims/Melee Attack Up" = SubResource( 40 )
-"anims/Take Damage" = ExtResource( 3 )
 "anims/Walk Down" = SubResource( 41 )
 "anims/Walk Left" = SubResource( 42 )
 "anims/Walk Right" = SubResource( 43 )
 "anims/Walk Up" = SubResource( 44 )
 
+[node name="PlayerHurtAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Hurt = SubResource( 45 )
+
 [node name="FairyAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Despawn = SubResource( 45 )
-anims/Idle = SubResource( 46 )
-anims/Spawn = SubResource( 47 )
+anims/Despawn = SubResource( 46 )
+anims/Idle = SubResource( 47 )
+anims/Spawn = SubResource( 48 )
 
 [node name="FairyFlyAnimationPlayer" type="AnimationPlayer" parent="FairyAnimationPlayer"]
 autoplay = "Fly"
-anims/Fly = SubResource( 48 )
+anims/Fly = SubResource( 49 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
 [node name="HurtBoxBoxPivot" type="Position2D" parent="."]
+rotation = 3.14159
 
 [node name="HurtBox" type="Area2D" parent="HurtBoxBoxPivot"]
 position = Vector2( -35, -30 )
@@ -1223,24 +1258,29 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxBoxPivot/HurtBox"]
 light_mask = 0
-shape = SubResource( 49 )
+shape = SubResource( 50 )
 disabled = true
 
 [node name="InteractZone" type="Area2D" parent="."]
-rotation = 3.14159
+rotation = -1.57079
 collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone"]
 light_mask = 0
 position = Vector2( -59, 1.4 )
-shape = SubResource( 50 )
+shape = SubResource( 51 )
 
 [node name="MeleeAttackCooldownTimer" type="Timer" parent="."]
 wait_time = 0.75
 autostart = true
 
+[node name="DeathWaitTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="body_entered" from="HurtBoxBoxPivot/HurtBox" to="." method="_on_HurtBox_body_entered"]
 [connection signal="body_entered" from="InteractZone" to="." method="_on_InteractZone_body_entered"]
 [connection signal="body_exited" from="InteractZone" to="." method="_on_InteractZone_body_exited"]
 [connection signal="timeout" from="MeleeAttackCooldownTimer" to="." method="_on_MeleeAttackCooldownTimer_timeout"]
+[connection signal="timeout" from="DeathWaitTimer" to="." method="_on_DeathWaitTimer_timeout"]

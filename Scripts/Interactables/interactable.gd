@@ -11,6 +11,7 @@ var id: int = 0 setget set_id, get_id
 var current_color: Color = Color(0, 0, 0, 0) setget _set_current_color, get_current_color
 
 onready var sprite: Sprite = $Sprite
+onready var collision_shape2D: CollisionShape2D = $CollisionShape2D
 onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 ################################# RUN THE CODE #################################
