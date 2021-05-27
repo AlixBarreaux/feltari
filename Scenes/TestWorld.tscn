@@ -75,7 +75,7 @@ position = Vector2( 734.392, -1230.43 )
 position = Vector2( 2113.8, 143.711 )
 
 [node name="InteractableChest2" parent="Interactables/Chests" instance=ExtResource( 4 )]
-position = Vector2( 2181.27, 158.322 )
+position = Vector2( 2576.38, -25.7618 )
 
 [node name="InteractableChest3" parent="Interactables/Chests" instance=ExtResource( 4 )]
 position = Vector2( 3726.69, -824.469 )

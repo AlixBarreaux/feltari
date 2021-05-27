@@ -107,9 +107,11 @@ func _unhandled_input(_event: InputEvent) -> void:
 	
 	# Interact
 	if Input.is_action_just_pressed("interact"):
-		if targeted_interactable != null:
-			targeted_interactable.receive_interaction()
-			targeted_interactable = null
+		print(get_can_interact())
+		if self.get_can_interact():
+			if targeted_interactable != null:
+				targeted_interactable.receive_interaction()
+				targeted_interactable = null
 	
 	
 	self.direction = self.direction.normalized()
@@ -255,6 +257,7 @@ func calculate_velocity() -> void:
 func melee_attack_animation_finished() -> void:
 	melee_attack_cooldown_timer.start()
 	is_attacking = false
+	self.set_can_interact(true)
 
 
 func on_die_animation_finished() -> void:
