@@ -698,6 +698,18 @@ tracks/7/keys = {
 "method": "melee_attack_animation_finished"
 } ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("SwordSound:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=36]
 length = 0.2
@@ -806,6 +818,18 @@ tracks/7/keys = {
 "args": [  ],
 "method": "melee_attack_animation_finished"
 } ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("SwordSound:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="Animation" id=37]
@@ -1286,7 +1310,7 @@ max_health = 4
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 hframes = 64
-frame = 19
+frame = 22
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
@@ -1339,6 +1363,7 @@ anims/Fly = SubResource( 45 )
 current = true
 
 [node name="HurtBoxBoxPivot" type="Position2D" parent="."]
+rotation = 1.57079
 
 [node name="HurtBox" type="Area2D" parent="HurtBoxBoxPivot"]
 position = Vector2( -35, -30 )
@@ -1351,7 +1376,6 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxBoxPivot/HurtBox"]
 light_mask = 0
 shape = SubResource( 46 )
-disabled = true
 
 [node name="InteractZone" type="Area2D" parent="."]
 rotation = 1.57079
@@ -1364,7 +1388,7 @@ position = Vector2( -59, 1.4 )
 shape = SubResource( 47 )
 
 [node name="MeleeAttackCooldownTimer" type="Timer" parent="."]
-wait_time = 0.75
+wait_time = 0.25
 autostart = true
 
 [node name="DeathWaitTimer" type="Timer" parent="."]
