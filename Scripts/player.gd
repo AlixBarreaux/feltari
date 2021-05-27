@@ -62,6 +62,7 @@ func _ready() -> void:
 	
 	self.set_enabled(false)
 	$Camera2D._set_current(false)
+	self.set_current_health(self.get_max_health())
 	
 
 var is_attacking: bool = false
@@ -177,7 +178,7 @@ func _initialize_asserts() -> void:
 	# Must be more than 0!
 	assert(self.current_health > 0)
 	assert(self.max_health > 0)
-	# Current Health mus be less or equal to max health!
+	# Current Health must be less or equal to max health!
 	assert(self.current_health <= self.max_health)
 
 
