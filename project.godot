@@ -9,11 +9,21 @@
 config_version=4
 
 _global_script_classes=[ {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> experimental
 "base": "Interactable",
 "class": "ColorCheckGate",
 "language": "GDScript",
 "path": "res://Scripts/Interactables/interactable_color_check_gate.gd"
 }, {
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< Updated upstream
+>>>>>>> 5904932407f96667cc71d8ce832f39a515bf62d3
+>>>>>>> experimental
 "base": "Reference",
 "class": "CreditsMenu",
 "language": "GDScript",
