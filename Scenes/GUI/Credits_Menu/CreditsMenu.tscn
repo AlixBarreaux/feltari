@@ -47,14 +47,14 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-margin_right = 690.0
-margin_bottom = 5711.0
+margin_right = 798.0
+margin_bottom = 6623.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 70
 
 [node name="IntroLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
-margin_right = 690.0
+margin_right = 798.0
 margin_bottom = 21.0
 text = "CREDITS_INTRO_LABEL"
 align = 1
@@ -63,12 +63,12 @@ autowrap = true
 
 [node name="CTNPhacoContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
 margin_top = 91.0
-margin_right = 690.0
+margin_right = 798.0
 margin_bottom = 169.0
 custom_constants/separation = 30
 
 [node name="CTNPhacoLabel" type="Label" parent="ScrollContainer/VBoxContainer/CTNPhacoContainer"]
-margin_right = 690.0
+margin_right = 798.0
 margin_bottom = 21.0
 text = "CTN_PHACO_LABEL"
 align = 1
@@ -79,14 +79,14 @@ __meta__ = {
 
 [node name="CTNPhacoButton" parent="ScrollContainer/VBoxContainer/CTNPhacoContainer" instance=ExtResource( 4 )]
 margin_top = 51.0
-margin_right = 690.0
+margin_right = 798.0
 margin_bottom = 78.0
 text = "CTN_PHACO_BUTTON"
 link_to_open = "https://ctn-phaco.itch.io"
 
 [node name="OctonyteContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
 margin_top = 239.0
-margin_right = 690.0
+margin_right = 798.0
 margin_bottom = 317.0
 custom_constants/separation = 30
 __meta__ = {
@@ -94,7 +94,7 @@ __meta__ = {
 }
 
 [node name="OctonyteLabel" type="Label" parent="ScrollContainer/VBoxContainer/OctonyteContainer"]
-margin_right = 690.0
+margin_right = 798.0
 margin_bottom = 21.0
 text = "Octonyte"
 align = 1
@@ -102,14 +102,14 @@ valign = 1
 
 [node name="OctonyteButton" parent="ScrollContainer/VBoxContainer/OctonyteContainer" instance=ExtResource( 4 )]
 margin_top = 51.0
-margin_right = 690.0
+margin_right = 798.0
 margin_bottom = 78.0
 text = "OCTONYTE_BUTTON"
 link_to_open = "https://soundcloud.com/octonyte"
 
 [node name="RaesayContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
 margin_top = 387.0
-margin_right = 690.0
+margin_right = 798.0
 margin_bottom = 465.0
 custom_constants/separation = 30
 __meta__ = {
@@ -117,7 +117,7 @@ __meta__ = {
 }
 
 [node name="RaesayLabel" type="Label" parent="ScrollContainer/VBoxContainer/RaesayContainer"]
-margin_right = 690.0
+margin_right = 798.0
 margin_bottom = 21.0
 text = "Raesay"
 align = 1
@@ -125,29 +125,67 @@ valign = 1
 
 [node name="RaesayButton2" parent="ScrollContainer/VBoxContainer/RaesayContainer" instance=ExtResource( 4 )]
 margin_top = 51.0
-margin_right = 690.0
+margin_right = 798.0
 margin_bottom = 78.0
 text = "RAESAY_BUTTON"
 link_to_open = "https://raesay.itch.io"
 
 [node name="AssetsUsedLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
 margin_top = 535.0
-margin_right = 690.0
-margin_bottom = 700.0
+margin_right = 798.0
+margin_bottom = 1612.0
 text = "Assets Downloaded Online:
 
-Permian:
-(MIT License)
+Permian Font:
 https://fontlibrary.org/en/font/permian
+
+Light texture (light.png):
+https://github.com/godotengine/godot-demo-projects/blob/master/2d/lights_and_shadows/light.png
+
+
+Lake Wind Ambience • Ambiences • Sounds Effects (No Copyright Sounds)
+https://www.youtube.com/watch?v=tdtX6KtVfRo
+
+
+FREE SOUND EFFECT - WIND [NO COPYRIGHT]
+https://www.youtube.com/watch?v=A5vFFEa-q_8
+
+
+FREE SOUND EFFECT - SWORD [NO COPYRIGHT]
+https://www.youtube.com/watch?v=oh5ygPb_wKU&list=PLPBN0sOxnQkNXhOEZNRPGJ_f7dzfiixZJ&index=6
+
+
+Smoke Bomb • Weapons • Sounds Effects (No Copyright Sounds)
+https://www.youtube.com/watch?v=2WI5ekcaxqE
+
+
+Fairy Dust 1 No Copyright Sound Effect(no copyright music)
+https://www.youtube.com/watch?v=Aff3stUAy-4
+
+
+Beautiful Magical Background Music | Fairy | No Copyright Music
+https://www.youtube.com/watch?v=h9Yrefejwac
+
+
+WALKING ON BEACH SAND // SOUND EFFECT (downloadable + royalty free)
+https://www.youtube.com/watch?v=Lg2zxeSF7WM
+
+
+Dirt and Sand Falling Slowly Sound Effect _(No Copyright)
+https://www.youtube.com/watch?v=7LNAeWM7UxI
+
+
+Teleport Sound Effects All Sounds
+https://www.youtube.com/watch?v=7sOBMWW688I
 
 ----------"
 align = 1
 valign = 1
 
 [node name="GodotEngineLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
-margin_top = 770.0
-margin_right = 690.0
-margin_bottom = 5711.0
+margin_top = 1682.0
+margin_right = 798.0
+margin_bottom = 6623.0
 text = "Game Engine: Godot Engine
 
 License (MIT) :

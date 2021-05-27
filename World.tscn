@@ -353,7 +353,7 @@ shape = SubResource( 1 )
 ] instance=ExtResource( 17 )]
 
 [node name="Player" parent="Creatures" instance=ExtResource( 21 )]
-position = Vector2( 2038.13, 421.984 )
+position = Vector2( -1571.24, 2823.2 )
 current_health = 4
 
 [node name="LabelDisplayers" type="Node2D" parent="."]
@@ -367,34 +367,27 @@ margin_left = -89.0
 margin_top = -74.0
 margin_right = 107.0
 margin_bottom = 87.0
-text = "Move with these keys:
-WASD/ZQSD
-OR
-Left Stick"
+text = "TUTORIAL_MESSAGE_MOVE"
 
-[node name="LabelDisplayerMove2" parent="LabelDisplayers" instance=ExtResource( 18 )]
+[node name="LabelDisplayerPickup" parent="LabelDisplayers" instance=ExtResource( 18 )]
 position = Vector2( -730.158, -1371.66 )
 
-[node name="DisplayTextLabel" parent="LabelDisplayers/LabelDisplayerMove2" index="1"]
+[node name="DisplayTextLabel" parent="LabelDisplayers/LabelDisplayerPickup" index="1"]
 margin_left = -89.0
 margin_top = -74.0
 margin_right = 107.0
 margin_bottom = 87.0
-text = "You start with 4 health points.
-There is no health indicator.
-One heart replenishes one health point.
-Don't take much more than needed!"
+text = "TUTORIAL_MESSAGE_PICKUP"
 
-[node name="LabelDisplayerFinalArea" parent="LabelDisplayers" instance=ExtResource( 18 )]
+[node name="LabelDisplayerLastLevelArea" parent="LabelDisplayers" instance=ExtResource( 18 )]
 position = Vector2( -3642.05, 2923.07 )
 
-[node name="DisplayTextLabel" parent="LabelDisplayers/LabelDisplayerFinalArea" index="1"]
+[node name="DisplayTextLabel" parent="LabelDisplayers/LabelDisplayerLastLevelArea" index="1"]
 margin_left = -89.0
 margin_top = -74.0
 margin_right = 107.0
 margin_bottom = 87.0
-text = "Legend says a magical oasis is behind a door guarded by creatures.
-Your destiny is near..."
+text = "LAST_LEVEL_MESSAGE"
 
 [node name="LabelDisplayerChest" parent="LabelDisplayers" instance=ExtResource( 18 )]
 position = Vector2( -111.264, 552.411 )
@@ -404,15 +397,7 @@ margin_left = -89.0
 margin_top = -74.0
 margin_right = 107.0
 margin_bottom = 87.0
-text = "Interact with the CHEST
-by pressing:
-E
-OR
-Xbox A / PS Cross
-Nintendo B
-
-Be careful!
-You can only have ONE following you at a time!"
+text = "TUTORIAL_MESSAGE_CHEST"
 
 [node name="LabelDisplayerAdvice" parent="LabelDisplayers" instance=ExtResource( 18 )]
 position = Vector2( 189.876, -135.891 )
@@ -422,8 +407,7 @@ margin_left = -89.0
 margin_top = -74.0
 margin_right = 107.0
 margin_bottom = 87.0
-text = "ADVICE:
-Leave this first fairy in the altar."
+text = "TUTORIAL_MESSAGE_ADVICE"
 
 [node name="LabelDisplayerAltar" parent="LabelDisplayers" instance=ExtResource( 18 )]
 position = Vector2( -85.8368, -13.3423 )
@@ -433,18 +417,7 @@ margin_left = -89.0
 margin_top = -74.0
 margin_right = 107.0
 margin_bottom = 87.0
-text = "Interact with the ALTAR
-by pressing:
-E
-OR
-Xbox A / PS Cross
-Nintendo B
-
-You can make your fairy go in the ALTAR if you have the fairy of the SAME COLOR...
-And you can take it back from the ALTAR if you DON'T HAVE ANY FAIRY!
-
-REMEMBER:
-You can only have ONE following you at a time!"
+text = "TUTORIAL_MESSAGE_ALTAR"
 
 [node name="LabelDisplayerGate" parent="LabelDisplayers" instance=ExtResource( 18 )]
 position = Vector2( -135.274, 1057.8 )
@@ -454,10 +427,7 @@ margin_left = -89.0
 margin_top = -74.0
 margin_right = 107.0
 margin_bottom = 87.0
-text = "Wait a little for the Fairy to follow you.
-This is a Color Gate.
-
-To pass through it, you need to find a fairy of the same color. Go find one!"
+text = "TUTORIAL_MESSAGE_GATE"
 
 [node name="LabelDisplayerEnemy" parent="LabelDisplayers" instance=ExtResource( 18 )]
 position = Vector2( -287.379, -764.12 )
@@ -467,9 +437,7 @@ margin_left = -89.0
 margin_top = -74.0
 margin_right = 107.0
 margin_bottom = 87.0
-text = "This is a shrine guardian.
-He will attack you on sight if you are in his territory but he is tied to it.
-He will teleport when wandering too far from it."
+text = "TUTORIAL_MESSAGE_ENEMY"
 
 [node name="Panel" parent="LabelDisplayers/LabelDisplayerEnemy/DisplayTextLabel" index="0"]
 margin_left = 1.36548
@@ -477,20 +445,17 @@ margin_top = 2.418
 margin_right = 1.36548
 margin_bottom = 2.418
 
-[node name="LabelDisplayerEnemy2" parent="LabelDisplayers" instance=ExtResource( 18 )]
+[node name="LabelDisplayerAttack" parent="LabelDisplayers" instance=ExtResource( 18 )]
 position = Vector2( 371.043, -764.12 )
 
-[node name="DisplayTextLabel" parent="LabelDisplayers/LabelDisplayerEnemy2" index="1"]
+[node name="DisplayTextLabel" parent="LabelDisplayers/LabelDisplayerAttack" index="1"]
 margin_left = -89.0
 margin_top = -74.0
 margin_right = 107.0
 margin_bottom = 87.0
-text = "Attack by pressing:
-SPACE BAR
-OR
-R2 (Right Trigger 2)"
+text = "TUTORIAL_MESSAGE_ATTACK"
 
-[node name="Panel" parent="LabelDisplayers/LabelDisplayerEnemy2/DisplayTextLabel" index="0"]
+[node name="Panel" parent="LabelDisplayers/LabelDisplayerAttack/DisplayTextLabel" index="0"]
 margin_left = 1.36548
 margin_top = 2.418
 margin_right = 1.36548
@@ -815,14 +780,14 @@ disabled = true
 [connection signal="animation_finished" from="LevelCameraManager/AnimationPlayer" to="LevelCameraManager" method="_on_AnimationPlayer_animation_finished"]
 
 [editable path="LabelDisplayers/LabelDisplayerMove"]
-[editable path="LabelDisplayers/LabelDisplayerMove2"]
-[editable path="LabelDisplayers/LabelDisplayerFinalArea"]
+[editable path="LabelDisplayers/LabelDisplayerPickup"]
+[editable path="LabelDisplayers/LabelDisplayerLastLevelArea"]
 [editable path="LabelDisplayers/LabelDisplayerChest"]
 [editable path="LabelDisplayers/LabelDisplayerAdvice"]
 [editable path="LabelDisplayers/LabelDisplayerAltar"]
 [editable path="LabelDisplayers/LabelDisplayerGate"]
 [editable path="LabelDisplayers/LabelDisplayerEnemy"]
-[editable path="LabelDisplayers/LabelDisplayerEnemy2"]
+[editable path="LabelDisplayers/LabelDisplayerAttack"]
 [editable path="PlayMusicArea2Ds/MazeAreaMusic"]
 [editable path="PlayMusicArea2Ds/ActionAreaMusic"]
 [editable path="PlayMusicArea2Ds/EndAreaMusicPlayer"]
