@@ -196,6 +196,8 @@ func _initialize() -> void:
 
 func set_current_health(value: int) -> void:
 	current_health = value
+	if current_health > max_health:
+		current_health = max_health
 	print(self.name + " Current health set to: " + str(value))
 
 
