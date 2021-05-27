@@ -3,11 +3,6 @@
 [resource]
 resource_name = "Take Damage"
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
-length = 0.4
-=======
->>>>>>> experimental
 <<<<<<< Updated upstream
 length = 0.5
 step = 0.05
@@ -26,10 +21,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
-<<<<<<< HEAD
 =======
 length = 0.4
->>>>>>> experimental
-=======
->>>>>>> 5904932407f96667cc71d8ce832f39a515bf62d3
 >>>>>>> experimental

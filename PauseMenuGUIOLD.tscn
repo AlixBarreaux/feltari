@@ -3,7 +3,7 @@
 [ext_resource path="res://Resources/Themes/gui_theme_medium.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/GUI/Options_Menu/OptionsMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/TestWorld.tscn" type="PackedScene" id=3]
-[ext_resource path="res://pause_menu_guiOLD.gd" type="Script" id=4]
+[ext_resource path="res://pause_menu_gui.gd" type="Script" id=4]
 [ext_resource path="res://Resources/Themes/gui_theme_large.tres" type="Theme" id=5]
 [ext_resource path="res://Scenes/GUI/QuitToDesktopButton.tscn" type="PackedScene" id=6]
 
