@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "HSlider",
 "class": "AmbientSoundSlider",
 "language": "GDScript",
-"path": "res://ambient_sounds_slider.gd"
+"path": "res://Scripts/GUI/Options_Controllers/ambient_sounds_slider.gd"
 }, {
 "base": "Interactable",
 "class": "ColorCheckGate",
@@ -27,12 +27,12 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "EndGameArea2D",
 "language": "GDScript",
-"path": "res://end_game_area2D.gd"
+"path": "res://Scripts/end_game_area2D.gd"
 }, {
 "base": "Control",
 "class": "EndGameGUI",
 "language": "GDScript",
-"path": "res://end_game_gui.gd"
+"path": "res://Scripts/end_game_gui.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Enemy",
@@ -52,12 +52,12 @@ _global_script_classes=[ {
 "base": "Path2D",
 "class": "FairyPathFollow",
 "language": "GDScript",
-"path": "res://fairy_path_follow.gd"
+"path": "res://Scripts/fairy_path_follow.gd"
 }, {
 "base": "StaticBody2D",
 "class": "FinalBlockZone",
 "language": "GDScript",
-"path": "res://Scenes/final_block_zone.gd"
+"path": "res://Scripts/final_block_zone.gd"
 }, {
 "base": "CheckBox",
 "class": "FullScreenCheckbox",
@@ -89,10 +89,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/interactables_manager.gd"
 }, {
-"base": "Node2D",
+"base": "Reference",
 "class": "LevelCameraManager",
 "language": "GDScript",
-"path": "res://level_camera_manager.gd"
+"path": "res://Scripts/level_camera_manager.gd"
 }, {
 "base": "HSlider",
 "class": "MasterSoundSlider",
@@ -122,7 +122,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "PlayMusicArea2D",
 "language": "GDScript",
-"path": "res://Scenes/play_music_area2D.gd"
+"path": "res://Scripts/play_music_area2D.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
@@ -171,7 +171,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Feltari"
-run/main_scene="res://Scenes/World.tscn"
+run/main_scene="res://World.tscn"
 config/icon="res://Miscellaneous/feltari_icon.png"
 config/macos_native_icon="res://Miscellaneous/feltari_icon.icns"
 config/windows_native_icon="res://Miscellaneous/feltari_icon.ico"

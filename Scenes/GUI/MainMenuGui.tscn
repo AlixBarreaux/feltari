@@ -17,11 +17,11 @@
 [ext_resource path="res://Scenes/Interactables/InteractableColorCheckGate.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Tilemaps/PathsTileMap.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Others/PatrolZoneEnemy.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Lake.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Lake.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/GUI/InGameGUI.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Creatures/Player.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Scenes/Creatures/Enemy.tscn" type="PackedScene" id=21]
-[ext_resource path="res://LabelDisplayer.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/LabelDisplayer.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scenes/Pickables/PickableHeart.tscn" type="PackedScene" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]

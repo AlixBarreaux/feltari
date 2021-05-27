@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://pause_menu_gui.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/MainMenuWorld.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/pause_menu_gui.gd" type="Script" id=1]
+[ext_resource path="res://MainMenuWorld.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Resources/Themes/gui_theme_medium.tres" type="Theme" id=3]
 [ext_resource path="res://Resources/Themes/gui_theme_large.tres" type="Theme" id=4]
 [ext_resource path="res://Scenes/GUI/QuitToDesktopButton.tscn" type="PackedScene" id=5]

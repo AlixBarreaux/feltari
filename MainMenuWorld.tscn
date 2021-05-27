@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scenes/Tilemaps/GroundTileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Graphics/Single_Textures/tumbleweed.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/GUI/MainMenuGui.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Sound/Musics/desert_music.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Sound/Musics/desert_music.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Scenes/GUI/MainMenuGui.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -60,14 +59,18 @@ tracks/3/keys = {
 
 [node name="MainMenuWorld" type="Node2D"]
 
-[node name="GroundTileMap" parent="." instance=ExtResource( 1 )]
-position = Vector2( 456.791, 33.9411 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
 anims/Idle = SubResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BackgroundTextureRect" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TumbleWeedTextureRect" type="TextureRect" parent="CanvasLayer"]
 self_modulate = Color( 0.996078, 0.74902, 0.00784314, 1 )
@@ -82,9 +85,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainMenu" parent="CanvasLayer" instance=ExtResource( 3 )]
+[node name="MainMenu" parent="CanvasLayer" instance=ExtResource( 4 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( 3 )
 autoplay = true
 bus = "Music"

@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Fonts/permian_sans_typeface.otf" type="DynamicFontData" id=1]
-[ext_resource path="res://end_game_gui.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/MainMenuWorld.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/end_game_gui.gd" type="Script" id=2]
+[ext_resource path="res://MainMenuWorld.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Resources/Themes/gui_theme_medium.tres" type="Theme" id=4]
 
 [sub_resource type="StyleBoxFlat" id=2]

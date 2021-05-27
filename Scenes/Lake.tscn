@@ -2,9 +2,9 @@
 
 [ext_resource path="res://Assets/Graphics/Single_Textures/lake.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Sound/Ambient/lake_ambience.ogg" type="AudioStream" id=2]
-[ext_resource path="res://lake.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/lake.gd" type="Script" id=3]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=1]
 resource_name = "Fade In Out"
 length = 3.0
 tracks/0/type = "value"
@@ -37,7 +37,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AudioStreamPlayer2D:volume_db")
 tracks/0/interp = 1
@@ -85,8 +85,8 @@ bus = "Ambient"
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
 [node name="SoundAnimationPlayer" type="AnimationPlayer" parent="."]
-"anims/Fade In Out" = SubResource( 4 )
-"anims/Fade Sound In" = SubResource( 5 )
+"anims/Fade In Out" = SubResource( 1 )
+"anims/Fade Sound In" = SubResource( 2 )
 "anims/Fade Sound Out" = SubResource( 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
