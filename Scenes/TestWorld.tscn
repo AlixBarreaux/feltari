@@ -129,7 +129,7 @@ shape = SubResource( 1 )
 ] instance=ExtResource( 3 )]
 
 [node name="Player" parent="Creatures" instance=ExtResource( 1 )]
-position = Vector2( 2984.01, -306.005 )
+position = Vector2( 2104, -5.18567 )
 current_health = 4
 
 [node name="LabelDisplayers" type="Node2D" parent="."]
