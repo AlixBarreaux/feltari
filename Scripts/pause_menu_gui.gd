@@ -29,10 +29,8 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause_menu"):
 		if not self.visible:
-			get_tree().set_pause(true)
 			self.show()
 		else:
-			get_tree().set_pause(false)
 			self.hide()
 
 
@@ -83,4 +81,7 @@ func _on_OptionsMenu_visibility_changed() -> void:
 
 func _on_PauseMenuGUI_visibility_changed() -> void:
 	if self.visible:
+		get_tree().set_pause(true)
 		first_button_to_focus_button.grab_focus()
+	else:
+		get_tree().set_pause(false)
