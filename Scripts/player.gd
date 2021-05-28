@@ -47,7 +47,7 @@ onready var death_wait_timer: Timer = $DeathWaitTimer
 # Other nodes
 onready var fairy_sprite: Sprite = $FairySprite
 onready var player_hurt_animation_player: AnimationPlayer = $PlayerHurtAnimationPlayer
-#onready var fairy_animation_player: AnimationPlayer = $FairyAnimationPlayer
+onready var fairy_animation_player: AnimationPlayer = $FairyAnimationPlayer
 
 
 ################################# RUN THE CODE #################################

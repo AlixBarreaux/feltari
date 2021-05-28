@@ -3,6 +3,7 @@ extends Node
 
 ############################### DECLARE VARIABLES ##############################
 
+# warning-ignore: unused_signal
 signal game_started
 signal game_ended
 
