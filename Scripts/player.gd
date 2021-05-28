@@ -47,6 +47,7 @@ onready var death_wait_timer: Timer = $DeathWaitTimer
 # Other nodes
 onready var fairy_sprite: Sprite = $FairySprite
 onready var player_hurt_animation_player: AnimationPlayer = $PlayerHurtAnimationPlayer
+onready var fairy_animation_player: AnimationPlayer = $FairyAnimationPlayer
 
 
 ################################# RUN THE CODE #################################
@@ -116,7 +117,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 		if self.get_can_interact():
 			if targeted_interactable != null:
 				targeted_interactable.receive_interaction()
-				targeted_interactable = null
+#				targeted_interactable = null
 	
 	
 	self.direction = self.direction.normalized()
@@ -331,11 +332,11 @@ func get_fairy_current_color() -> Color:
 
 func spawn_following_fairy(new_color: Color) -> void:
 	set_fairy_current_color(new_color)
-	$FairyAnimationPlayer.play("Spawn")
+	fairy_animation_player.play("Spawn")
 
 
 func despawn_following_fairy() -> void:
-	$FairyAnimationPlayer.play("Despawn")
+	fairy_animation_player.play("Despawn")
 
 
 
