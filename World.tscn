@@ -280,7 +280,7 @@ position = Vector2( 1966.9, -2068.64 )
 [node name="ColorCheckGates" type="Node2D" parent="Interactables"]
 
 [node name="InteractableColorCheckGate" parent="Interactables/ColorCheckGates" instance=ExtResource( 11 )]
-position = Vector2( 2129.38, 332.244 )
+position = Vector2( 2112.48, -120.991 )
 
 [node name="InteractableColorCheckGate2" parent="Interactables/ColorCheckGates" instance=ExtResource( 11 )]
 position = Vector2( 2212.44, 237.856 )
