@@ -1,0 +1,420 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/GUI/credits_menu.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Themes/gui_theme_medium.tres" type="Theme" id=2]
+[ext_resource path="res://Resources/Themes/gui_theme_large.tres" type="Theme" id=3]
+[ext_resource path="res://Scenes/GUI/Credits_Menu/ExternalLinkOpenButton.tscn" type="PackedScene" id=4]
+
+[node name="CreditsMenu" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+first_button_to_focus_node_path = NodePath("BackButton")
+
+[node name="TitleLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -426.5
+margin_top = 36.0
+margin_right = 426.5
+margin_bottom = 74.0
+theme = ExtResource( 3 )
+text = "CREDITS"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -351.0
+margin_top = -124.0
+margin_right = 351.0
+margin_bottom = 124.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 798.0
+margin_bottom = 6623.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 70
+
+[node name="IntroLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_right = 798.0
+margin_bottom = 21.0
+text = "CREDITS_INTRO_LABEL"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="CTNPhacoContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 91.0
+margin_right = 798.0
+margin_bottom = 169.0
+custom_constants/separation = 30
+
+[node name="CTNPhacoLabel" type="Label" parent="ScrollContainer/VBoxContainer/CTNPhacoContainer"]
+margin_right = 798.0
+margin_bottom = 21.0
+text = "CTN_PHACO_LABEL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CTNPhacoButton" parent="ScrollContainer/VBoxContainer/CTNPhacoContainer" instance=ExtResource( 4 )]
+margin_top = 51.0
+margin_right = 798.0
+margin_bottom = 78.0
+text = "CTN_PHACO_BUTTON"
+link_to_open = "https://ctn-phaco.itch.io"
+
+[node name="OctonyteContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 239.0
+margin_right = 798.0
+margin_bottom = 317.0
+custom_constants/separation = 30
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="OctonyteLabel" type="Label" parent="ScrollContainer/VBoxContainer/OctonyteContainer"]
+margin_right = 798.0
+margin_bottom = 21.0
+text = "OCTONYTE_LABEL"
+align = 1
+valign = 1
+
+[node name="OctonyteButton" parent="ScrollContainer/VBoxContainer/OctonyteContainer" instance=ExtResource( 4 )]
+margin_top = 51.0
+margin_right = 798.0
+margin_bottom = 78.0
+text = "OCTONYTE_BUTTON"
+link_to_open = "https://soundcloud.com/octonyte"
+
+[node name="RaesayContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 387.0
+margin_right = 798.0
+margin_bottom = 465.0
+custom_constants/separation = 30
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="RaesayLabel" type="Label" parent="ScrollContainer/VBoxContainer/RaesayContainer"]
+margin_right = 798.0
+margin_bottom = 21.0
+text = "RAESAY_LABEL"
+align = 1
+valign = 1
+
+[node name="RaesayButton2" parent="ScrollContainer/VBoxContainer/RaesayContainer" instance=ExtResource( 4 )]
+margin_top = 51.0
+margin_right = 798.0
+margin_bottom = 78.0
+text = "RAESAY_BUTTON"
+link_to_open = "https://raesay.itch.io"
+
+[node name="AssetsUsedLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 535.0
+margin_right = 798.0
+margin_bottom = 1612.0
+text = "Assets Downloaded Online:
+
+Permian Font:
+https://fontlibrary.org/en/font/permian
+
+Light texture (light.png):
+https://github.com/godotengine/godot-demo-projects/blob/master/2d/lights_and_shadows/light.png
+
+
+Lake Wind Ambience • Ambiences • Sounds Effects (No Copyright Sounds)
+https://www.youtube.com/watch?v=tdtX6KtVfRo
+
+
+FREE SOUND EFFECT - WIND [NO COPYRIGHT]
+https://www.youtube.com/watch?v=A5vFFEa-q_8
+
+
+FREE SOUND EFFECT - SWORD [NO COPYRIGHT]
+https://www.youtube.com/watch?v=oh5ygPb_wKU&list=PLPBN0sOxnQkNXhOEZNRPGJ_f7dzfiixZJ&index=6
+
+
+Smoke Bomb • Weapons • Sounds Effects (No Copyright Sounds)
+https://www.youtube.com/watch?v=2WI5ekcaxqE
+
+
+Fairy Dust 1 No Copyright Sound Effect(no copyright music)
+https://www.youtube.com/watch?v=Aff3stUAy-4
+
+
+Beautiful Magical Background Music | Fairy | No Copyright Music
+https://www.youtube.com/watch?v=h9Yrefejwac
+
+
+WALKING ON BEACH SAND // SOUND EFFECT (downloadable + royalty free)
+https://www.youtube.com/watch?v=Lg2zxeSF7WM
+
+
+Dirt and Sand Falling Slowly Sound Effect _(No Copyright)
+https://www.youtube.com/watch?v=7LNAeWM7UxI
+
+
+Teleport Sound Effects All Sounds
+https://www.youtube.com/watch?v=7sOBMWW688I
+
+----------"
+align = 1
+valign = 1
+
+[node name="GodotEngineLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1682.0
+margin_right = 798.0
+margin_bottom = 6623.0
+text = "Game Engine: Godot Engine
+
+License (MIT) :
+Copyright (c) 2007-2021 Juan Linietsky, Ariel Manzur.
+Copyright (c) 2014-2021 Godot Engine contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the \"Software\"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+-- Godot Engine <https://godotengine.org>
+
+
+----------
+
+
+Godot Engine Authors:
+
+Aaron Franke (aaronfranke)
+Alexander Holland (AlexHolly)
+Alexey Khoroshavin (allkhor)
+Alket Rexhepi (alketii)
+Andrea Catania (AndreaCatania)
+Andrii Doroshenko (Xrayez)
+Andy Moss (MillionOstrich)
+Anish Bhobe (KidRigger)
+Anton Yabchinskiy (a12n)
+Anutrix
+Aren Villanueva (kurikaesu)
+Ariel Manzur (punto-)
+Bastiaan Olij (BastiaanOlij)
+Ben Brookshire (sheepandshepherd)
+Benjamin Larsson (Nallebeorn)
+Bernard Liebl (poke1024)
+Błażej Szczygieł (zaps166)
+Bojidar Marinov (bojidar-bg)
+Bruno Lourenço (MadEqua)
+bruvzg
+Cameron Reikes (creikey)
+Camille Mohr-Daurat (pouleyKetchoupp)
+Carl Olsson (not-surt)
+Carter Anderson (cart)
+Chris Bradfield (cbscribe)
+Clay John (clayjohn)
+Dana Olson (adolson)
+Daniel J. Ramirez (djrm)
+Daniel Rakos (aqnuep)
+dankan1890
+Danil Alexeev (dalexeev)
+David Sichma (DavidSichma)
+David Snopek (dsnopek)
+Dharkael (lupoDharkael)
+Dmitry Koteroff (Krakean)
+Dominik Jasiński (dreamsComeTrue)
+DualMatrix
+Emmanuel Barroga (codecustard)
+Emmanuel Leblond (touilleMan)
+Eoin O'Neill (Eoin-ONeill-Yokai)
+Eric Lasota (elasota)
+Eric M (EricEzaM)
+Eric Rybicki (ericrybick)
+Erik Selecký (rxlecky)
+est31
+Fabian Mathews (supagu)
+Fabio Alessandrelli (Faless)
+Ferenc Arn (tagcup)
+Franklin Sobrinho (TheHX)
+Fredia Huya-Kouadio (m4gr3d)
+Geequlim
+George Marques (vnen)
+Gerrit Großkopf (Grosskopf)
+Gilles Roudiere (groud)
+Gordon MacPherson (RevoluPowered)
+Guilherme Felipe de C. G. da Silva (guilhermefelipecgs)
+Hanif Bin Ariffin (hbina)
+Haoyu Qiu (timothyqiu)
+Hein-Pieter van Braam-Stewart (hpvb)
+Hiroshi Ogawa (hi-ogawa)
+homer666
+Hubert Jarosz (Marqin)
+Hugo Locurcio (Calinou)
+Ian Bishop (ianb96)
+Ibrahn Sahir (ibrahn)
+Ignacio Etcheverry (neikeq)
+Ilaria Cislaghi (QbieShay)
+Indah Sylvia (ISylvox)
+J08nY
+Jakub Grzesik (kubecz3k)
+James Buck (jbuck3)
+Jérôme Gully (Nutriz)
+Jia Jun Chai (SkyLucilfer)
+jmb462
+Joan Fons Sanchez (JFonS)
+Johannes Witt (HaSa1002)
+Johan Manuel (29jm)
+Joshua Grams (JoshuaGrams)
+Juan Linietsky (reduz)
+Julian Murgia (StraToN)
+Justo Delgado (mrcdk)
+Kelly Thomas (KellyThomas)
+kleonc
+Kongfa Waroros (gongpha)
+Kostadin Damyanov (Max-Might)
+K. S. Ernest (iFire) Lee (fire)
+lawnjelly
+Leon Krause (leonkrause)
+Liz Haas (27thLiz)
+Lucien Menassol (Kanabenki)
+Lyuma
+m4nu3lf
+Maganty Rushyendra (mrushyendra)
+Marcel Admiraal (madmiraal)
+Marcelo Fernandez (marcelofg55)
+Marc Gilleron (Zylann)
+Marcin Zawiejski (dragmz)
+Marcus Brummer (mbrlabs)
+Marcus (MCrafterzz)
+Mariano Javier Suligoy (MarianoGnu)
+Mario Schlack (hurikhan)
+Martin Capitanio (capnm)
+Martin Liška (marxin)
+Martin Sjursen (binbitten)
+marynate
+Masoud BH (masoudbh3)
+Mateo Kuruk Miccino (kuruk-mm)
+Matthew (skyace65)
+Matthias Hölzl (hoelzl)
+Max Hilbrunner (mhilbrunner)
+merumelu
+Michael Alexsander (YeldhamDev)
+MichiRecRoom (LikeLakers2)
+mrezai
+muiroc
+Nathan Franke (nathanfranke)
+Nathan Lovato (NathanLovato)
+Nathan Warden (NathanWarden)
+Nils André-Chang (NilsIrl)
+Noah Beard (TwistedTwigleg)
+Nuno Donato (nunodonato)
+Ovnuniarchos
+Pascal Richter (ShyRed)
+Patrick (firefly2442)
+Paul Batty (Paulb23)
+Paul Joannon (paulloz)
+Paul Trojahn (ptrojahn)
+Pawel Kowal (pkowal1982)
+Pedro J. Estébanez (RandomShaper)
+Pieter-Jan Briers (PJB3005)
+Poommetee Ketson (Noshyaar)
+Przemysław Gołąb (n-pigeon)
+Rafał Mikrut (qarmin)
+Ralf Hölzemer (rollenrolm)
+Ramesh Ravone (RameshRavone)
+raphael10241024
+Ray Koopa (RayKoopa)
+Rémi Verschelde (akien-mga)
+Rhody Lugo (rraallvv)
+Ricardo Subtil (Ev1lbl0w)
+Roberto F. Arroyo (robfram)
+Robin Hübner (profan)
+romulox-x
+Ruslan Mustakov (endragor)
+Ryan Roden-Corrent (rrcore)
+Saniko (sanikoyes)
+santouits
+SaracenOne
+Sergey Minakov (naithar)
+sersoong
+Shiqing (kawa-yoiko)
+Simon Wenner (swenner)
+Stijn Hinlopen (hinlopen)
+Swarnim Arun (minraws)
+Thakee Nathees (ThakeeNathees)
+Theo Hallenius (TheoXD)
+Thomas Herzog (karroffel)
+Timo Schwarzer (timoschwarzer)
+Timo (toger5)
+Tomasz Chabora (KoBeWi)
+Twarit Waikar (IronicallySerious)
+Vinzenz Feenstra (vinzenz)
+박한얼 (volzhs)
+V. Vamsi Krishna (vkbsb)
+Wilhem Barbier (nounoursheureux)
+Will Nations (willnationsdev)
+Wilson E. Alvarez (Rubonnek)
+Xavier Cho (mysticfall)
+yg2f (SuperUserNameMan)
+Yuri Roubinsky (Chaosus)
+Yuri Sizov (pycbouh)
+Zak Stam (zaksnet)
+Zher Huei Lee (leezh)
+ZuBsPaCe"
+align = 1
+valign = 1
+
+[node name="BackButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -114.5
+margin_top = -80.0
+margin_right = 114.5
+margin_bottom = -30.0
+focus_neighbour_left = NodePath("../VBoxContainer/SoundContainer/SoundEffectsHSlider")
+focus_neighbour_top = NodePath("../VBoxContainer/SoundContainer/SoundEffectsHSlider")
+focus_neighbour_right = NodePath("../VBoxContainer/FullScreenContainer/CheckBox")
+focus_neighbour_bottom = NodePath("../VBoxContainer/FullScreenContainer/CheckBox")
+focus_next = NodePath("../VBoxContainer/FullScreenContainer/CheckBox")
+focus_previous = NodePath("../VBoxContainer/SoundContainer/SoundEffectsHSlider")
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[connection signal="visibility_changed" from="." to="." method="_on_CreditsMenu_visibility_changed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

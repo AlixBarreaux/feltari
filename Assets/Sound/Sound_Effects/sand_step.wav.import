@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sand_step.wav-5bf5638b5fbc4a314f461a8bdbeea216.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Sound_Effects/sand_step.wav"
+dest_files=[ "res://.import/sand_step.wav-5bf5638b5fbc4a314f461a8bdbeea216.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

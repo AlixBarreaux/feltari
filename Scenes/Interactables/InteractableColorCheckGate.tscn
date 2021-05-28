@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Interactables/Interactable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Interactables/interactable_color_check_gate.gd" type="Script" id=2]
+
+[sub_resource type="StreamTexture" id=58]
+load_path = "res://.import/gate.png-a12930027a89789f88c7372eae9b4450.stex"
+
+[sub_resource type="RectangleShape2D" id=60]
+extents = Vector2( 96, 24 )
+
+[sub_resource type="RectangleShape2D" id=61]
+extents = Vector2( 96, 64 )
+
+[node name="InteractableColorCheckGate" instance=ExtResource( 1 )]
+collision_layer = 1
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2( 12, 3 )
+texture = SubResource( 58 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 60 )
+
+[node name="CreatureDetectZone" type="Area2D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CreatureDetectZone" index="0"]
+shape = SubResource( 61 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[connection signal="body_entered" from="CreatureDetectZone" to="." method="_on_CreatureDetectZone_body_entered"]
+[connection signal="body_exited" from="CreatureDetectZone" to="." method="_on_CreatureDetectZone_body_exited"]

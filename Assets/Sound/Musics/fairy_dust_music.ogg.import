@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/fairy_dust_music.ogg-e96b0203abc2e04e04569ea9b2a08e76.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/Musics/fairy_dust_music.ogg"
+dest_files=[ "res://.import/fairy_dust_music.ogg-e96b0203abc2e04e04569ea9b2a08e76.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

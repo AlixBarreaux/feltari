@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Graphics/Spritesheets/fairy_spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Graphics/light.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/fairy_path_follow.gd" type="Script" id=3]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( -174.864, 18.0203, 174.864, -18.0203, 54.103, 72.8, 48.7217, 34.0384, -48.7217, -34.0384, 27.603, -67.7, 24.0271, 48.0542, -24.0271, -48.0542, -42.397, -79.7, -45.3846, -88.0994, 45.3846, 88.0994, -106.897, -19.7, 0, 0, 0, 0, 54.103, 72.8 )
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Glow"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("FairySprite/Light2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.25, 0.5 ]
+}
+
+[node name="FairyPathFollow" type="Path2D"]
+curve = SubResource( 1 )
+script = ExtResource( 3 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2( 31.2885, -65.1542 )
+rotation = -0.70511
+offset = 244.886
+rotate = false
+
+[node name="FairySprite" type="Sprite" parent="PathFollow2D"]
+self_modulate = Color( 0.337255, 0, 0.705882, 1 )
+rotation = 0.70511
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+hframes = 3
+
+[node name="Light2D" type="Light2D" parent="PathFollow2D/FairySprite"]
+texture = ExtResource( 2 )
+color = Color( 0.337255, 0, 0.705882, 1 )
+energy = 0.25
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PathFollow2D"]
+anims/Glow = SubResource( 2 )
