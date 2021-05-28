@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gates_extended.png-a87a55e44bb0780abac8db5c4edf9776.stex"
+path="res://.import/gates_extended.png-84596451ca2fa6c6c58c33ae9911e77a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gates_extended.png"
-dest_files=[ "res://.import/gates_extended.png-a87a55e44bb0780abac8db5c4edf9776.stex" ]
+source_file="res://Assets/Graphics/Single_Textures/gates_extended.png"
+dest_files=[ "res://.import/gates_extended.png-84596451ca2fa6c6c58c33ae9911e77a.stex" ]
 
 [params]
 

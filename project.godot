@@ -89,10 +89,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/interactables_manager.gd"
 }, {
-"base": "Reference",
+"base": "Node2D",
 "class": "LevelCameraManager",
 "language": "GDScript",
-"path": "res://level_camera_manager.gd"
+"path": "res://Scripts/level_camera_manager.gd"
 }, {
 "base": "HSlider",
 "class": "MasterSoundSlider",
@@ -171,7 +171,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Feltari"
-run/main_scene="res://World.tscn"
+run/main_scene="res://MainMenuWorld.tscn"
 config/icon="res://Miscellaneous/feltari_icon.png"
 config/macos_native_icon="res://Miscellaneous/feltari_icon.icns"
 config/windows_native_icon="res://Miscellaneous/feltari_icon.ico"

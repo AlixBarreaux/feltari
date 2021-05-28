@@ -101,7 +101,6 @@ collision_mask = 3
 script = ExtResource( 1 )
 current_health = 2
 max_health = 3
-damage = 4
 current_speed = 50
 
 [node name="Sprite" type="Sprite" parent="."]
