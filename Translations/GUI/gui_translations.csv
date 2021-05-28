@@ -1,31 +1,31 @@
-KEYS,en_US,fr_FR
-AMBIENT_SOUNDS_VOLUME,Ambient Sounds Volume,Volume Sons Ambiants
-BACK,Back,Retour
-CREDITS,Credits,Credits
-CTN_PHACO_BUTTON,CTN Phaco Itch.io (external link),CTN Phaco Itch.io (lien externe)
-CTN_PHACO_LABEL,"Programming, Team Management,\nGame Design, Level Design,\nTranslations:\n\nCtn Phaco","Programmation, Gestion de l’Équipe,\nGame Design, Conception des niveaux,\nTraductions:\n\nCtn Phaco"
-FULL_SCREEN,Full Screen,Plein Écran
-CREDITS_INTRO_LABEL,Thank you for playing the game!\n We are grateful about that after 1 week non stop work.\n We hope you enjoyed it! :)\n\n\n  Development Team:,Merci d'avoir joué au jeu!\n Nous vous en sommes reconnaissant après une semaine de travail sans relâche.\n Nous espérons que cela vous a plu! :)\n\n\n  L'Équipe de développement:
-END_GAME_MESSAGE,"THE END\nThanks for playing!\nMay the light guide you, guardian.","FIN\n Merci d’avoir joué!\nQue la lumière soit avec vous, gardien."
-LAST_LEVEL_MESSAGE,Legend says a magical oasis is behind a door\nguarded by creatures.\nYour destiny is near…,La légende raconte qu’un oasis magique se trouve de derrière une porte\ngardée par des créatures.\nVotre destinée est proche…
-MASTER_VOLUME,Master Volume,Volume Master
-MUSIC_VOLUME,Music Volume,Volume Musique
-OCTONYTE_BUTTON,Octonyte Itch.io (external link),Octonyte Itch.io (lien externe)
-OCTONYTE_LABEL,Music:\n\nOctonyte,Musique:\n\nOctonyte
-OPTIONS,Options,Options
-PAUSE_MENU,Pause Menu,Menu Pause
-PLAY,Play,Play
-QUIT_TO_DESKTOP,Quit to Desktop,Quit to Desktop
-QUIT_TO_MAIN_MENU,Quit to Main Menu,Quitter vers le Menu Principal
-RAESAY_BUTTON,Raesay Itch.io (external link),Raesay Itch.io (lien externe)
-RAESAY_LABEL,"Graphics Art, Level Design:\n\nRae-Anne (raesay)","Artiste 2D, Conception des niveaux:\n\nRae-Anne (raesay)"
-RESUME,Resume,Reprendre
-SOUND_EFFECTS_VOLUME,Sound Effect Volume,Volume Effets Sonores
-TUTORIAL_MESSAGE_ADVICE,ADVICE:\nLeave this first fairy in the altar.,CONSEIL:\nLaissez cette première fée dans l’autel.
-TUTORIAL_MESSAGE_ALTAR,Interact with the ALTAR by pressing:\nE\nOR\nXbox A / PS Cross Nintendo B \nYou can place the fairy in the ALTAR if you have the fairy of the SAME COLOR...\nAnd you can take it back from the ALTAR if you DON'T HAVE ANY FAIRY! \n\nREMEMBER: You can only have ONE following you at a time!,Intéragissez avec l’AUTEL en appuyant sur:\nE\nOU\nXbox A / PS Croix Nintendo B \nVous pouvez placer la fée dans l’AUTEL si vous avez une fée de la MÊME COULEUR...\nEt vous pouvez la reprendre de l’AUTEL si vous N’AVEZ AUCUNE FÉE!\n\nRAPPEL: Vous ne pouvez en avoir qu’une à la fois qui vous suit!
-TUTORIAL_MESSAGE_ATTACK,Attack by pressing:\nSPACE BAR\nOR\nR2 (Right Trigger 2),Attaquez en pressant le bouton:\nBARRE ESPACE\nOU\nR2 (gâchette)
-TUTORIAL_MESSAGE_CHEST,Interact with the CHEST by pressing:\nE\nOR\nXbox A / PS Cross Nintendo B\nIt will free a fairy that will follow you\nBe careful! You can only have ONE following you at a time!,Intéragissez avec le COFFRE en appuyant sur:\nE\nOU\nXbox A / PS Croix Nintendo B\nVous libérerez ainsi une fée qui vous suivra.\nAttention! Nous ne pouvez avoir qu’une fée qui vous suit à la fois!
-TUTORIAL_MESSAGE_ENEMY,This is a shrine guardian.\nHe will attack you on sight if you are in his territory but he is tied to it.\nHe will teleport when wandering too far from it.,Voici un gardien d’autel.\nIl vous attaquera à vue si vous êtes dans son territoire\nmais il est contraint dans ses limites.\nIl se téléportera s’en éloignera de trop.
-TUTORIAL_MESSAGE_GATE,"This is a Color Gate.\nIf you just opened a chest,\nwait a little for the Fairy to follow you.\nTo pass through it, you need to find a fairy of the same color. Go find one!","Ceci est une porte de couleur.\nSi vous venez d’ouvrir un coffre,\nattendez un peu avant que la fée vous suive.\nPour y passer au travers, vous devez trouver une fée de la même couleur.\n Allez en chercher une!"
-TUTORIAL_MESSAGE_MOVE,Move with these keys:\nWASD/ZQSD\nOR\nJoystick Left,Déplacez vous avec ces touches:\nWASD/ZQSD\nOU\nJoytick Gauche
-TUTORIAL_MESSAGE_PICKUP,You start with 4 health points.\nThere is no health indicator.\nOne heart replenishes one health point.\nDon't take much more than needed!,Vous commencez avec 4 points de vie.\nLes points de vie restant ne sont pas indiqués.\nUn coeur vous redonne un point de vie.\nN’en prennez pas plus que vous n’en avez besoin!
+KEYS,en_US,fr_FR,pt_BR
+AMBIENT_SOUNDS_VOLUME,Ambient Sounds Volume,Volume Sons Ambiants,Sons de Ambiente
+BACK,Back,Retour, Voltar
+CREDITS,Credits,Credits,Cr�ditos
+CTN_PHACO_BUTTON,CTN Phaco Itch.io (external link),CTN Phaco Itch.io (lien externe),CTN Phaco Itch.io (link externo)
+CTN_PHACO_LABEL,"Programming, Team Management,\nGame Design, Level Design,\nTranslations:\n\nCtn Phaco","Programmation, Gestion de l’Équipe,\nGame Design, Conception des niveaux,\nTraductions:\n\nCtn Phaco","Programa��o, Administra��o de time,\nDesign do jogo, Design de n�vel,\nTradu��es:\n\nCtn Phaco"
+FULL_SCREEN,Full Screen,Plein Écran,Tela Cheia
+CREDITS_INTRO_LABEL,Thank you for playing the game!\n We are grateful about that after 1 week non stop work.\n We hope you enjoyed it! :)\n\n\n  Development Team:,Merci d'avoir joué au jeu!\n Nous vous en sommes reconnaissant après une semaine de travail sans relâche.\n Nous espérons que cela vous a plu! :)\n\n\n  L'Équipe de développement:,Obrigado por jogar esse jogo!\n N�s somos gratos por tudo isso depois de 1 semana de constru��o desse jogo sem parar!\n Esperamos que aproveitem muito :)\n\n\n  Time de Desenvolvimento:
+END_GAME_MESSAGE,"THE END\nThanks for playing!\nMay the light guide you, guardian.","FIN\n Merci d’avoir joué!\nQue la lumière soit avec vous, gardien.",
+LAST_LEVEL_MESSAGE,Legend says a magical oasis is behind a door\nguarded by creatures.\nYour destiny is near…,La légende raconte qu’un oasis magique se trouve de derrière une porte\ngardée par des créatures.\nVotre destinée est proche…,
+MASTER_VOLUME,Master Volume,Volume Général,Volume Geral
+MUSIC_VOLUME,Music Volume,Volume Musique,Volume da M�sica
+OCTONYTE_BUTTON,Octonyte Itch.io (external link),Octonyte Itch.io (lien externe),Octonyte Itch.io (link externo)
+OCTONYTE_LABEL,Music:\n\nOctonyte,Musique:\n\nOctonyte,M�sica:\n\nOctonyte
+OPTIONS,Options,Options,Op��es
+PAUSE_MENU,Pause Menu,Menu Pause, Menu Pausa
+PLAY,Play,Play,Jogar
+QUIT_TO_DESKTOP,Quit to Desktop,Quit to Desktop,Sair
+QUIT_TO_MAIN_MENU,Quit to Main Menu,Quitter vers le Menu Principal,Voltar ao Menu Principal
+RAESAY_BUTTON,Raesay Itch.io (external link),Raesay Itch.io (lien externe),Raesay Itch.io (link externo)
+RAESAY_LABEL,"Graphics Art, Level Design:\n\nRae-Anne (raesay)","Artiste 2D, Conception des niveaux:\n\nRae-Anne (raesay)","Gr�ficos, Design:\n\nRae-Anne (raesay)"
+RESUME,Resume,Reprendre,Resumo
+SOUND_EFFECTS_VOLUME,Sound Effect Volume,Volume Effets Sonores,Volume dos Efeitos Sonoros
+TUTORIAL_MESSAGE_ADVICE,ADVICE:\nLeave this first fairy in the altar.,CONSEIL:\nLaissez cette première fée dans l’autel.,CONSELHO:\nDeixe essa primeira fada no altar.
+TUTORIAL_MESSAGE_ALTAR,Interact with the ALTAR by pressing:\nE\nOR\nXbox A / PS Cross Nintendo B \nYou can place the fairy in the ALTAR if you have the fairy of the SAME COLOR...\nAnd you can take it back from the ALTAR if you DON'T HAVE ANY FAIRY! \n\nREMEMBER: You can only have ONE following you at a time!,Intéragissez avec l’AUTEL en appuyant sur:\nE\nOU\nXbox A / PS Croix Nintendo B \nVous pouvez placer la fée dans l’AUTEL si vous avez une fée de la MÊME COULEUR...\nEt vous pouvez la reprendre de l’AUTEL si vous N’AVEZ AUCUNE FÉE!\n\nRAPPEL: Vous ne pouvez en avoir qu’une à la fois qui vous suit!,Interaja com o altar pressionando:\nE\nOR\nXbox A / PS Cross Nintendo B \nVoc� pode colocar a fada no altar somente se voc� tiver a fada DA MESMA COR...\nE voc� pode voltar do altar se n�o tiver NENHUMA FADA! \n\nLEMBRE-SE: Voc� s� pode ter UM te seguindo por vez!
+TUTORIAL_MESSAGE_ATTACK,Attack by pressing:\nSPACE BAR\nOR\nR2 (Right Trigger 2),Attaquez en pressant le bouton:\nBARRE ESPACE\nOU\nR2 (gâchette), Ataque pressionando:\nSPACE BAR\nOR\nR2 (Atirador da Direita 2)
+TUTORIAL_MESSAGE_CHEST,Interact with the CHEST by pressing:\nE\nOR\nXbox A / PS Cross Nintendo B\nIt will free a fairy that will follow you\nBe careful! You can only have ONE following you at a time!,Intéragissez avec le COFFRE en appuyant sur:\nE\nOU\nXbox A / PS Croix Nintendo B\nVous libérerez ainsi une fée qui vous suivra.\nAttention! Nous ne pouvez avoir qu’une fée qui vous suit à la fois!, Interaja com o BA� pressionando:\nE\nOR\nXbox A / PS Cross Nintendo B\nVai libertar a fada que vai te seguir\nCuidado! Voc� s� pode ter UM te seguindo por vez!
+TUTORIAL_MESSAGE_ENEMY,This is a shrine guardian.\nHe will attack you on sight if you are in his territory but he is tied to it.\nHe will teleport when wandering too far from it.,Voici un gardien d’autel.\nIl vous attaquera à vue si vous êtes dans son territoire\nmais il est contraint dans ses limites.\nIl se téléportera s’en éloignera de trop.,Esse � um guarda do santu�rio.\nEle vai te atacar se voc� estiver no territ�rio dele mas somente isso.\nEle vai se teletransportar se voc� estiver vagando muito perto.
+TUTORIAL_MESSAGE_GATE,"This is a Color Gate.\nIf you just opened a chest,\nwait a little for the Fairy to follow you.\nTo pass through it, you need to find a fairy of the same color. Go find one!","Ceci est une porte de couleur.\nSi vous venez d’ouvrir un coffre,\nattendez un peu avant que la fée vous suive.\nPour y passer au travers, vous devez trouver une fée de la même couleur.\n Allez en chercher une!","Esse � o Port�o Colorido.\nSe voc� apenas abrir o ba�,\nespere um pouco para a fada te seguir.\nPara passar atrav�s disso, you precisa encontrar uma fada da mesma cor. V� encontrar uma!"""
+TUTORIAL_MESSAGE_MOVE,Move with these keys:\nWASD/ZQSD\nOR\nJoystick Left,Déplacez vous avec ces touches:\nWASD/ZQSD\nOU\nJoytick Gauche,Mova com essas chaves:\nWASD/ZQSD\nOR\nJoystick Esquerdo
+TUTORIAL_MESSAGE_PICKUP,You start with 4 health points.\nThere is no health indicator.\nOne heart replenishes one health point.\nDon't take much more than needed!,Vous commencez avec 4 points de vie.\nLes points de vie restant ne sont pas indiqués.\nUn coeur vous redonne un point de vie.\nN’en prennez pas plus que vous n’en avez besoin!,Voc� come�a com 4 pontos de sa�de.\nN�o h� indicador de sa�de.\nUm cora��o pode recuperar um ponto de sa�de.\nN�o pegue mais do que � preciso!
