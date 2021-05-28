@@ -465,6 +465,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy3/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy4" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -7725.55, 781.288 )
@@ -477,6 +479,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy4/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy5" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -3777.39, 1123.78 )
@@ -489,6 +493,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy5/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy6" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -5594.5, 1057.18 )
@@ -501,6 +507,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy6/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy7" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -7915.83, 2084.66 )
@@ -513,6 +521,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy7/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy8" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -4367.23, 2198.82 )
@@ -525,6 +535,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy8/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy9" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -6793.21, 1295.03 )
@@ -537,6 +549,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy9/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy10" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -4329.18, -265.214 )
@@ -549,6 +563,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy10/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy11" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -3187.54, 67.7646 )
@@ -561,6 +577,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy11/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy12" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -4842.92, 467.338 )
@@ -573,6 +591,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy12/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy13" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -6327.05, 143.874 )
@@ -585,6 +605,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy13/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy14" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -6034.08, 2316.66 )
@@ -597,6 +619,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy14/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy15" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -2863.55, 1836.92 )
@@ -609,6 +633,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy15/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy16" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -8089.22, 3819.28 )
@@ -621,6 +647,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy16/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy17" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -10105.1, 4000.71 )
@@ -633,6 +661,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy17/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy18" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -12453.6, 3829.36 )
@@ -645,6 +675,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy18/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy19" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -14283.4, 5295.88 )
@@ -657,6 +689,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy19/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy20" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -14364.1, 6896.95 )
@@ -669,6 +703,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy20/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy21" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -10829.6, 9269.6 )
@@ -681,6 +717,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy21/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy22" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -7047.28, 8965.01 )
@@ -693,6 +731,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy22/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy23" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -5290.7, 10305.1 )
@@ -705,6 +745,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy23/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy24" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -8948.23, 10469.9 )
@@ -717,6 +759,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy24/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy25" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -12163.1, 10414.3 )
@@ -729,6 +773,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy25/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy26" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -15150.6, 8070.42 )
@@ -741,6 +787,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy26/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy27" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -15617.2, 9371.51 )
@@ -753,6 +801,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy27/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy28" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -13935.2, 9799.14 )
@@ -765,6 +815,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy28/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy29" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -4612.87, 8501.99 )
@@ -777,6 +829,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy29/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy30" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -5693.1, 7315.5 )
@@ -789,6 +843,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy30/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy31" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -10100.5, 9824.31 )
@@ -801,6 +857,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy31/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy32" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -7150.92, 10519.3 )
@@ -813,6 +871,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy32/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy33" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -9761.43, 8230.88 )
@@ -825,6 +885,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy33/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy34" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -9015.57, 7095.13 )
@@ -837,6 +899,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy34/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy35" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -3783, 6732.06 )
@@ -849,6 +913,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy35/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy36" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -2586.98, 4254.59 )
@@ -861,6 +927,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy36/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy37" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -15583.9, 11735.2 )
@@ -873,6 +941,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy37/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy38" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -13162.1, 12973 )
@@ -885,6 +955,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy38/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy39" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -10417.4, 12757.7 )
@@ -897,6 +969,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy39/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy40" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -7861.08, 12138.8 )
@@ -909,6 +983,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy40/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy41" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -7511.27, 6649.47 )
@@ -921,6 +997,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy41/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy42" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -6272.07, 12540.1 )
@@ -933,6 +1011,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy42/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy43" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -4206.74, 13007.1 )
@@ -945,6 +1025,8 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy43/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="PatrolZoneEnemy44" parent="Creatures/Enemies" instance=ExtResource( 13 )]
 position = Vector2( -2787.95, 11983.4 )
@@ -957,10 +1039,11 @@ shape = SubResource( 1 )
 [node name="Enemy" parent="Creatures/Enemies/PatrolZoneEnemy44/EnemySpawnPoint2" groups=[
 "enemy",
 ] instance=ExtResource( 17 )]
+current_health = 4
+max_health = 4
 
 [node name="Player" parent="Creatures" instance=ExtResource( 21 )]
-position = Vector2( -878.2, -401.807 )
-current_speed = 600
+position = Vector2( -4959.54, 895.115 )
 
 [node name="LabelDisplayers" type="Node2D" parent="."]
 position = Vector2( 2020, -416 )
@@ -1037,6 +1120,20 @@ custom_fonts/font = SubResource( 68 )
 text = "TUTORIAL_MESSAGE_PICKUP"
 
 [node name="Panel" parent="LabelDisplayers/LabelDisplayerPickup/DisplayTextLabel" index="0"]
+custom_styles/panel = SubResource( 69 )
+
+[node name="LabelDisplayerAltar" parent="LabelDisplayers" instance=ExtResource( 18 )]
+position = Vector2( -107.161, 74.3678 )
+
+[node name="DisplayTextLabel" parent="LabelDisplayers/LabelDisplayerAltar" index="1"]
+margin_left = -89.0
+margin_top = -74.0
+margin_right = 107.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 68 )
+text = "TUTORIAL_MESSAGE_ALTAR"
+
+[node name="Panel" parent="LabelDisplayers/LabelDisplayerAltar/DisplayTextLabel" index="0"]
 custom_styles/panel = SubResource( 69 )
 
 [node name="Colliders" type="Node2D" parent="."]
@@ -1384,6 +1481,7 @@ disabled = true
 [editable path="LabelDisplayers/LabelDisplayerGate"]
 [editable path="LabelDisplayers/LabelDisplayerEnemy"]
 [editable path="LabelDisplayers/LabelDisplayerPickup"]
+[editable path="LabelDisplayers/LabelDisplayerAltar"]
 [editable path="PlayMusicArea2Ds/MazeAreaMusic"]
 [editable path="PlayMusicArea2Ds/ActionAreaMusic"]
 [editable path="PlayMusicArea2Ds/EndAreaMusicPlayer"]

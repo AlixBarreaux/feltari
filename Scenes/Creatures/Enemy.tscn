@@ -60,7 +60,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=6]
 resource_name = "Teleport"
 length = 0.4
 step = 0.036
@@ -101,6 +101,7 @@ collision_mask = 3
 script = ExtResource( 1 )
 current_health = 2
 max_health = 3
+damage = 4
 current_speed = 50
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -141,7 +142,7 @@ anims/Move = SubResource( 4 )
 
 [node name="AnimationPlayerDamage" type="AnimationPlayer" parent="."]
 "anims/Take Damage" = SubResource( 5 )
-anims/Teleport = SubResource( 8 )
+anims/Teleport = SubResource( 6 )
 
 [node name="TargetPosition" type="Position2D" parent="."]
 
