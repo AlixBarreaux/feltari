@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=2]
+[gd_scene load_steps=99 format=2]
 
 [ext_resource path="res://Scenes/Interactables/InteractableChest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tilemaps/DecorationsTileMap.tscn" type="PackedScene" id=2]
@@ -82,148 +82,151 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 6, 399 )
+[sub_resource type="DynamicFont" id=12]
+font_data = ExtResource( 29 )
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 297, 7 )
+extents = Vector2( 6, 399 )
 
 [sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 217, 23 )
+extents = Vector2( 297, 7 )
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 122, 24 )
+extents = Vector2( 217, 23 )
 
 [sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 122, 24 )
 
 [sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 190, 22 )
+extents = Vector2( 122, 24 )
 
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 789.101, 10 )
+extents = Vector2( 190, 22 )
 
 [sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 3, 792 )
+extents = Vector2( 789.101, 10 )
 
 [sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 1682, 11 )
+extents = Vector2( 3, 792 )
 
 [sub_resource type="RectangleShape2D" id=21]
-extents = Vector2( 717, 10 )
+extents = Vector2( 1682, 11 )
 
 [sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 580, 8 )
+extents = Vector2( 717, 10 )
 
 [sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 631, 10 )
+extents = Vector2( 580, 8 )
 
 [sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 655, 10 )
+extents = Vector2( 631, 10 )
 
 [sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 241, 10 )
+extents = Vector2( 655, 10 )
 
 [sub_resource type="RectangleShape2D" id=26]
-extents = Vector2( 290, 10 )
+extents = Vector2( 241, 10 )
 
 [sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 330, 10 )
+extents = Vector2( 290, 10 )
 
 [sub_resource type="RectangleShape2D" id=28]
-extents = Vector2( 235, 10 )
+extents = Vector2( 330, 10 )
 
 [sub_resource type="RectangleShape2D" id=29]
-extents = Vector2( 169, 10 )
+extents = Vector2( 235, 10 )
 
 [sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 189, 10 )
+extents = Vector2( 169, 10 )
 
 [sub_resource type="RectangleShape2D" id=31]
-extents = Vector2( 142, 10 )
+extents = Vector2( 189, 10 )
 
 [sub_resource type="RectangleShape2D" id=32]
-extents = Vector2( 91, 10 )
+extents = Vector2( 142, 10 )
 
 [sub_resource type="RectangleShape2D" id=33]
-extents = Vector2( 112, 10 )
+extents = Vector2( 91, 10 )
 
 [sub_resource type="RectangleShape2D" id=34]
-extents = Vector2( 10, 166 )
+extents = Vector2( 112, 10 )
 
 [sub_resource type="RectangleShape2D" id=35]
-extents = Vector2( 7, 140 )
+extents = Vector2( 10, 166 )
 
 [sub_resource type="RectangleShape2D" id=36]
-extents = Vector2( 10, 148 )
+extents = Vector2( 7, 140 )
 
 [sub_resource type="RectangleShape2D" id=37]
-extents = Vector2( 2, 66.999 )
+extents = Vector2( 10, 148 )
 
 [sub_resource type="RectangleShape2D" id=38]
-extents = Vector2( 10, 55 )
+extents = Vector2( 2, 66.999 )
 
 [sub_resource type="RectangleShape2D" id=39]
-extents = Vector2( 10, 109 )
+extents = Vector2( 10, 55 )
 
 [sub_resource type="RectangleShape2D" id=40]
-extents = Vector2( 10, 110 )
+extents = Vector2( 10, 109 )
 
 [sub_resource type="RectangleShape2D" id=41]
-extents = Vector2( 10, 147 )
+extents = Vector2( 10, 110 )
 
 [sub_resource type="RectangleShape2D" id=42]
-extents = Vector2( 10, 140 )
+extents = Vector2( 10, 147 )
 
 [sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 29, 10 )
+extents = Vector2( 10, 140 )
 
 [sub_resource type="RectangleShape2D" id=44]
-extents = Vector2( 21, 10 )
+extents = Vector2( 29, 10 )
 
 [sub_resource type="RectangleShape2D" id=45]
-extents = Vector2( 10, 313 )
+extents = Vector2( 21, 10 )
 
 [sub_resource type="RectangleShape2D" id=46]
-extents = Vector2( 10, 136 )
+extents = Vector2( 10, 313 )
 
 [sub_resource type="RectangleShape2D" id=47]
-extents = Vector2( 8, 102 )
+extents = Vector2( 10, 136 )
 
 [sub_resource type="RectangleShape2D" id=48]
-extents = Vector2( 10, 169 )
+extents = Vector2( 8, 102 )
 
 [sub_resource type="RectangleShape2D" id=49]
-extents = Vector2( 10, 132 )
+extents = Vector2( 10, 169 )
 
 [sub_resource type="RectangleShape2D" id=50]
-extents = Vector2( 14, 220 )
+extents = Vector2( 10, 132 )
 
 [sub_resource type="RectangleShape2D" id=51]
-extents = Vector2( 7, 362 )
+extents = Vector2( 14, 220 )
 
 [sub_resource type="RectangleShape2D" id=52]
-extents = Vector2( 13, 203 )
+extents = Vector2( 7, 362 )
 
 [sub_resource type="RectangleShape2D" id=53]
-extents = Vector2( 10, 170 )
+extents = Vector2( 13, 203 )
 
 [sub_resource type="RectangleShape2D" id=54]
-extents = Vector2( 10, 291 )
+extents = Vector2( 10, 170 )
 
 [sub_resource type="RectangleShape2D" id=55]
-extents = Vector2( 12, 120 )
+extents = Vector2( 10, 291 )
 
 [sub_resource type="RectangleShape2D" id=56]
-extents = Vector2( 10, 106 )
+extents = Vector2( 12, 120 )
 
 [sub_resource type="RectangleShape2D" id=57]
-extents = Vector2( 23.865, 10 )
+extents = Vector2( 10, 106 )
 
 [sub_resource type="RectangleShape2D" id=58]
+extents = Vector2( 23.865, 10 )
+
+[sub_resource type="RectangleShape2D" id=59]
 extents = Vector2( 17.7251, 10 )
 
-[sub_resource type="Animation" id=59]
+[sub_resource type="Animation" id=60]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("LevelCamera2D:zoom")
@@ -238,7 +241,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=60]
+[sub_resource type="Animation" id=61]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("LevelCamera2D:zoom")
@@ -253,13 +256,13 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=61]
+[sub_resource type="RectangleShape2D" id=62]
 extents = Vector2( 60.8185, 10 )
 
-[sub_resource type="RectangleShape2D" id=62]
+[sub_resource type="RectangleShape2D" id=63]
 extents = Vector2( 27.8058, 136.607 )
 
-[sub_resource type="GDScript" id=63]
+[sub_resource type="GDScript" id=64]
 script/source = "class_name PlayMusicArea2D
 extends Area2D
 
@@ -303,22 +306,22 @@ func _on_ExitPointArea2D_body_exited(_body: Node) -> void:
 	self.queue_free()
 "
 
-[sub_resource type="RectangleShape2D" id=64]
+[sub_resource type="RectangleShape2D" id=65]
 extents = Vector2( 192.205, 169.837 )
 
-[sub_resource type="CircleShape2D" id=65]
+[sub_resource type="CircleShape2D" id=66]
 radius = 210.098
 
-[sub_resource type="RectangleShape2D" id=66]
+[sub_resource type="RectangleShape2D" id=67]
 extents = Vector2( 608.235, 531.179 )
 
-[sub_resource type="RectangleShape2D" id=67]
+[sub_resource type="RectangleShape2D" id=68]
 extents = Vector2( 467.606, 389.471 )
 
-[sub_resource type="RectangleShape2D" id=68]
+[sub_resource type="RectangleShape2D" id=69]
 extents = Vector2( 22.9822, 540.314 )
 
-[sub_resource type="RectangleShape2D" id=69]
+[sub_resource type="RectangleShape2D" id=70]
 extents = Vector2( 22.9822, 611.295 )
 
 [node name="World" type="Node2D"]
@@ -1150,6 +1153,20 @@ text = "TUTORIAL_MESSAGE_ADVICE"
 [node name="Panel" parent="LabelDisplayers/LabelDisplayerAdvice/DisplayTextLabel" index="0"]
 custom_styles/panel = SubResource( 11 )
 
+[node name="LabelDisplayerLastLevel" parent="LabelDisplayers" instance=ExtResource( 18 )]
+position = Vector2( -8357.05, 4470.83 )
+
+[node name="DisplayTextLabel" parent="LabelDisplayers/LabelDisplayerLastLevel" index="1"]
+margin_left = -89.0
+margin_top = -74.0
+margin_right = 107.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 12 )
+text = "LAST_LEVEL_MESSAGE"
+
+[node name="Panel" parent="LabelDisplayers/LabelDisplayerLastLevel/DisplayTextLabel" index="0"]
+custom_styles/panel = SubResource( 11 )
+
 [node name="Colliders" type="Node2D" parent="."]
 position = Vector2( 2125.66, -423.151 )
 
@@ -1158,210 +1175,210 @@ collision_mask = 6
 
 [node name="CollisionShape2D(Left)" type="CollisionShape2D" parent="Colliders/CliffTutorialArea"]
 position = Vector2( -774.66, -134.849 )
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 
 [node name="CollisionShape2D(Right)2" type="CollisionShape2D" parent="Colliders/CliffTutorialArea"]
 position = Vector2( 696.34, -143.849 )
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 
 [node name="CollisionShape2D2(Top Left)" type="CollisionShape2D" parent="Colliders/CliffTutorialArea"]
 position = Vector2( -424.66, -529.849 )
-shape = SubResource( 13 )
+shape = SubResource( 14 )
 
 [node name="CollisionShape2D2(Top Left)2" type="CollisionShape2D" parent="Colliders/CliffTutorialArea"]
 position = Vector2( -472.66, -529.849 )
-shape = SubResource( 13 )
+shape = SubResource( 14 )
 
 [node name="CollisionShape2D2(Top Right)" type="CollisionShape2D" parent="Colliders/CliffTutorialArea"]
 position = Vector2( 413.34, -530.849 )
-shape = SubResource( 13 )
+shape = SubResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/CliffTutorialArea"]
 position = Vector2( -564.66, 253.151 )
-shape = SubResource( 14 )
+shape = SubResource( 15 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Colliders/CliffTutorialArea"]
 position = Vector2( -228.66, 300.151 )
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Colliders/CliffTutorialArea"]
 position = Vector2( 205.34, 301.151 )
-shape = SubResource( 16 )
+shape = SubResource( 17 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Colliders/CliffTutorialArea"]
 position = Vector2( 512.34, 253.151 )
-shape = SubResource( 17 )
+shape = SubResource( 18 )
 
 [node name="Maze Colliders" type="StaticBody2D" parent="Colliders"]
 position = Vector2( -2871.66, -1151.85 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -887.935, 802.881 )
-shape = SubResource( 18 )
+shape = SubResource( 19 )
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 868.395, 800.361 )
-shape = SubResource( 18 )
+shape = SubResource( 19 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -1688, 27 )
-shape = SubResource( 19 )
+shape = SubResource( 20 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -13, -773 )
-shape = SubResource( 20 )
+shape = SubResource( 21 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -590, -552 )
-shape = SubResource( 21 )
+shape = SubResource( 22 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 847, -550 )
-shape = SubResource( 22 )
+shape = SubResource( 23 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -699, 470 )
-shape = SubResource( 23 )
+shape = SubResource( 24 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -330, -343 )
-shape = SubResource( 24 )
+shape = SubResource( 25 )
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 309, 462 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 1092, 518 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 840, -152 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 746, 118 )
-shape = SubResource( 28 )
+shape = SubResource( 29 )
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -1158, -52 )
-shape = SubResource( 29 )
+shape = SubResource( 30 )
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 988, 316 )
-shape = SubResource( 30 )
+shape = SubResource( 31 )
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 1510, 78 )
-shape = SubResource( 31 )
+shape = SubResource( 32 )
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -1418, -311 )
-shape = SubResource( 32 )
+shape = SubResource( 33 )
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -2, -49 )
-shape = SubResource( 33 )
+shape = SubResource( 34 )
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -1329, 299 )
-shape = SubResource( 34 )
+shape = SubResource( 35 )
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -1326, -170 )
-shape = SubResource( 35 )
+shape = SubResource( 36 )
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -975, -189 )
-shape = SubResource( 36 )
+shape = SubResource( 37 )
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -1498, -373.999 )
-shape = SubResource( 37 )
+shape = SubResource( 38 )
 
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -1312, -496 )
-shape = SubResource( 38 )
+shape = SubResource( 39 )
 
 [node name="CollisionShape2D23" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -111, 62 )
-shape = SubResource( 39 )
+shape = SubResource( 40 )
 
 [node name="CollisionShape2D24" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 113, 62 )
-shape = SubResource( 40 )
+shape = SubResource( 41 )
 
 [node name="CollisionShape2D25" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -67, 320 )
-shape = SubResource( 41 )
+shape = SubResource( 42 )
 
 [node name="CollisionShape2D26" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 65, 322 )
-shape = SubResource( 42 )
+shape = SubResource( 43 )
 
 [node name="CollisionShape2D27" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -87, 169 )
-shape = SubResource( 43 )
+shape = SubResource( 44 )
 
 [node name="CollisionShape2D28" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 93, 172 )
-shape = SubResource( 44 )
+shape = SubResource( 45 )
 
 [node name="CollisionShape2D29" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 308, -33 )
-shape = SubResource( 45 )
+shape = SubResource( 46 )
 
 [node name="CollisionShape2D30" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 514, -14 )
-shape = SubResource( 46 )
+shape = SubResource( 47 )
 
 [node name="CollisionShape2D31" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 807, 421 )
-shape = SubResource( 47 )
+shape = SubResource( 48 )
 
 [node name="CollisionShape2D32" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 563, 624 )
-shape = SubResource( 48 )
+shape = SubResource( 49 )
 
 [node name="CollisionShape2D33" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 1169, 177 )
-shape = SubResource( 49 )
+shape = SubResource( 50 )
 
 [node name="CollisionShape2D34" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 1377, 310 )
-shape = SubResource( 50 )
+shape = SubResource( 51 )
 
 [node name="CollisionShape2D35" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 1648, 435 )
-shape = SubResource( 51 )
+shape = SubResource( 52 )
 
 [node name="CollisionShape2D36" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 1170, -347 )
-shape = SubResource( 52 )
+shape = SubResource( 53 )
 
 [node name="CollisionShape2D37" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 1410, -376 )
-shape = SubResource( 53 )
+shape = SubResource( 54 )
 
 [node name="CollisionShape2D38" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 1651, -490 )
-shape = SubResource( 54 )
+shape = SubResource( 55 )
 
 [node name="CollisionShape2D39" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 129, -661 )
-shape = SubResource( 55 )
+shape = SubResource( 56 )
 
 [node name="CollisionShape2D40" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( 947, -665 )
-shape = SubResource( 56 )
+shape = SubResource( 57 )
 
 [node name="CollisionShape2D41" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -1347.68, -18.6157 )
-shape = SubResource( 57 )
+shape = SubResource( 58 )
 
 [node name="CollisionShape2D42" type="CollisionShape2D" parent="Colliders/Maze Colliders"]
 position = Vector2( -1347.39, 141.624 )
-shape = SubResource( 58 )
+shape = SubResource( 59 )
 
 [node name="LevelCameraManager" type="Node2D" parent="."]
 position = Vector2( 2194, 412 )
@@ -1378,8 +1395,8 @@ position = Vector2( -13081.2, 15100.8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LevelCameraManager"]
 autoplay = "Zoom In"
-"anims/Zoom In" = SubResource( 59 )
-"anims/Zoom Out" = SubResource( 60 )
+"anims/Zoom In" = SubResource( 60 )
+"anims/Zoom Out" = SubResource( 61 )
 
 [node name="PlayMusicArea2Ds" type="Node2D" parent="."]
 
@@ -1394,16 +1411,16 @@ position = Vector2( 190, 1544 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayMusicArea2Ds/MazeAreaMusic/ExitPointArea2D" index="0"]
 position = Vector2( -1655.28, 511.103 )
-shape = SubResource( 61 )
+shape = SubResource( 62 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayMusicArea2Ds/MazeAreaMusic"]
 self_modulate = Color( 1, 0, 0.937255, 1 )
 position = Vector2( 163.5, 1547.5 )
-shape = SubResource( 62 )
+shape = SubResource( 63 )
 
 [node name="ActionAreaMusic" parent="PlayMusicArea2Ds" instance=ExtResource( 22 )]
 position = Vector2( -1730.02, 23.6128 )
-script = SubResource( 63 )
+script = SubResource( 64 )
 
 [node name="AudioStreamPlayer" parent="PlayMusicArea2Ds/ActionAreaMusic" index="0"]
 stream = ExtResource( 20 )
@@ -1413,10 +1430,10 @@ position = Vector2( -4643.07, 3644.17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayMusicArea2Ds/ActionAreaMusic/ExitPointArea2D" index="0"]
 position = Vector2( 34.0381, 37.3755 )
-shape = SubResource( 64 )
+shape = SubResource( 65 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayMusicArea2Ds/ActionAreaMusic"]
-shape = SubResource( 65 )
+shape = SubResource( 66 )
 
 [node name="EndAreaMusicPlayer" parent="PlayMusicArea2Ds" instance=ExtResource( 22 )]
 position = Vector2( -10887.7, 15514.6 )
@@ -1426,7 +1443,7 @@ stream = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayMusicArea2Ds/EndAreaMusicPlayer"]
 self_modulate = Color( 1, 0, 0.937255, 1 )
-shape = SubResource( 66 )
+shape = SubResource( 67 )
 
 [node name="AmbientDesertSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
@@ -1449,7 +1466,7 @@ visible = true
 position = Vector2( -10884.2, 15512.2 )
 
 [node name="CollisionShape2D" parent="EndGameArea2D" index="0"]
-shape = SubResource( 67 )
+shape = SubResource( 68 )
 
 [node name="PathFollow2D" parent="EndGameArea2D/FairyPathFollow" index="0"]
 position = Vector2( 31.2885, -65.1542 )
@@ -1468,24 +1485,24 @@ position = Vector2( -10886.7, 15511.8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinalBlockZone"]
 position = Vector2( 596.807, 6.34448 )
-shape = SubResource( 68 )
+shape = SubResource( 69 )
 disabled = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="FinalBlockZone"]
 position = Vector2( -596.79, 6.34448 )
-shape = SubResource( 68 )
+shape = SubResource( 69 )
 disabled = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="FinalBlockZone"]
 position = Vector2( -14.1335, -502.772 )
 rotation = 1.57079
-shape = SubResource( 69 )
+shape = SubResource( 70 )
 disabled = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="FinalBlockZone"]
 position = Vector2( -14.1335, 518.29 )
 rotation = 1.57079
-shape = SubResource( 69 )
+shape = SubResource( 70 )
 disabled = true
 
 [connection signal="animation_finished" from="LevelCameraManager/AnimationPlayer" to="LevelCameraManager" method="_on_AnimationPlayer_animation_finished"]
@@ -1497,6 +1514,7 @@ disabled = true
 [editable path="LabelDisplayers/LabelDisplayerPickup"]
 [editable path="LabelDisplayers/LabelDisplayerAltar"]
 [editable path="LabelDisplayers/LabelDisplayerAdvice"]
+[editable path="LabelDisplayers/LabelDisplayerLastLevel"]
 [editable path="PlayMusicArea2Ds/MazeAreaMusic"]
 [editable path="PlayMusicArea2Ds/ActionAreaMusic"]
 [editable path="PlayMusicArea2Ds/EndAreaMusicPlayer"]
