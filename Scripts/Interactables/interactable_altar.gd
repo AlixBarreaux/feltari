@@ -28,14 +28,14 @@ func get_can_interact() -> bool:
 
 func receive_interaction() -> void:
 	if not self.get_can_interact():
-		print(self.name + ": Stop spamming me with your interaction!")
+#		print(self.name + ": Stop spamming me with your interaction!")
 		return
 	
-	print(self.name + ": I just received an interaction!")
+#	print(self.name + ": I just received an interaction!")
 	
 	
 	if not Global.has_player_following_fairy:
-		print(self.name + ": PLAYER HAS NO FAIRY FOLLOWING HIM: ", Global.has_player_following_fairy)
+#		print(self.name + ": PLAYER HAS NO FAIRY FOLLOWING HIM: ", Global.has_player_following_fairy)
 		
 		if self.is_enabled:
 			animation_player.play("Idle")
@@ -45,8 +45,8 @@ func receive_interaction() -> void:
 			is_enabled = false
 	else:
 		if not Global.following_fairy_id == self.id:
-			print(self.name + ": The player has a following fairy or a fairy of different ID from me!")
-			print("Submitted fairy ID: ", Global.following_fairy_id, " Altar's ID: ", self.id)
+#			print(self.name + ": The player has a following fairy or a fairy of different ID from me!")
+#			print("Submitted fairy ID: ", Global.following_fairy_id, " Altar's ID: ", self.id)
 			return
 		
 		if not self.is_enabled:

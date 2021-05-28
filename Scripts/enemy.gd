@@ -112,7 +112,7 @@ func set_enabled(value: bool) -> void:
 		# Enable the timers
 		idle_timer.start()
 	else:
-		print(self.name + ": I'M NOW DISABLED!")
+#		print(self.name + ": I'M NOW DISABLED!")
 		# Disable the Collision Shapes (Physics first)
 		collision_shape2D.set_deferred("disabled", true)
 		creature_detection_zone_collision_shape2D.set_deferred("disabled", true)
@@ -135,7 +135,7 @@ func get_is_dead() -> bool:
 
 # AI Behaviors
 func _on_CreatureDetectionZone_body_entered(body: PhysicsBody2D) -> void:
-	print(self.name + ": I was entered by: " + body.name)
+#	print(self.name + ": I was entered by: " + body.name)
 	self.set_current_target(body)
 	self.set_current_ai_state(AI_STATES.CHASE)
 
@@ -272,11 +272,11 @@ func check_if_dead() -> void:
 	if self.current_health <= 0:
 			self.current_health = 0
 			self.die()
-	print(self.name + ": Health status: " + str(current_health) + " / " + str(max_health))
+#	print(self.name + ": Health status: " + str(current_health) + " / " + str(max_health))
 
 
 func die() -> void:
-	print(self.name + str(": I died!"))
+#	print(self.name + str(": I died!"))
 	self.set_enabled(false)
 	self.set_is_dead(true)
 

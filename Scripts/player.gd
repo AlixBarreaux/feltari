@@ -47,7 +47,7 @@ onready var death_wait_timer: Timer = $DeathWaitTimer
 # Other nodes
 onready var fairy_sprite: Sprite = $FairySprite
 onready var player_hurt_animation_player: AnimationPlayer = $PlayerHurtAnimationPlayer
-onready var fairy_animation_player: AnimationPlayer = $FairyAnimationPlayer
+#onready var fairy_animation_player: AnimationPlayer = $FairyAnimationPlayer
 
 
 ################################# RUN THE CODE #################################
@@ -113,7 +113,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 	
 	# Interact
 	if Input.is_action_just_pressed("interact"):
-		print(get_can_interact())
+#		print(get_can_interact())
 		if self.get_can_interact():
 			if targeted_interactable != null:
 				targeted_interactable.receive_interaction()
@@ -200,7 +200,7 @@ func set_current_health(value: int) -> void:
 	current_health = value
 	if current_health > max_health:
 		current_health = max_health
-	print(self.name + " Current health set to: " + str(value))
+#	print(self.name + " Current health set to: " + str(value))
 
 
 func get_current_health() -> int:
@@ -209,7 +209,7 @@ func get_current_health() -> int:
 
 func set_max_health(value: int) -> void:
 	max_health = value
-	print(self.name + ": max value set to: " + str(value))
+#	print(self.name + ": max value set to: " + str(value))
 
 
 func get_max_health() -> int:
@@ -293,14 +293,14 @@ func attack_melee() -> void:
 # Send damage from the weapon collision zone (HurtBox) to whatever is in 
 # its collision layer (should collide with "Enemy" layer)
 func _on_HurtBox_body_entered(body: PhysicsBody2D) -> void:
-	print(self.name, ": I was entered by: ", body.name)
+#	print(self.name, ": I was entered by: ", body.name)
 	body.take_damage(self.get_current_damage())
 
 
 func _on_InteractZone_body_entered(body: PhysicsBody2D) -> void:
 	# Add the interatable as the target for interaction with the player
 	self.targeted_interactable = body
-	print(self.name + ": Interact target set to: " + body.name)
+#	print(self.name + ": Interact target set to: " + body.name)
 
 
 func _on_InteractZone_body_exited(_body: PhysicsBody2D) -> void:
@@ -347,11 +347,11 @@ func check_if_dead() -> void:
 	if self.current_health <= 0:
 			self.current_health = 0
 			self.die()
-	print(self.name + ": Health status: " + str(current_health) + " / " + str(max_health))
+#	print(self.name + ": Health status: " + str(current_health) + " / " + str(max_health))
 
 
 func die() -> void:
-	print(self.name + str(": I died!"))
+#	print(self.name + str(": I died!"))
 	self.set_enabled(false)
 	player_hurt_animation_player.stop()
 	anim_tree_sm_playback.travel("Die")
@@ -374,7 +374,7 @@ func decrease_current_health(amount: int) -> void:
 #	self.current_health -= amount
 	self.set_current_health(get_current_health() - amount)
 	
-	print(self.name + ": I took " + str(amount) + " damage!")
+#	print(self.name + ": I took " + str(amount) + " damage!")
 	player_hurt_animation_player.play("Hurt")
 	self.check_if_dead()
 	
@@ -385,12 +385,12 @@ func decrease_current_health(amount: int) -> void:
 func increase_current_health(amount: int) -> void:
 #	self.current_health += amount
 	self.set_current_health(get_current_health() + amount)
-	print(self.name + ": I was healed by " + str(amount) + " health points!")
+#	print(self.name + ": I was healed by " + str(amount) + " health points!")
 	Events.emit_signal("player_current_health_increased", amount)
 
 
 func _on_DeathWaitTimer_timeout() -> void:
-	print("DEATH TIMEOUT!")
+#	print("DEATH TIMEOUT!")
 	self.resurrect()
 
 
