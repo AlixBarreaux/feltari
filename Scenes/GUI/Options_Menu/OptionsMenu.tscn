@@ -135,6 +135,8 @@ valign = 1
 margin_top = 272.0
 margin_right = 565.0
 margin_bottom = 288.0
+focus_neighbour_top = NodePath("../SoundEffectsHSlider")
+focus_neighbour_bottom = NodePath("../../../BackButton")
 
 [node name="BackButton" type="Button" parent="."]
 anchor_left = 0.5
@@ -145,8 +147,8 @@ margin_left = -114.5
 margin_top = -90.0
 margin_right = 114.5
 margin_bottom = -40.0
-focus_neighbour_left = NodePath("../VBoxContainer/SoundContainer/SoundEffectsHSlider")
-focus_neighbour_top = NodePath("../VBoxContainer/SoundContainer/SoundEffectsHSlider")
+focus_neighbour_left = NodePath("../VBoxContainer/SoundContainer/AmbientSoundsHSlider")
+focus_neighbour_top = NodePath("../VBoxContainer/SoundContainer/AmbientSoundsHSlider")
 focus_neighbour_right = NodePath("../VBoxContainer/FullScreenContainer/CheckBox")
 focus_neighbour_bottom = NodePath("../VBoxContainer/FullScreenContainer/CheckBox")
 focus_next = NodePath("../VBoxContainer/FullScreenContainer/CheckBox")
