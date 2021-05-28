@@ -268,7 +268,7 @@ position = Vector2( -1948.48, 1081.81 )
 position = Vector2( 2085.06, -301.525 )
 
 [node name="InteractableAltar4" parent="Interactables/Altars" instance=ExtResource( 10 )]
-position = Vector2( 734.392, -1230.43 )
+position = Vector2( -4967.72, 2563.43 )
 
 [node name="Chests" type="Node2D" parent="Interactables"]
 
