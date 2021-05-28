@@ -5,10 +5,10 @@ type="Translation"
 
 [deps]
 
-files=[ "res://Translations/GUI/gui_translations.en_US.translation", "res://Translations/GUI/gui_translations.fr_FR.translation" ]
+files=[ "res://Translations/GUI/gui_translations.en_US.translation", "res://Translations/GUI/gui_translations.fr_FR.translation", "res://Translations/GUI/gui_translations.pt_BR.translation" ]
 
 source_file="res://Translations/GUI/gui_translations.csv"
-dest_files=[ "res://Translations/GUI/gui_translations.en_US.translation", "res://Translations/GUI/gui_translations.fr_FR.translation" ]
+dest_files=[ "res://Translations/GUI/gui_translations.en_US.translation", "res://Translations/GUI/gui_translations.fr_FR.translation", "res://Translations/GUI/gui_translations.pt_BR.translation" ]
 
 [params]
 
