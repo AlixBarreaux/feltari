@@ -14,7 +14,7 @@ onready var buttons_container: VBoxContainer = $Panel/ButtonsContainer
 # Buttons
 onready var resume_button: Button = buttons_container.get_node("ResumeButton")
 onready var options_button: Button = buttons_container.get_node("OptionsButton")
-onready var quit_to_main_menu_button: Button = buttons_container.get_node("QuitToMainMenuButton")
+#onready var quit_to_main_menu_button: Button = buttons_container.get_node("QuitToMainMenuButton")
 
 # SubMenus
 onready var options_menu: Control = $OptionsMenu

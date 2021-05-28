@@ -89,10 +89,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/interactables_manager.gd"
 }, {
-"base": "Node2D",
+"base": "Reference",
 "class": "LevelCameraManager",
 "language": "GDScript",
-"path": "res://Scripts/level_camera_manager.gd"
+"path": "res://level_camera_manager.gd"
 }, {
 "base": "HSlider",
 "class": "MasterSoundSlider",
