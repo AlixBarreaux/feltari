@@ -10,5 +10,5 @@ extends Area2D
 
 ############################### DECLARE FUNCTIONS ##############################
 
-func _on_EndGameArea2D_body_entered(body: PhysicsBody2D) -> void:
+func _on_EndGameArea2D_body_entered(_body: PhysicsBody2D) -> void:
 	Events.emit_signal("game_ended")

@@ -47,7 +47,7 @@ func check_if_player_can_pass() -> void:
 	self.set_gate_locked(false)
 
 
-func _on_CreatureDetectZone_body_exited(body: PhysicsBody2D) -> void:
+func _on_CreatureDetectZone_body_exited(_body: PhysicsBody2D) -> void:
 #	print(self.name + ": I've been exited by: " + body.name + " !")
 #	print(self.name + ": I'm now locking the gate!")
 	self.set_gate_locked(true)

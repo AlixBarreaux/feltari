@@ -13,6 +13,7 @@ func _ready() -> void:
 ############################### DECLARE FUNCTIONS ##############################
 
 func _initialize_signals() -> void:
+	# warning-ignore: return_value_discarded
 	Events.connect("game_ended", self, "on_game_ended")
 
 

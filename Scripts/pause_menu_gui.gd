@@ -26,7 +26,7 @@ func _ready() -> void:
 	first_button_to_focus_button.grab_focus()
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause_menu"):
 		if not self.visible:
 			get_tree().set_pause(true)
@@ -60,7 +60,18 @@ func _on_OptionsButton_pressed() -> void:
 
 
 func _on_QuitToMainMenuButton_pressed() -> void:
-	get_tree().change_scene_to(self.get_scene_to_load())
+	var _change_scene_to_error: int = 0
+	_change_scene_to_error = get_tree().change_scene_to(self.get_scene_to_load())
+	
+	match _change_scene_to_error:
+		OK:
+			pass
+		ERR_CANT_CREATE:
+			printerr("(!) ERROR: In " + self.name + " _on_PlayButton_pressed()")
+			printerr("Can't load the scene! ERR_CANT_CREATE")
+		_:
+			printerr("(!) ERROR: In" + self.name + " _on_PlayButton_pressed()")
+			printerr("Unknown error!")
 
 
 

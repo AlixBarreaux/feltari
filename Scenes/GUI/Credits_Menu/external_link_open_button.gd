@@ -24,4 +24,5 @@ func _initialize_asserts() -> void:
 
 
 func _on_ExternalLinkOpenButton_pressed() -> void:
+	# warning-ignore: return_value_discarded
 	OS.shell_open(self.get_link_to_open())

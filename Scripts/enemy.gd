@@ -291,6 +291,6 @@ func _on_HurtTargetTimer_timeout() -> void:
 
 
 
-func _on_VisibilityNotifier2D_viewport_entered(viewport: Viewport) -> void:
+func _on_VisibilityNotifier2D_viewport_entered(_viewport: Viewport) -> void:
 	if self.get_is_dead():
 		self.resurrect()

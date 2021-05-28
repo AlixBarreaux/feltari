@@ -15,10 +15,14 @@ func _ready() -> void:
 ############################### DECLARE FUNCTIONS ##############################
 
 func _initialize_signals() -> void:
+	# warning-ignore: return_value_discarded
 	Events.connect("player_current_health_set", self, "on_player_current_health_set")
+	# warning-ignore: return_value_discarded
 	Events.connect("player_current_health_decreased", self, "on_current_health_decreased")
+	# warning-ignore: return_value_discarded
 	Events.connect("player_current_health_increased", self, "on_current_health_increased")
 	
+	# warning-ignore: return_value_discarded
 	Events.connect("player_max_health_set", self, "on_player_max_health_set")
 
 

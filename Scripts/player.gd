@@ -184,6 +184,7 @@ func _initialize_asserts() -> void:
 
 
 func _initialize_signals() -> void:
+	# warning-ignore: return_value_discarded
 	Events.connect("game_started", self, "on_game_started")
 
 
