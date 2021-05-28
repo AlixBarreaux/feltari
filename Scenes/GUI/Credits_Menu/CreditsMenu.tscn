@@ -96,7 +96,7 @@ __meta__ = {
 [node name="OctonyteLabel" type="Label" parent="ScrollContainer/VBoxContainer/OctonyteContainer"]
 margin_right = 798.0
 margin_bottom = 21.0
-text = "Octonyte"
+text = "OCTONYTE_LABEL"
 align = 1
 valign = 1
 
@@ -119,7 +119,7 @@ __meta__ = {
 [node name="RaesayLabel" type="Label" parent="ScrollContainer/VBoxContainer/RaesayContainer"]
 margin_right = 798.0
 margin_bottom = 21.0
-text = "Raesay"
+text = "RAESAY_LABEL"
 align = 1
 valign = 1
 

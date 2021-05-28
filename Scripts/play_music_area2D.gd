@@ -33,6 +33,9 @@ func set_audio_stream_playing(playing: bool) -> void:
 	print(playing, audio_stream_player.playing)
 
 
-
+# Use of yield with create timer because of
+# time constraints for the project...
 func _on_ExitPointArea2D_body_exited(_body: Node) -> void:
 	sound_animation_player.play_backwards("Fade In Out")
+	yield(get_tree().create_timer(8), "timeout")
+	self.queue_free()
