@@ -1299,7 +1299,7 @@ tracks/0/keys = {
 extents = Vector2( 15, 45 )
 
 [sub_resource type="RectangleShape2D" id=47]
-extents = Vector2( 18.5955, 34.8772 )
+extents = Vector2( 18.5955, 44.8772 )
 
 [sub_resource type="AudioStreamRandomPitch" id=48]
 audio_stream = ExtResource( 3 )
