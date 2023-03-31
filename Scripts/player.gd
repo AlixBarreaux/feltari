@@ -147,6 +147,9 @@ func get_can_move() -> bool:
 
 func set_enabled(value: bool) -> void:
 	if value:
+		# Quick fix for character moving after death if a move key was pressed during death animation
+		self.direction = Vector2(0.0, 0.0)
+		
 		set_physics_process(true)
 		set_process_unhandled_input(true)
 		
