@@ -151,7 +151,6 @@ func set_enabled(value: bool) -> void:
 		set_process_unhandled_input(true)
 		
 		collision_shape2D.set_deferred("disabled", false)
-		hurt_box_collision_shape2D.set_deferred("disabled", false)
 		interact_zone_collision_shape2D.set_deferred("disabled", false)
 		
 		anim_tree_sm_playback.start("Idle")
