@@ -17,9 +17,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 3 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 scene_to_load = ExtResource( 4 )
 first_button_to_focus_node_path = NodePath("ButtonsContainer/PlayButton")
 

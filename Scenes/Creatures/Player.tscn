@@ -8,8 +8,8 @@
 [ext_resource path="res://Assets/Sound/Sound_Effects/sand_step.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Sound/Sound_Effects/player_hurt.wav" type="AudioStream" id=7]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 21, 22.5 )
+[sub_resource type="CircleShape2D" id=51]
+radius = 19.0591
 
 [sub_resource type="AnimationNodeAnimation" id=2]
 animation = "Die"
@@ -1313,9 +1313,7 @@ random_pitch = 1.25
 audio_stream = ExtResource( 7 )
 random_pitch = 1.25
 
-[node name="Player" type="KinematicBody2D" groups=[
-"player",
-]]
+[node name="Player" type="KinematicBody2D" groups=["player"]]
 collision_layer = 2
 collision_mask = 13
 script = ExtResource( 1 )
@@ -1332,7 +1330,7 @@ frame = 48
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
 position = Vector2( 0, 1.5 )
-shape = SubResource( 1 )
+shape = SubResource( 51 )
 
 [node name="FairySprite" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0.6 )
