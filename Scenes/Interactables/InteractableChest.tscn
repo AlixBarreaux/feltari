@@ -273,6 +273,7 @@ tracks/6/keys = {
 
 [node name="InteractableChest" instance=ExtResource( 1 )]
 scale = Vector2( 3, 3 )
+collision_mask = 2
 script = ExtResource( 4 )
 
 [node name="Sprite" parent="." index="0"]

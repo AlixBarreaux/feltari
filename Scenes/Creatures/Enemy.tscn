@@ -93,9 +93,7 @@ tracks/1/keys = {
 audio_stream = ExtResource( 3 )
 random_pitch = 1.25
 
-[node name="Enemy" type="KinematicBody2D" groups=[
-"enemies",
-]]
+[node name="Enemy" type="KinematicBody2D" groups=["enemies"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource( 1 )
