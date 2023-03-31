@@ -1299,7 +1299,7 @@ tracks/0/keys = {
 extents = Vector2( 15, 45 )
 
 [sub_resource type="RectangleShape2D" id=47]
-extents = Vector2( 37.1911, 38.1541 )
+extents = Vector2( 18.5955, 34.8772 )
 
 [sub_resource type="AudioStreamRandomPitch" id=48]
 audio_stream = ExtResource( 3 )
@@ -1400,7 +1400,7 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone"]
 light_mask = 0
-position = Vector2( -59, 1.4 )
+position = Vector2( -40.4044, -1.87693 )
 shape = SubResource( 47 )
 
 [node name="MeleeAttackCooldownTimer" type="Timer" parent="."]
