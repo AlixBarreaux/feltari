@@ -14,6 +14,7 @@ extends Interactable
 
 func _ready() -> void:
 	self._initialize_asserts()
+	self._initialize_signals()
 	pass
 
 ############################### DECLARE FUNCTIONS ##############################
@@ -21,6 +22,10 @@ func _ready() -> void:
 func _initialize_asserts() -> void:
 #	assert(creature_detect_zone)
 	pass
+
+
+func _initialize_signals() -> void:
+	Events.connect("fairy_picked_up_from_chest", self, "check_if_player_can_pass")
 
 
 func _set_current_color(new_color: Color) -> void:

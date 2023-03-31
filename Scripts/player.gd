@@ -280,6 +280,7 @@ func on_die_animation_finished() -> void:
 # Must rename to on_fairy_spawn_animation_finished()
 func on_spawn_animation_finished() -> void:
 	$FairyAnimationPlayer.play("Idle")
+	Events.emit_signal("fairy_picked_up_from_chest")
 
 
 

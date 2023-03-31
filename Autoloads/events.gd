@@ -21,6 +21,10 @@ signal player_max_health_set
 # warning-ignore: unused_signal
 signal player_died
 
+# warning-ignore: unused_signal
+signal fairy_picked_up_from_chest
+
+
 ################################# RUN THE CODE #################################
 
 
