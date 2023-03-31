@@ -18,5 +18,5 @@ func _on_PatrolZoneEnemy_body_entered(_body: PhysicsBody2D) -> void:
 
 func _on_PatrolZoneEnemy_body_exited(body: PhysicsBody2D) -> void:
 #	body.set_current_ai_state(AI_STATES.TELEPORT_TO_SPAWN_POINT)
-	print(self.name + ": The body " + body.name + " exited me!")
+#	print(self.name + ": The body " + body.name + " exited me!")
 	body.teleport_to_spawn_point()
